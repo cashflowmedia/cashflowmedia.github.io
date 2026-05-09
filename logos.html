@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Logo 3D Final — Cash Flow Media</title>
+<title>Logo 3D — Live Preview · Cash Flow Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -16,7 +16,58 @@
     padding: 60px 24px 80px;
     line-height: 1.5;
     min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
   }
+
+  /* =============== FIRE BG + EMBERS =============== */
+  .fire-bg, .ember-layer {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .fire-glow {
+    position: fixed;
+    bottom: -200px;
+    left: -10%; right: -10%;
+    height: 60vh;
+    background:
+      radial-gradient(ellipse at 25% 100%, rgba(255,80,20,0.35), transparent 60%),
+      radial-gradient(ellipse at 75% 100%, rgba(255,120,30,0.28), transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(255,160,40,0.18), transparent 70%);
+    filter: blur(40px);
+    animation: fireFlicker 4s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+  }
+  @keyframes fireFlicker {
+    0%, 100% { opacity: 0.7; transform: scaleY(1) scaleX(1); }
+    33%      { opacity: 1;   transform: scaleY(1.06) scaleX(0.98); }
+    66%      { opacity: 0.85; transform: scaleY(0.95) scaleX(1.02); }
+  }
+  .ember-layer { overflow: hidden; }
+  .ember-layer span {
+    position: absolute;
+    bottom: -8px;
+    left: var(--x);
+    width: var(--w, 3px); height: var(--w, 3px);
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffcc66 0%, #ff7722 50%, #cc3300 100%);
+    box-shadow: 0 0 6px rgba(255,140,40,0.85), 0 0 14px rgba(255,90,20,0.45);
+    opacity: 0;
+    animation: ember var(--d, 12s) ease-out infinite;
+    animation-delay: var(--del, 0s);
+    will-change: transform, opacity;
+  }
+  @keyframes ember {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0; }
+    8%   { opacity: 1; }
+    50%  { transform: translate(20px, -45vh) scale(0.8); opacity: 0.85; }
+    80%  { opacity: 0.4; }
+    100% { transform: translate(-20px, -110vh) scale(0.2); opacity: 0; }
+  }
+
+  /* =============== PAGE =============== */
   h1 {
     text-align: center;
     font-family: 'Space Grotesk', sans-serif;
@@ -24,25 +75,29 @@
     font-weight: 700;
     margin-bottom: 12px;
     letter-spacing: -0.02em;
+    position: relative; z-index: 2;
   }
   .sub {
     text-align: center;
     color: #a8b2ad;
-    max-width: 640px;
-    margin: 0 auto 48px;
+    max-width: 660px;
+    margin: 0 auto 40px;
     font-size: 16px;
+    position: relative; z-index: 2;
   }
   .sub strong { color: #1aff66; }
 
   .hero-card {
     max-width: 640px;
-    margin: 0 auto 32px;
+    margin: 0 auto 56px;
     background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
     border: 1px solid rgba(26,255,102,0.3);
     border-radius: 24px;
     padding: 48px 36px;
     text-align: center;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 80px rgba(26,255,102,0.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 80px rgba(255,100,30,0.06);
+    position: relative; z-index: 2;
+    backdrop-filter: blur(2px);
   }
   .hero-preview {
     background: #060808;
@@ -50,11 +105,11 @@
     border-radius: 20px;
     margin-bottom: 28px;
     border: 1px solid rgba(255,255,255,0.04);
-    display: grid;
-    place-items: center;
+    display: grid; place-items: center;
     min-height: 240px;
+    box-shadow: inset 0 -40px 80px rgba(255,80,20,0.08);
   }
-  .hero-preview svg { width: 200px; height: 200px; overflow: visible; }
+  .hero-preview svg { width: 220px; height: 220px; overflow: visible; }
   .hero-name {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 26px; font-weight: 700;
@@ -75,41 +130,113 @@
   }
   .hero-horiz span em { font-style: normal; color: #1aff66; margin-left: 4px; }
 
-  .compare {
-    max-width: 640px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-    text-align: center;
+  /* ============ EQ BAR ANIMATIONS ============ */
+  .eq-bar { transform-origin: bottom; transform-box: fill-box; }
+  .eq-1 { animation: eqPulse 1.4s ease-in-out infinite 0s; }
+  .eq-2 { animation: eqPulse 1.4s ease-in-out infinite -0.45s; }
+  .eq-3 { animation: eqPulse 1.4s ease-in-out infinite -0.85s; }
+  @keyframes eqPulse {
+    0%, 100% { transform: scaleY(0.82); filter: drop-shadow(0 0 4px rgba(26,255,102,0.5)); }
+    50%      { transform: scaleY(1.12); filter: drop-shadow(0 0 18px rgba(26,255,102,0.95)); }
   }
-  .compare-item {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 14px;
-    padding: 24px 18px;
-  }
-  .compare-item .label {
-    font-size: 11px; letter-spacing: 0.2em; color: #a8b2ad;
-    text-transform: uppercase; margin-bottom: 14px; font-weight: 600;
-  }
-  .compare-item svg { width: 90px; height: 90px; overflow: visible; }
 
-  /* Animations */
-  .pulse-bar { transform-origin: bottom; animation: barPulse 2s ease-in-out infinite; }
-  @keyframes barPulse {
-    0%, 100% { transform: scaleY(1); filter: drop-shadow(0 0 6px #1aff66); }
-    50%      { transform: scaleY(1.04); filter: drop-shadow(0 0 18px #1aff66); }
+  .dollar-pulse {
+    transform-origin: 41.5px 32px;
+    transform-box: fill-box;
+    animation: dollarPulse 1.4s ease-in-out infinite -0.85s;
   }
+  @keyframes dollarPulse {
+    0%, 100% { transform: scale(0.94); }
+    50%      { transform: scale(1.1); }
+  }
+
+  /* sparks */
   .spark-1 { animation: sparkle 2.4s ease-in-out infinite; }
   .spark-2 { animation: sparkle 2.4s ease-in-out infinite -0.8s; }
   @keyframes sparkle {
     0%, 100% { opacity: 0.3; transform: scale(0.7); }
     50%      { opacity: 1;   transform: scale(1.3); }
   }
+
+  /* ============ IDEAS GRID ============ */
+  .ideas-wrap {
+    max-width: 980px; margin: 0 auto;
+    position: relative; z-index: 2;
+  }
+  .ideas-section {
+    margin-bottom: 36px;
+  }
+  .ideas-section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px; font-weight: 600;
+    color: #1aff66;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 700px) { .ideas-grid { grid-template-columns: 1fr; } }
+  .idea {
+    padding: 16px 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    transition: transform .25s, border-color .25s, background .25s;
+  }
+  .idea:hover {
+    transform: translateY(-3px);
+    border-color: rgba(26,255,102,0.35);
+    background: linear-gradient(180deg, rgba(26,255,102,0.04), rgba(255,255,255,0.005));
+  }
+  .idea-code {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #1aff66;
+    background: rgba(26,255,102,0.1);
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .idea-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px; font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .idea-desc { color: #a8b2ad; font-size: 13px; line-height: 1.45; }
 </style>
 </head>
 <body>
 
-<h1>Logo 3D · Modern $ · No Arrow</h1>
-<p class="sub">Modernized: chunky <strong>Inter Black 900</strong> $ replacing the old text rendering, and the arrow removed. Reply <strong>ship it</strong> to wire across all pages, or describe what to change.</p>
+<!-- Fire glow + embers -->
+<div class="fire-glow"></div>
+<div class="ember-layer">
+  <span style="--x:6%;--d:9s;--del:0s;--w:3px"></span>
+  <span style="--x:14%;--d:13s;--del:-2s;--w:2px"></span>
+  <span style="--x:22%;--d:11s;--del:-5s;--w:4px"></span>
+  <span style="--x:31%;--d:14s;--del:-1s;--w:2px"></span>
+  <span style="--x:39%;--d:10s;--del:-7s;--w:3px"></span>
+  <span style="--x:48%;--d:12s;--del:-3s;--w:2px"></span>
+  <span style="--x:57%;--d:15s;--del:-8s;--w:4px"></span>
+  <span style="--x:66%;--d:11s;--del:-4s;--w:3px"></span>
+  <span style="--x:74%;--d:13s;--del:-6s;--w:2px"></span>
+  <span style="--x:82%;--d:9s;--del:-2s;--w:3px"></span>
+  <span style="--x:90%;--d:14s;--del:-9s;--w:2px"></span>
+  <span style="--x:96%;--d:10s;--del:-5s;--w:4px"></span>
+  <span style="--x:11%;--d:16s;--del:-11s;--w:2px"></span>
+  <span style="--x:43%;--d:17s;--del:-13s;--w:2px"></span>
+  <span style="--x:78%;--d:18s;--del:-10s;--w:3px"></span>
+</div>
+
+<h1>Logo 3D · Live Preview</h1>
+<p class="sub">EQ-style pulsing bars · synced <strong>$</strong> pulse · subtle fire glow + drifting embers behind. Scroll down for more idea menus.</p>
 
 <!-- Defs once -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -126,38 +253,37 @@
   </defs>
 </svg>
 
-<!-- HERO CARD: big preview -->
+<!-- HERO LOGO -->
 <div class="hero-card">
   <div class="hero-preview">
     <svg viewBox="0 0 64 64" fill="none">
       <line x1="4" y1="58" x2="60" y2="58" stroke="url(#g3d)" stroke-width="1.5" opacity="0.5"/>
       <g filter="url(#fusionGlow)">
-        <path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3d)" opacity="0.5"/>
-        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.75"/>
-        <path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3d)" class="pulse-bar"/>
+        <path d="M8 56 V46 L19 38 V56 Z"  fill="url(#g3d)" opacity="0.55" class="eq-bar eq-1"/>
+        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.78" class="eq-bar eq-2"/>
+        <path d="M36 56 V20 L47 8 V56 Z"  fill="url(#g3d)" class="eq-bar eq-3"/>
       </g>
-      <!-- Modern $ — Inter Black 900, bigger, tight -->
-      <text x="41.5" y="44" text-anchor="middle"
+      <text class="dollar-pulse" x="41.5" y="44" text-anchor="middle"
             font-family="Inter, system-ui, sans-serif"
             font-size="28" font-weight="900"
             fill="#001a0e"
             style="letter-spacing:-1px;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))">$</text>
-      <circle class="spark-1" cx="6" cy="14" r="1.4" fill="#66ff88"/>
+      <circle class="spark-1" cx="6"  cy="14" r="1.4" fill="#66ff88"/>
       <circle class="spark-2" cx="56" cy="42" r="1.1" fill="#1aff66"/>
     </svg>
   </div>
 
-  <div class="hero-name">3D · FUSION (Modern $)</div>
-  <div class="hero-desc">Blade-cut bars · pulsing tallest · sparks · clean modern $ · no arrow.</div>
+  <div class="hero-name">3D · FUSION ALIVE</div>
+  <div class="hero-desc">All 3 bars pulse on a stagger like an audio meter. The $ pulses in sync with the tallest bar.</div>
 
   <div class="hero-horiz">
     <svg viewBox="0 0 64 64" fill="none">
       <g filter="url(#fusionGlow)">
-        <path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3d)" opacity="0.5"/>
-        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.75"/>
-        <path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3d)"/>
+        <path d="M8 56 V46 L19 38 V56 Z"  fill="url(#g3d)" opacity="0.55" class="eq-bar eq-1"/>
+        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.78" class="eq-bar eq-2"/>
+        <path d="M36 56 V20 L47 8 V56 Z"  fill="url(#g3d)" class="eq-bar eq-3"/>
       </g>
-      <text x="41.5" y="44" text-anchor="middle"
+      <text class="dollar-pulse" x="41.5" y="44" text-anchor="middle"
             font-family="Inter, system-ui, sans-serif"
             font-size="28" font-weight="900"
             fill="#001a0e"
@@ -167,38 +293,64 @@
   </div>
 </div>
 
-<!-- BEFORE / AFTER -->
-<div class="compare">
-  <div class="compare-item">
-    <div class="label">Before</div>
-    <svg viewBox="0 0 64 64" fill="none">
-      <g filter="url(#fusionGlow)">
-        <path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3d)" opacity="0.5"/>
-        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.75"/>
-        <path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3d)"/>
-      </g>
-      <path d="M50 14 L58 6 M58 6 L52 6 M58 6 L58 12" stroke="#1aff66" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="800" fill="#001a0e">$</text>
-    </svg>
+<!-- IDEAS MENU -->
+<div class="ideas-wrap">
+
+  <div class="ideas-section">
+    <h2>Bar motion alternatives</h2>
+    <div class="ideas-grid">
+      <div class="idea"><span class="idea-code">M1</span><div class="idea-name">EQ pulse (current)</div><div class="idea-desc">3 bars bouncing on a stagger like an audio meter.</div></div>
+      <div class="idea"><span class="idea-code">M2</span><div class="idea-name">Cascade rise</div><div class="idea-desc">Bars rise from baseline one after another, then settle. Loops every 3s.</div></div>
+      <div class="idea"><span class="idea-code">M3</span><div class="idea-name">Heartbeat</div><div class="idea-desc">All bars pulse together once, pause, pulse twice. Living, calm.</div></div>
+      <div class="idea"><span class="idea-code">M4</span><div class="idea-name">Wave</div><div class="idea-desc">Heights ripple left-to-right like a wave passing through.</div></div>
+      <div class="idea"><span class="idea-code">M5</span><div class="idea-name">Random ticker</div><div class="idea-desc">Heights flicker subtly random — like a real spend dashboard.</div></div>
+      <div class="idea"><span class="idea-code">M6</span><div class="idea-name">Build &amp; hold</div><div class="idea-desc">Bars grow up from zero on page load, then stay still. Cinematic intro.</div></div>
+    </div>
   </div>
-  <div class="compare-item">
-    <div class="label">After</div>
-    <svg viewBox="0 0 64 64" fill="none">
-      <g filter="url(#fusionGlow)">
-        <path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3d)" opacity="0.5"/>
-        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.75"/>
-        <path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3d)"/>
-      </g>
-      <text x="41.5" y="44" text-anchor="middle"
-            font-family="Inter, system-ui, sans-serif"
-            font-size="28" font-weight="900"
-            fill="#001a0e"
-            style="letter-spacing:-1px">$</text>
-    </svg>
+
+  <div class="ideas-section">
+    <h2>$ effects</h2>
+    <div class="ideas-grid">
+      <div class="idea"><span class="idea-code">D1</span><div class="idea-name">Pulse with bars (current)</div><div class="idea-desc">$ scales 0.94 ↔ 1.10 in sync with tallest bar.</div></div>
+      <div class="idea"><span class="idea-code">D2</span><div class="idea-name">Counter-pulse</div><div class="idea-desc">$ shrinks when bar grows, grows when bar settles. Tension.</div></div>
+      <div class="idea"><span class="idea-code">D3</span><div class="idea-name">Color shift</div><div class="idea-desc">$ cycles green → gold → green slowly. Money tone.</div></div>
+      <div class="idea"><span class="idea-code">D4</span><div class="idea-name">Sheen pass</div><div class="idea-desc">A light reflection sweeps across the $ every 4s.</div></div>
+      <div class="idea"><span class="idea-code">D5</span><div class="idea-name">Tilt sway</div><div class="idea-desc">$ rocks ±3° gently like a coin spinning slow.</div></div>
+      <div class="idea"><span class="idea-code">D6</span><div class="idea-name">Stamp drop</div><div class="idea-desc">$ scales in from 1.6 → 1.0 every 4s, like getting stamped.</div></div>
+    </div>
   </div>
+
+  <div class="ideas-section">
+    <h2>Background atmospheres (alternatives or additions)</h2>
+    <div class="ideas-grid">
+      <div class="idea"><span class="idea-code">B1</span><div class="idea-name">Fire + embers (current)</div><div class="idea-desc">Warm bottom glow + small embers drifting up. "Heat."</div></div>
+      <div class="idea"><span class="idea-code">B2</span><div class="idea-name">Money rain</div><div class="idea-desc">Small $ / 💵 emojis falling slowly behind the content.</div></div>
+      <div class="idea"><span class="idea-code">B3</span><div class="idea-name">Aurora</div><div class="idea-desc">Soft green northern-lights gradient slowly rotating. Calm.</div></div>
+      <div class="idea"><span class="idea-code">B4</span><div class="idea-name">Constellation</div><div class="idea-desc">Tiny stars + slow lines drawing between them. Tech.</div></div>
+      <div class="idea"><span class="idea-code">B5</span><div class="idea-name">Light rays</div><div class="idea-desc">Soft god-rays from top corner. Premium.</div></div>
+      <div class="idea"><span class="idea-code">B6</span><div class="idea-name">Smoke wisps</div><div class="idea-desc">Slow drifting smoke at the edges. Cinematic.</div></div>
+      <div class="idea"><span class="idea-code">B7</span><div class="idea-name">Pulse grid</div><div class="idea-desc">Faint dot grid where dots pulse outward in waves.</div></div>
+      <div class="idea"><span class="idea-code">B8</span><div class="idea-name">Cursor heat</div><div class="idea-desc">Warm glow follows your cursor — feels alive.</div></div>
+    </div>
+  </div>
+
+  <div class="ideas-section">
+    <h2>Page-level "first class" microeffects</h2>
+    <div class="ideas-grid">
+      <div class="idea"><span class="idea-code">E1</span><div class="idea-name">Click ripple</div><div class="idea-desc">Buttons emit a ring/ripple on click.</div></div>
+      <div class="idea"><span class="idea-code">E2</span><div class="idea-name">Cursor trail</div><div class="idea-desc">Faint green particles trail behind your cursor.</div></div>
+      <div class="idea"><span class="idea-code">E3</span><div class="idea-name">Confetti on first visit</div><div class="idea-desc">Tasteful 1-second burst when site first loads.</div></div>
+      <div class="idea"><span class="idea-code">E4</span><div class="idea-name">Number reveal counters</div><div class="idea-desc">All stats count up on scroll into view (already partial).</div></div>
+      <div class="idea"><span class="idea-code">E5</span><div class="idea-name">Section dividers</div><div class="idea-desc">Subtle wave/diagonal between sections so transitions feel intentional.</div></div>
+      <div class="idea"><span class="idea-code">E6</span><div class="idea-name">Sticky bottom CTA</div><div class="idea-desc">Always-visible "Talk to us → Telegram" bar at the bottom.</div></div>
+      <div class="idea"><span class="idea-code">E7</span><div class="idea-name">Page transitions</div><div class="idea-desc">Smooth fade between index → pricing → contact.</div></div>
+      <div class="idea"><span class="idea-code">E8</span><div class="idea-name">Scroll progress bar</div><div class="idea-desc">Thin green bar at top showing % of page scrolled.</div></div>
+    </div>
+  </div>
+
 </div>
 
-<p class="sub" style="margin-top:48px">Reply <strong>ship it</strong> to wire it sitewide, or describe further tweaks (e.g. "$ even bigger", "add a small dot under it", "make $ white not dark").</p>
+<p class="sub" style="margin-top:60px">Reply with codes (e.g. <strong>M1, D3, B3, E1, E6</strong>) — or <strong>ship it</strong> to wire current logo (M1+D1+B1) sitewide.</p>
 
 </body>
 </html>
