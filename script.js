@@ -16,7 +16,16 @@ lenis.on('scroll', ScrollTrigger.update);
 const cursor = document.getElementById('cursor');
 const cursorDot = document.getElementById('cursor-dot');
 let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; cursorDot.style.left = mouseX + 'px'; cursorDot.style.top = mouseY + 'px'; });
+const bgSpotlight = document.getElementById('bgSpotlight');
+window.addEventListener('mousemove', e => {
+  mouseX = e.clientX; mouseY = e.clientY;
+  cursorDot.style.left = mouseX + 'px';
+  cursorDot.style.top = mouseY + 'px';
+  if (bgSpotlight) {
+    bgSpotlight.style.setProperty('--mx', mouseX + 'px');
+    bgSpotlight.style.setProperty('--my', mouseY + 'px');
+  }
+});
 function animateCursor() {
   cursorX += (mouseX - cursorX) * 0.15;
   cursorY += (mouseY - cursorY) * 0.15;

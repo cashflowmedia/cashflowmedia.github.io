@@ -18,10 +18,34 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-dot" id="cursor-dot"></div>
 
-<!-- Animated background -->
-<div class="bg-grid"></div>
-<div class="bg-glow bg-glow-1"></div>
-<div class="bg-glow bg-glow-2"></div>
+<!-- Animated background layer -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+  <div class="bg-glow bg-glow-4"></div>
+  <div class="bg-aurora"></div>
+  <div class="bg-spotlight" id="bgSpotlight"></div>
+  <div class="bg-particles">
+    <span style="--x:8%;--d:18s;--s:.6;--del:0s"></span>
+    <span style="--x:18%;--d:22s;--s:.9;--del:-3s"></span>
+    <span style="--x:27%;--d:26s;--s:.5;--del:-7s"></span>
+    <span style="--x:38%;--d:20s;--s:.8;--del:-2s"></span>
+    <span style="--x:47%;--d:30s;--s:1.1;--del:-12s"></span>
+    <span style="--x:55%;--d:24s;--s:.7;--del:-5s"></span>
+    <span style="--x:64%;--d:28s;--s:.9;--del:-9s"></span>
+    <span style="--x:72%;--d:21s;--s:.6;--del:-1s"></span>
+    <span style="--x:81%;--d:34s;--s:1;--del:-15s"></span>
+    <span style="--x:89%;--d:23s;--s:.8;--del:-6s"></span>
+    <span style="--x:14%;--d:32s;--s:.5;--del:-11s"></span>
+    <span style="--x:33%;--d:27s;--s:1;--del:-4s"></span>
+    <span style="--x:58%;--d:31s;--s:.6;--del:-8s"></span>
+    <span style="--x:76%;--d:25s;--s:.9;--del:-13s"></span>
+    <span style="--x:93%;--d:29s;--s:.7;--del:-2s"></span>
+  </div>
+</div>
 
 <!-- Loader -->
 <div class="loader" id="loader">
@@ -52,7 +76,7 @@
     <span>CASH FLOW</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#flagship">Reservoir</a></li>
+    <li><a href="#flagship">Jade BM2500</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#verticals">Verticals</a></li>
     <li><a href="#proof">Reviews</a></li>
@@ -168,7 +192,7 @@
         <div class="narrative-tag narrative-tag-good">With Cash Flow Media</div>
         <ul class="narrative-list">
           <li><span class="narrative-time">0:00</span><span>Account flagged. Auto-detected by our system.</span></li>
-          <li><span class="narrative-time">0:05</span><span>Replacement spun up from the Reservoir network.</span></li>
+          <li><span class="narrative-time">0:05</span><span>Replacement spun up from the Jade BM2500 network.</span></li>
           <li><span class="narrative-time">0:30</span><span>Pixel and creatives migrated with our team.</span></li>
           <li><span class="narrative-time">1:30</span><span>Spend resumed. Algorithm intact.</span></li>
           <li><span class="narrative-time">2:00</span><span>Daily ops report sent. Nothing lost.</span></li>
@@ -186,7 +210,7 @@
       <div class="flagship-left">
         <span class="eyebrow"><span class="dot"></span>Flagship infrastructure</span>
         <h2 class="flagship-title">
-          <span class="gradient-text">Reservoir 2500.</span><br/>
+          <span class="gradient-text">Jade BM2500.</span><br/>
           Distributed accounts. Auto replacement. Zero panic.
         </h2>
         <p class="flagship-desc">
@@ -203,7 +227,7 @@
         </ul>
         <div class="flagship-cta">
           <a href="#contact" class="btn btn-primary magnetic">
-            <span>Get Reservoir 2500</span>
+            <span>Get Jade BM2500</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -220,7 +244,7 @@
         <div class="reservoir-viz">
           <div class="reservoir-core">
             <span class="reservoir-num">2500</span>
-            <span class="reservoir-cap">RESERVOIR</span>
+            <span class="reservoir-cap">JADE BM</span>
           </div>
           <div class="reservoir-ring reservoir-ring-1"></div>
           <div class="reservoir-ring reservoir-ring-2"></div>
@@ -257,7 +281,7 @@
     <div class="pricing-grid" data-tab-panel="subs">
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
-          <h3>Pulse</h3>
+          <h3>Solo</h3>
           <p>For solo media buyers and testers.</p>
         </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">450</span><span class="price-period">/mo</span></div>
@@ -268,13 +292,13 @@
           <li><span class="check">✓</span> Unlimited replacements</li>
           <li><span class="check">✓</span> Onboarding assistance</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Pulse</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Solo</span></a>
       </div>
 
       <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
         <div class="price-tag">Most Popular</div>
         <div class="price-head">
-          <h3>Surge</h3>
+          <h3>Scale</h3>
           <p>For agencies running real volume.</p>
         </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">850</span><span class="price-period">/mo</span></div>
@@ -285,12 +309,12 @@
           <li><span class="check">✓</span> <strong>Unlimited replacements</strong></li>
           <li><span class="check">✓</span> Approvals guidance</li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Choose Surge</span></a>
+        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Choose Scale</span></a>
       </div>
 
       <div class="price-card" data-anim="fade-up" data-delay="0.2">
         <div class="price-head">
-          <h3>Apex</h3>
+          <h3>Top Agency</h3>
           <p>For high-spend operations.</p>
         </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">1,950</span><span class="price-period">/mo</span></div>
@@ -301,13 +325,13 @@
           <li><span class="check">✓</span> Unlimited replacements</li>
           <li><span class="check">✓</span> Vertical-specific support</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Apex</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Top Agency</span></a>
       </div>
 
       <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
         <div class="price-tag price-tag-elite">Elite</div>
         <div class="price-head">
-          <h3>Reign</h3>
+          <h3>Agency Unlimited</h3>
           <p>Unlimited infrastructure for top operators.</p>
         </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">35,000</span><span class="price-period">/mo</span></div>
@@ -318,7 +342,7 @@
           <li><span class="check">✓</span> Custom vertical strategy</li>
           <li><span class="check">✓</span> Direct-line escalation</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Apply for Reign</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Get Agency Unlimited</span></a>
       </div>
     </div>
 
@@ -326,7 +350,7 @@
     <div class="pricing-grid" data-tab-panel="onetime" hidden>
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
-          <h3>Spark</h3>
+          <h3>Profile FB</h3>
           <p>Aged personal profile, ready to deploy.</p>
         </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">100</span><span class="price-period">one-time</span></div>
@@ -336,13 +360,13 @@
           <li><span class="check">✓</span> Login credentials delivered</li>
           <li><span class="check">✓</span> Setup checklist included</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Spark</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Profile FB</span></a>
       </div>
 
       <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
         <div class="price-tag">Best Value</div>
         <div class="price-head">
-          <h3>Triad</h3>
+          <h3>BM3 Verified</h3>
           <p>3-pack of verified BM accounts.</p>
         </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">200</span><span class="price-period">one-time</span></div>
@@ -352,12 +376,12 @@
           <li><span class="check">✓</span> Standard wallet config</li>
           <li><span class="check">✓</span> Quick-start guide</li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Buy Triad</span></a>
+        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Buy BM3 Verified</span></a>
       </div>
 
       <div class="price-card" data-anim="fade-up" data-delay="0.2">
         <div class="price-head">
-          <h3>Decade</h3>
+          <h3>BM10 Instant</h3>
           <p>10 accounts with instant wallet delivery.</p>
         </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">550</span><span class="price-period">one-time</span></div>
@@ -367,13 +391,13 @@
           <li><span class="check">✓</span> Bulk allocation interface</li>
           <li><span class="check">✓</span> Setup support included</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Decade</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy BM10 Instant</span></a>
       </div>
 
       <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
         <div class="price-tag price-tag-elite">Custom</div>
         <div class="price-head">
-          <h3>Bespoke</h3>
+          <h3>Custom Enterprise</h3>
           <p>Built around your vertical and scale.</p>
         </div>
         <div class="price-num"><span class="price-currency">Custom</span></div>
@@ -468,7 +492,7 @@
         <ul>
           <li>✓ Disabled = replaced in &lt; 2 hours</li>
           <li>✓ Direct line to humans 24/7</li>
-          <li>✓ Reservoir network always ready</li>
+          <li>✓ Jade BM2500 network always ready</li>
           <li>✓ All major verticals supported</li>
           <li>✓ Pixel + creative migration handled</li>
           <li>✓ You sleep. We watch.</li>
@@ -505,7 +529,7 @@
       </div>
       <div class="proof-card" data-anim="fade-up" data-delay="0.1">
         <div class="proof-stars">★★★★★</div>
-        <p>"Reservoir 2500 changed how we operate. We don't even pause campaigns anymore. The replacement just happens."</p>
+        <p>"Jade BM2500 changed how we operate. We don't even pause campaigns anymore. The replacement just happens."</p>
         <div class="proof-meta">
           <strong>Agency Founder</strong>
           <span>Multi-vertical · 7-figure spend</span>
@@ -550,7 +574,7 @@
     <div class="faq-list">
       <details class="faq-item" data-anim="fade-up">
         <summary>How fast are replacements?</summary>
-        <p>Subscriptions: typically under 2 hours, 24/7. Reservoir 2500 customers see auto-replacement in 5–10 minutes via the distributed pool.</p>
+        <p>Subscriptions: typically under 2 hours, 24/7. Jade BM2500 customers see auto-replacement in 5–10 minutes via the distributed pool.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.05">
         <summary>How fast can I get onboarded?</summary>
@@ -565,12 +589,12 @@
         <p>For most setups, no — accounts come pre-warmed. For higher-risk verticals or aggressive scaling, our team will guide you through a short warm-up plan.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.2">
-        <summary>What's the difference between Reservoir 2500 and a regular subscription?</summary>
-        <p>Subscriptions give you a fixed number of accounts with manual replacements when something goes down. Reservoir 2500 is a private distributed pool that auto-rotates so spend never pauses — built for operators who can't afford downtime.</p>
+        <summary>What's the difference between Jade BM2500 and a regular subscription?</summary>
+        <p>Subscriptions give you a fixed number of accounts with manual replacements when something goes down. Jade BM2500 is a private distributed pool that auto-rotates so spend never pauses — built for operators who can't afford downtime.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.25">
         <summary>Should I pick a one-time bundle or a subscription?</summary>
-        <p>One-time bundles (Spark / Triad / Decade) are best for testing and short campaigns. Subscriptions (Pulse / Surge / Apex / Reign) are for ongoing operations that need replacements and 24/7 support.</p>
+        <p>One-time bundles (Profile FB / BM3 Verified / BM10 Instant) are best for testing and short campaigns. Subscriptions (Solo / Scale / Top Agency / Agency Unlimited) are for ongoing operations that need replacements and 24/7 support.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.3">
         <summary>Are there guarantees?</summary>
@@ -620,7 +644,7 @@
     </div>
     <div class="footer-col">
       <h5>Product</h5>
-      <a href="#flagship">Reservoir 2500</a>
+      <a href="#flagship">Jade BM2500</a>
       <a href="#pricing">Pricing</a>
       <a href="#verticals">Verticals</a>
       <a href="#faq">FAQ</a>
