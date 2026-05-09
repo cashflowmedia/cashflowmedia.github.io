@@ -521,6 +521,16 @@ ul, ol { list-style: none; }
   background-size: 200% 100%;
   animation: gradientShift 6s linear infinite;
 }
+
+/* "Media" within a heading — solid green with strong glow (matches wordmark vibe) */
+.heading-media {
+  color: var(--green);
+  text-shadow:
+    0 0 4px  rgba(26,255,102,0.9),
+    0 0 12px rgba(26,255,102,0.55),
+    0 0 28px rgba(26,255,102,0.3),
+    0 0 56px rgba(26,255,102,0.15);
+}
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
