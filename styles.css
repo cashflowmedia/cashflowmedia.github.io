@@ -304,19 +304,51 @@ ul, ol { list-style: none; }
   transform: rotate(-8deg) scale(1.05);
   filter: drop-shadow(0 0 18px rgba(26,255,102,0.5));
 }
+/* "CashFlow" — gold gradient with shimmer, premium display font */
 .logo-word {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.22em;
-  color: var(--text);
+  font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.015em;
   white-space: nowrap;
+  background: linear-gradient(120deg, #F4C95C 0%, #FFE4A0 30%, #F4C95C 60%, #FFD480 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 250% 100%;
+  animation: goldShimmer 5s linear infinite;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.35));
 }
+@keyframes goldShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 250% 50%; }
+}
+
+/* "media" — Matrix terminal style, green with character flicker glow */
 .logo-word em {
+  display: inline-block;
+  margin-left: 6px;
+  font-family: 'VT323', 'Share Tech Mono', monospace;
   font-style: normal;
+  font-weight: 400;
+  font-size: 1.45em;
+  letter-spacing: 0.04em;
   color: var(--green);
-  margin-left: 4px;
-  font-weight: 600;
+  text-shadow:
+    0 0 4px rgba(26,255,102,0.85),
+    0 0 10px rgba(26,255,102,0.55),
+    0 0 18px rgba(26,255,102,0.25);
+  animation: matrixFlicker 3.5s ease-in-out infinite;
+  -webkit-text-fill-color: var(--green); /* override inherited gradient transparency */
+  background: none;
+  filter: none;
+}
+@keyframes matrixFlicker {
+  0%, 88%, 100% { opacity: 1; }
+  90%           { opacity: 0.6; }
+  92%           { opacity: 1; }
+  94%           { opacity: 0.85; }
+  96%           { opacity: 1; }
 }
 .nav-links {
   display: flex; gap: 32px;
