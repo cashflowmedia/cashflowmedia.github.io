@@ -3,10 +3,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ---------- Smooth scroll (Lenis) ---------- */
 const lenis = new Lenis({
-  duration: 1.2,
+  duration: 0.7,
   easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
   smoothTouch: false,
+  wheelMultiplier: 1.2,
 });
 function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
@@ -16,19 +17,14 @@ lenis.on('scroll', ScrollTrigger.update);
 const cursor = document.getElementById('cursor');
 const cursorDot = document.getElementById('cursor-dot');
 let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-const bgSpotlight = document.getElementById('bgSpotlight');
 window.addEventListener('mousemove', e => {
   mouseX = e.clientX; mouseY = e.clientY;
   cursorDot.style.left = mouseX + 'px';
   cursorDot.style.top = mouseY + 'px';
-  if (bgSpotlight) {
-    bgSpotlight.style.setProperty('--mx', mouseX + 'px');
-    bgSpotlight.style.setProperty('--my', mouseY + 'px');
-  }
 });
 function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.15;
-  cursorY += (mouseY - cursorY) * 0.15;
+  cursorX += (mouseX - cursorX) * 0.32;
+  cursorY += (mouseY - cursorY) * 0.32;
   cursor.style.left = cursorX + 'px';
   cursor.style.top  = cursorY + 'px';
   requestAnimationFrame(animateCursor);
@@ -132,7 +128,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       const target = document.querySelector(id);
       if (target) {
         e.preventDefault();
-        lenis.scrollTo(target, { offset: -80, duration: 1.4 });
+        lenis.scrollTo(target, { offset: -80, duration: 0.8 });
       }
     }
   });
