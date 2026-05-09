@@ -903,6 +903,7 @@ ul, ol { list-style: none; }
   margin-bottom: 18px;
 }
 .cta-card p { color: var(--muted); font-size: 17px; margin-bottom: 36px; }
+.cta-badge { display: inline-flex; margin: 0 auto 22px; opacity: 1; transform: none; }
 .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* ========== FOOTER ========== */
