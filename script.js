@@ -219,5 +219,40 @@ if (supportFab && supportWidget) {
   });
 }
 
+/* ---------- Side ScrollSpy nav ---------- */
+const pageNav = document.getElementById('pageNav');
+if (pageNav) {
+  const items = Array.from(pageNav.querySelectorAll('.page-nav-item'));
+  const sections = items
+    .map(item => {
+      const id = item.getAttribute('href').slice(1);
+      return { item, el: document.getElementById(id) };
+    })
+    .filter(x => x.el);
+
+  // Show nav once user scrolls past the hero
+  ScrollTrigger.create({
+    start: 'top -180',
+    end: 99999,
+    onUpdate: self => {
+      pageNav.classList.toggle('is-visible', self.scroll() > 220);
+    }
+  });
+
+  // Mark active section as user scrolls
+  function updateActive() {
+    const scrollY = window.scrollY + 160; // offset for top nav
+    let active = sections[0];
+    for (const s of sections) {
+      if (s.el.offsetTop <= scrollY) active = s;
+    }
+    items.forEach(i => i.classList.remove('is-active'));
+    if (active) active.item.classList.add('is-active');
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('resize', updateActive);
+  setTimeout(updateActive, 100);
+}
+
 /* ---------- Footer year ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();

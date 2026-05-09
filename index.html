@@ -113,6 +113,21 @@
   })();
 </script>
 
+<!-- Side ScrollSpy nav (sticky, right) -->
+<aside class="page-nav" id="pageNav" aria-label="On this page">
+  <div class="page-nav-track"></div>
+  <a href="#hero"          class="page-nav-item is-active"><span class="dot"></span><span class="label">Top</span></a>
+  <a href="#narrative"     class="page-nav-item"><span class="dot"></span><span class="label">Cost of Downtime</span></a>
+  <a href="#onetime"       class="page-nav-item"><span class="dot"></span><span class="label">One-Time Bundles</span></a>
+  <a href="#subscriptions" class="page-nav-item"><span class="dot"></span><span class="label">Subscriptions</span></a>
+  <a href="#flagship"      class="page-nav-item"><span class="dot"></span><span class="label">Onyx BM2500</span></a>
+  <a href="#verticals"     class="page-nav-item"><span class="dot"></span><span class="label">Verticals</span></a>
+  <a href="#ba"            class="page-nav-item"><span class="dot"></span><span class="label">Before / After</span></a>
+  <a href="#proof"         class="page-nav-item"><span class="dot"></span><span class="label">Reviews</span></a>
+  <a href="#faq"           class="page-nav-item"><span class="dot"></span><span class="label">FAQ</span></a>
+  <a href="#contact"       class="page-nav-item"><span class="dot"></span><span class="label">Contact</span></a>
+</aside>
+
 <!-- Nav -->
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">
@@ -155,7 +170,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-emojis" aria-hidden="true">
     <span style="--x:6%;--y:18%;--d:22s;--del:0s">💰</span>
     <span style="--x:88%;--y:24%;--d:26s;--del:-6s">📈</span>
@@ -275,22 +290,93 @@
 
 <div class="section-divider" aria-hidden="true"><span></span></div>
 
-<!-- PRICING -->
-<section class="section section-alt" id="pricing">
+<!-- ONE-TIME BUNDLES (now its own section, above subscriptions) -->
+<section class="section section-alt" id="onetime">
   <div class="container">
     <div class="section-head" data-anim="fade-up">
-      <span class="eyebrow"><span class="dot"></span>Pricing</span>
-      <h2 class="section-title">Pick what <span class="gradient-text">matches your scale.</span></h2>
-      <p class="section-sub">One-time account purchases or monthly subscriptions with unlimited replacements.</p>
-
-      <div class="price-toggle" role="tablist">
-        <button class="price-toggle-btn is-active" data-tab="onetime" role="tab">One-time</button>
-        <button class="price-toggle-btn" data-tab="subs" role="tab">Subscriptions</button>
-      </div>
+      <span class="eyebrow"><span class="dot"></span>One-Time Bundles</span>
+      <h2 class="section-title">Buy accounts <span class="gradient-text">outright.</span></h2>
+      <p class="section-sub">Best for testing, short campaigns, or stocking up. No subscription required.</p>
     </div>
 
-    <!-- SUBSCRIPTIONS -->
-    <div class="pricing-grid" data-tab-panel="subs" hidden>
+    <div class="pricing-grid">
+      <div class="price-card" data-anim="fade-up">
+        <div class="price-head">
+          <h3>Profile FB</h3>
+          <p>Aged personal profile, ready to deploy.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">100</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Aged Facebook profile</li>
+          <li><span class="check">✓</span> Verified email + recovery</li>
+          <li><span class="check">✓</span> Login credentials delivered</li>
+          <li><span class="check">✓</span> Setup checklist included</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Profile FB</span></a>
+      </div>
+
+      <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
+        <div class="price-tag">Best Value</div>
+        <div class="price-head">
+          <h3>BM3 Verified</h3>
+          <p>3-pack of verified BM accounts.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">200</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> 3 verified BM accounts</li>
+          <li><span class="check">✓</span> Pre-warmed and ready</li>
+          <li><span class="check">✓</span> Standard wallet config</li>
+          <li><span class="check">✓</span> Quick-start guide</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Buy BM3 Verified</span></a>
+      </div>
+
+      <div class="price-card" data-anim="fade-up" data-delay="0.2">
+        <div class="price-head">
+          <h3>BM10 Instant</h3>
+          <p>10 accounts with instant wallet delivery.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">550</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> 10 verified ad accounts</li>
+          <li><span class="check">✓</span> Instant wallet provisioning</li>
+          <li><span class="check">✓</span> Bulk allocation interface</li>
+          <li><span class="check">✓</span> Setup support included</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy BM10 Instant</span></a>
+      </div>
+
+      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
+        <div class="price-tag price-tag-elite">Custom</div>
+        <div class="price-head">
+          <h3>Custom Enterprise</h3>
+          <p>Built around your vertical and scale.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">Custom</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Custom account architecture</li>
+          <li><span class="check">✓</span> Dedicated sourcing strategy</li>
+          <li><span class="check">✓</span> Tailored support SLA</li>
+          <li><span class="check">✓</span> Vertical-specific compliance</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Request Quote</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span></span></div>
+
+<!-- MONTHLY SUBSCRIPTIONS -->
+<section class="section" id="subscriptions">
+  <div class="container">
+    <div class="section-head" data-anim="fade-up">
+      <span class="eyebrow"><span class="dot"></span>Monthly Subscriptions</span>
+      <h2 class="section-title">Ongoing access with <span class="gradient-text">unlimited replacements.</span></h2>
+      <p class="section-sub">For agencies and operators running real volume. 24/7 support included.</p>
+    </div>
+
+    <div class="pricing-grid">
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
           <h3>Solo</h3>
@@ -355,71 +441,6 @@
           <li><span class="check">✓</span> Direct-line escalation</li>
         </ul>
         <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Get Agency Unlimited</span></a>
-      </div>
-    </div>
-
-    <!-- ONE-TIME -->
-    <div class="pricing-grid" data-tab-panel="onetime">
-      <div class="price-card" data-anim="fade-up">
-        <div class="price-head">
-          <h3>Profile FB</h3>
-          <p>Aged personal profile, ready to deploy.</p>
-        </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">100</span><span class="price-period">one-time</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> Aged Facebook profile</li>
-          <li><span class="check">✓</span> Verified email + recovery</li>
-          <li><span class="check">✓</span> Login credentials delivered</li>
-          <li><span class="check">✓</span> Setup checklist included</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Profile FB</span></a>
-      </div>
-
-      <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
-        <div class="price-tag">Best Value</div>
-        <div class="price-head">
-          <h3>BM3 Verified</h3>
-          <p>3-pack of verified BM accounts.</p>
-        </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">200</span><span class="price-period">one-time</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> 3 verified BM accounts</li>
-          <li><span class="check">✓</span> Pre-warmed and ready</li>
-          <li><span class="check">✓</span> Standard wallet config</li>
-          <li><span class="check">✓</span> Quick-start guide</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Buy BM3 Verified</span></a>
-      </div>
-
-      <div class="price-card" data-anim="fade-up" data-delay="0.2">
-        <div class="price-head">
-          <h3>BM10 Instant</h3>
-          <p>10 accounts with instant wallet delivery.</p>
-        </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">550</span><span class="price-period">one-time</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> 10 verified ad accounts</li>
-          <li><span class="check">✓</span> Instant wallet provisioning</li>
-          <li><span class="check">✓</span> Bulk allocation interface</li>
-          <li><span class="check">✓</span> Setup support included</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy BM10 Instant</span></a>
-      </div>
-
-      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
-        <div class="price-tag price-tag-elite">Custom</div>
-        <div class="price-head">
-          <h3>Custom Enterprise</h3>
-          <p>Built around your vertical and scale.</p>
-        </div>
-        <div class="price-num"><span class="price-currency">Custom</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> Custom account architecture</li>
-          <li><span class="check">✓</span> Dedicated sourcing strategy</li>
-          <li><span class="check">✓</span> Tailored support SLA</li>
-          <li><span class="check">✓</span> Vertical-specific compliance</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Request Quote</span></a>
       </div>
     </div>
   </div>
