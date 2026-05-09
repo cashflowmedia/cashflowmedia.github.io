@@ -928,6 +928,39 @@ ul, ol { list-style: none; }
 }
 .cta-card p { color: var(--muted); font-size: 17px; margin-bottom: 36px; }
 .cta-badge { display: inline-flex; margin: 0 auto 22px; opacity: 1; transform: none; }
+
+/* Clean trust line under the contact buttons (bottom of page) */
+.cta-trust {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 26px;
+  padding: 8px 16px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-top: 1px solid rgba(244,201,92,0.18);
+  border-bottom: 1px solid rgba(244,201,92,0.18);
+  background: linear-gradient(180deg, transparent, rgba(244,201,92,0.02), transparent);
+}
+.cta-trust-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: livePulse 1.8s ease-out infinite;
+  flex-shrink: 0;
+}
+.cta-trust-text {
+  color: var(--text);
+  font-weight: 500;
+}
+.cta-trust-sep { color: rgba(255,255,255,0.25); }
+.cta-trust-247 {
+  font-weight: 800;
+  color: #F4C95C;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 6px rgba(244,201,92,0.4);
+}
 .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* ========== FOOTER ========== */
