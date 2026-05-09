@@ -36,12 +36,10 @@ document.querySelectorAll('a, button, .card, .price-card, .faq-item summary').fo
 });
 
 /* ---------- Loader ---------- */
+/* Loader fade is handled by inline script (real progress tracking).
+   We just trigger the hero intro shortly after window.load. */
 window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  gsap.to(loader, {
-    opacity: 0, duration: 0.6, delay: 1.4,
-    onComplete: () => { loader.style.display = 'none'; runHeroIntro(); }
-  });
+  setTimeout(runHeroIntro, 1100);
 });
 
 /* ---------- Hero intro ---------- */

@@ -74,17 +74,43 @@
       <text class="dollar-load" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
     </svg>
     <span class="loader-text">CASH FLOW MEDIA</span>
-    <div class="loader-progress" aria-hidden="true"></div>
+    <div class="loader-progress" aria-hidden="true"><div class="loader-progress-fill"></div></div>
   </div>
 </div>
 <script>
-  setTimeout(function () {
-    var l = document.getElementById('loader');
-    if (l && l.style.display !== 'none' && parseFloat(getComputedStyle(l).opacity) > 0.5) {
-      l.style.transition = 'opacity .5s'; l.style.opacity = '0';
-      setTimeout(function () { l.style.display = 'none'; }, 500);
+  (function() {
+    var loader = document.getElementById('loader');
+    var fill = loader && loader.querySelector('.loader-progress-fill');
+    if (!loader || !fill) return;
+    var p = 6;
+    fill.style.width = p + '%';
+    function bump(t) { p = Math.max(p, Math.min(100, t)); fill.style.width = p + '%'; }
+    var total = Math.max(1, document.querySelectorAll('link[rel="stylesheet"], script[src], img').length);
+    var loaded = 0;
+    if (window.PerformanceObserver) {
+      try {
+        var obs = new PerformanceObserver(function(list) {
+          loaded += list.getEntries().length;
+          bump(15 + Math.min(75, (loaded / total) * 75));
+        });
+        obs.observe({ entryTypes: ['resource'] });
+      } catch (e) {}
     }
-  }, 3500);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { bump(50); });
+    } else { bump(50); }
+    function fadeOut() {
+      bump(100);
+      setTimeout(function() {
+        loader.style.transition = 'opacity .5s';
+        loader.style.opacity = '0';
+        setTimeout(function() { loader.style.display = 'none'; }, 500);
+      }, 280);
+    }
+    if (document.readyState === 'complete') { fadeOut(); }
+    else { window.addEventListener('load', fadeOut); }
+    setTimeout(fadeOut, 6000);
+  })();
 </script>
 
 <!-- Nav -->

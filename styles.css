@@ -160,31 +160,22 @@ ul, ol { list-style: none; }
 }
 @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
 
-/* L→R progress sweep under loader logo */
+/* Real progress bar — fills as the page actually loads */
 .loader-progress {
   width: 240px;
-  height: 3px;
-  background: rgba(255,255,255,0.07);
-  border-radius: 2px;
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
   overflow: hidden;
   margin-top: 16px;
-  position: relative;
 }
-.loader-progress::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -40%;
-  width: 40%;
+.loader-progress-fill {
+  width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, #1aff66 30%, #F4C95C 70%, transparent);
-  border-radius: 2px;
-  animation: progressSweep 1.4s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(244,201,92,0.4);
-}
-@keyframes progressSweep {
-  0%   { left: -40%; }
-  100% { left: 100%; }
+  background: linear-gradient(90deg, #1aff66 0%, #66ff88 50%, #F4C95C 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(244,201,92,0.5);
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Loader-only dramatic build cascade (bars build L→R, hold, drop, loop) */
