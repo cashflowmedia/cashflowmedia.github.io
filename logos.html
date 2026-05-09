@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Logo · M2 Subtle · Honey Gold · Cash Flow Media</title>
+<title>Logo Polish · Side-by-Side · Cash Flow Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -28,59 +28,83 @@
   .sub {
     text-align: center;
     color: #a8b2ad;
-    max-width: 660px;
+    max-width: 680px;
     margin: 0 auto 40px;
-    font-size: 16px;
+    font-size: 15px;
   }
   .sub strong { color: #F4C95C; }
 
-  /* HERO CARD */
-  .hero-card {
-    max-width: 640px;
-    margin: 0 auto 56px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
-    border: 1px solid rgba(244,201,92,0.35);
-    border-radius: 24px;
-    padding: 48px 36px;
-    text-align: center;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(244,201,92,0.06);
-  }
-  .hero-preview {
+  /* Baseline card (the current state) */
+  .baseline {
+    max-width: 320px;
+    margin: 0 auto 48px;
+    padding: 24px;
     background: #060808;
-    padding: 50px;
-    border-radius: 20px;
-    margin-bottom: 28px;
-    border: 1px solid rgba(255,255,255,0.04);
-    display: grid; place-items: center;
-    min-height: 240px;
+    border: 1px solid rgba(244,201,92,0.4);
+    border-radius: 18px;
+    text-align: center;
   }
-  .hero-preview svg { width: 220px; height: 220px; overflow: visible; }
-  .hero-name {
+  .baseline svg { width: 130px; height: 130px; overflow: visible; }
+  .baseline-label {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 26px; font-weight: 700;
-    margin-bottom: 8px; letter-spacing: -0.01em;
+    font-size: 11px; letter-spacing: 0.2em; font-weight: 700;
+    color: #F4C95C;
+    margin-bottom: 14px;
+    text-transform: uppercase;
   }
-  .hero-desc { color: #a8b2ad; font-size: 14px; margin-bottom: 24px; }
-  .hero-horiz {
-    display: flex; align-items: center; gap: 14px;
-    justify-content: center;
-    padding: 22px 0 0;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .hero-horiz svg { width: 44px; height: 44px; overflow: visible; }
-  .hero-horiz span {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: 14px;
-    letter-spacing: 0.22em; color: #f3f5f4;
-  }
-  .hero-horiz span em { font-style: normal; color: #F4C95C; margin-left: 4px; }
 
-  /* SUBTLE CASCADE — bars stay visible, gentle lift */
-  .cas {
-    transform-origin: bottom;
-    transform-box: fill-box;
-    animation: cascadeSubtle 3.2s ease-in-out infinite;
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 18px 14px 16px;
+    text-align: center;
+    transition: transform .25s, border-color .25s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(244,201,92,0.4);
+  }
+  .preview {
+    background: #060808;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.04);
+    min-height: 130px;
+    display: grid; place-items: center;
+  }
+  .preview svg { width: 100px; height: 100px; overflow: visible; }
+  .code {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #F4C95C;
+    background: rgba(244,201,92,0.1);
+    padding: 3px 8px; border-radius: 6px;
+    margin-bottom: 6px;
+  }
+  .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .desc { color: #a8b2ad; font-size: 11px; line-height: 1.4; }
+
+  /* ============ SHARED ANIMATIONS ============ */
+  .cas { transform-origin: bottom; transform-box: fill-box; animation: cascadeSubtle 3.2s ease-in-out infinite; }
   .cas-1 { animation-delay: 0s; }
   .cas-2 { animation-delay: 0.22s; }
   .cas-3 { animation-delay: 0.44s; }
@@ -89,7 +113,6 @@
     35%, 55% { transform: scaleY(1.05); }
   }
 
-  /* $ always visible, smooth continuous swell from its own center */
   .dollar-soft {
     transform-origin: center;
     transform-box: fill-box;
@@ -100,21 +123,25 @@
     50%      { transform: scale(1.06); filter: drop-shadow(0 0 6px #F4C95C) drop-shadow(0 1px 2px rgba(0,0,0,0.3)); }
   }
 
-  /* Honey gold fire base */
-  .fire-base {
+  /* P6 - tilt variant */
+  .dollar-tilt {
     transform-origin: center;
     transform-box: fill-box;
-    animation: fireFlick 3s ease-in-out infinite;
+    animation: dollarTilt 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.44s;
   }
+  @keyframes dollarTilt {
+    0%, 100% { transform: scale(0.99) rotate(-1.2deg); filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)); }
+    50%      { transform: scale(1.06) rotate(1.2deg); filter: drop-shadow(0 0 6px #F4C95C) drop-shadow(0 1px 2px rgba(0,0,0,0.3)); }
+  }
+
+  .fire-base { transform-origin: center; transform-box: fill-box; animation: fireFlick 3s ease-in-out infinite; }
   @keyframes fireFlick {
     0%, 100% { opacity: 0.5; transform: scaleX(1); }
     50%      { opacity: 0.8; transform: scaleX(1.12); }
   }
 
-  /* Honey gold embers */
   .ember {
-    transform-box: fill-box;
-    transform-origin: center;
+    transform-box: fill-box; transform-origin: center;
     animation: emberRise 4.5s ease-out infinite;
     filter: drop-shadow(0 0 1.5px #F4C95C);
   }
@@ -125,103 +152,64 @@
     100% { transform: translate(-2px,-58px) scale(0.2); opacity: 0; }
   }
 
-  /* COLOR PICK CONFIRM */
-  .color-pick {
-    max-width: 640px; margin: 0 auto 56px;
-    text-align: center;
-    padding: 28px;
-    border: 1px solid rgba(244,201,92,0.3);
-    background: linear-gradient(180deg, rgba(244,201,92,0.05), rgba(244,201,92,0.01));
-    border-radius: 18px;
+  /* P7 - bigger random spark */
+  .big-spark {
+    transform-box: fill-box; transform-origin: center;
+    animation: bigSpark 7s ease-out infinite;
+    filter: drop-shadow(0 0 4px #FFE080);
   }
-  .color-pick-row {
-    display: flex; gap: 0;
-    height: 70px; border-radius: 12px; overflow: hidden;
-    margin: 16px auto 14px;
-    max-width: 360px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  }
-  .color-pick-row > div { flex: 1; }
-  .color-pick h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 20px; font-weight: 700;
-    margin-bottom: 4px;
-  }
-  .color-pick code {
-    color: #F4C95C; font-size: 13px; font-family: monospace;
-  }
-  .color-pick p {
-    color: #a8b2ad; font-size: 13px; margin-top: 12px;
+  @keyframes bigSpark {
+    0%, 80% { transform: translate(0,0) scale(1); opacity: 0; }
+    82%     { transform: translate(0,-5px) scale(1.4); opacity: 1; }
+    95%     { transform: translate(2px,-40px) scale(0.6); opacity: 0.6; }
+    100%    { transform: translate(-2px,-55px) scale(0.2); opacity: 0; }
   }
 
-  /* IDEAS GRID */
-  .ideas-wrap { max-width: 980px; margin: 0 auto; }
-  .ideas-section { margin-bottom: 36px; }
-  .ideas-section h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px; font-weight: 600;
-    color: #F4C95C;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+  /* P9 - bar-top sparkle synced to cascade peak */
+  .bar-sparkle { animation: sparkAtPeak 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .bar-sparkle.bs-1 { animation-delay: 0s; }
+  .bar-sparkle.bs-2 { animation-delay: 0.22s; }
+  .bar-sparkle.bs-3 { animation-delay: 0.44s; }
+  @keyframes sparkAtPeak {
+    0%, 100% { opacity: 0; transform: scale(0.6); }
+    35%, 55% { opacity: 1; transform: scale(1.3); }
   }
-  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  @media (max-width: 700px) { .ideas-grid { grid-template-columns: 1fr; } }
-  .idea {
-    padding: 16px 18px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    transition: transform .25s, border-color .25s, background .25s;
-  }
-  .idea:hover { transform: translateY(-3px); border-color: rgba(244,201,92,0.4); background: linear-gradient(180deg, rgba(244,201,92,0.04), rgba(255,255,255,0.005)); }
-  .idea-code {
-    display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.15em;
-    color: #F4C95C;
-    background: rgba(244,201,92,0.1);
-    padding: 3px 8px; border-radius: 6px;
-    margin-bottom: 8px;
-  }
-  .idea-name { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-  .idea-desc { color: #a8b2ad; font-size: 13px; line-height: 1.45; }
+
+  /* P1 - halo SVG class */
+  .halo { filter: drop-shadow(0 0 14px rgba(26,255,102,0.45)) drop-shadow(0 0 28px rgba(244,201,92,0.25)); }
 </style>
 </head>
 <body>
 
-<h1>M2 Subtle · Multicolor · Honey Gold</h1>
-<p class="sub">Bars cascade gently (always visible) · <strong>$</strong> always shows with a soft gold pulse · embers and fire base switched to honey gold · tallest bar transitions <strong>green → gold</strong>.</p>
+<h1>Polish Refinements · Side-by-Side</h1>
+<p class="sub">Reply with codes (e.g. <strong>P1, P3, P5</strong>) — combo any. Each card shows the <strong>current logo + that single refinement</strong> so you can isolate the effect.</p>
 
-<!-- Defs once -->
+<!-- Shared SVG defs -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- Bar 1: dark green to bright green -->
     <linearGradient id="bar1Grad" x1="0" y1="60" x2="0" y2="36" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#006622"/>
       <stop offset="1" stop-color="#1aff66"/>
     </linearGradient>
-    <!-- Bar 2: bright green to lime -->
     <linearGradient id="bar2Grad" x1="0" y1="60" x2="0" y2="22" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#008833"/>
       <stop offset="0.6" stop-color="#1aff66"/>
       <stop offset="1" stop-color="#aaff99"/>
     </linearGradient>
-    <!-- Bar 3: green to honey gold (the "premium tier") -->
     <linearGradient id="bar3Grad" x1="0" y1="60" x2="0" y2="6" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#008833"/>
       <stop offset="0.45" stop-color="#1aff66"/>
       <stop offset="0.78" stop-color="#aaff99"/>
       <stop offset="1" stop-color="#F4C95C"/>
     </linearGradient>
-    <!-- Honey gold fire base radial -->
     <radialGradient id="fireGrad" cx="50%" cy="100%" r="60%">
       <stop offset="0" stop-color="#F4C95C" stop-opacity="0.75"/>
       <stop offset="0.5" stop-color="#D49A30" stop-opacity="0.35"/>
       <stop offset="1" stop-color="#604016" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="platformGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#F4C95C" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#F4C95C" stop-opacity="0"/>
     </radialGradient>
     <filter id="fusionGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="1.6" result="b"/>
@@ -230,104 +218,289 @@
   </defs>
 </svg>
 
-<!-- HERO LOGO -->
-<div class="hero-card">
-  <div class="hero-preview">
-    <svg viewBox="0 0 64 64" fill="none">
-      <!-- Honey gold fire base -->
-      <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
-
-      <!-- Honey gold embers drifting up -->
-      <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
-      <circle class="ember" cx="20" cy="56" r="0.5" fill="#FFD480" style="animation-delay: -0.9s"/>
-      <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
-      <circle class="ember" cx="42" cy="56" r="0.6" fill="#E0B040" style="animation-delay: -2.7s"/>
-      <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
-      <circle class="ember" cx="58" cy="56" r="0.5" fill="#FFD480" style="animation-delay: -1.4s"/>
-      <circle class="ember" cx="6"  cy="56" r="0.6" fill="#E0B040" style="animation-delay: -3.2s"/>
-
-      <!-- Multicolor cascading bars -->
-      <g filter="url(#fusionGlow)">
-        <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
-        <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
-        <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
-      </g>
-
-      <!-- $ always visible, soft pulse -->
-      <text class="dollar-soft" x="41.5" y="44" text-anchor="middle"
-            font-family="Inter, system-ui, sans-serif"
-            font-size="28" font-weight="900"
-            fill="#001a0e"
-            style="letter-spacing:-1px">$</text>
-    </svg>
-  </div>
-
-  <div class="hero-name">3D · M2 SOFT · MULTICOLOR</div>
-  <div class="hero-desc">Bars stay visible at all times · cascade is a gentle ±13% lift · $ pulses softly with gold glow · tallest bar grows into honey gold.</div>
-
-  <div class="hero-horiz">
-    <svg viewBox="0 0 64 64" fill="none">
-      <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
-      <circle class="ember" cx="20" cy="56" r="0.5" fill="#FFD480" style="animation-delay: -0.9s"/>
-      <circle class="ember" cx="42" cy="56" r="0.6" fill="#E0B040" style="animation-delay: -2.7s"/>
-      <g filter="url(#fusionGlow)">
-        <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
-        <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
-        <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
-      </g>
-      <text class="dollar-soft" x="41.5" y="44" text-anchor="middle"
-            font-family="Inter, system-ui, sans-serif"
-            font-size="28" font-weight="900"
-            fill="#001a0e"
-            style="letter-spacing:-1px">$</text>
-    </svg>
-    <span>CASH FLOW <em>MEDIA</em></span>
-  </div>
+<!-- BASELINE -->
+<div class="baseline">
+  <div class="baseline-label">Current (no changes)</div>
+  <svg viewBox="0 0 64 64" fill="none">
+    <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+    <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+    <circle class="ember" cx="20" cy="56" r="0.5" fill="#FFD480" style="animation-delay: -0.9s"/>
+    <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+    <circle class="ember" cx="42" cy="56" r="0.6" fill="#E0B040" style="animation-delay: -2.7s"/>
+    <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+    <g filter="url(#fusionGlow)">
+      <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+      <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+      <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+    </g>
+    <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+  </svg>
 </div>
 
-<!-- COLOR LOCKED IN -->
-<div class="color-pick">
-  <h3>Accent locked: Honey Gold</h3>
-  <code>#F4C95C</code>
-  <div class="color-pick-row">
-    <div style="background:#1aff66"></div>
-    <div style="background:#F4C95C"></div>
-  </div>
-  <p>Halfway between Gold (#FFB400) and Champagne (#E8DCB4). Warm, premium, ties together with the embers and the green palette.</p>
-</div>
+<!-- GRID OF VARIANTS -->
+<div class="grid">
 
-<!-- IDEAS still here -->
-<div class="ideas-wrap">
-
-  <div class="ideas-section">
-    <h2>Bar motion alternatives (M2 currently picked)</h2>
-    <div class="ideas-grid">
-      <div class="idea"><span class="idea-code">M1</span><div class="idea-name">EQ pulse</div><div class="idea-desc">3 bars bouncing on a stagger like an audio meter.</div></div>
-      <div class="idea"><span class="idea-code">M2</span><div class="idea-name">Subtle cascade (current)</div><div class="idea-desc">Bars always visible, gentle lift sequence. 3.2s loop.</div></div>
-      <div class="idea"><span class="idea-code">M3</span><div class="idea-name">Heartbeat</div><div class="idea-desc">All bars pulse together once, pause, pulse twice.</div></div>
-      <div class="idea"><span class="idea-code">M4</span><div class="idea-name">Wave</div><div class="idea-desc">Heights ripple left-to-right like a wave passing through.</div></div>
-      <div class="idea"><span class="idea-code">M5</span><div class="idea-name">Random ticker</div><div class="idea-desc">Heights flicker subtly random — like a real spend dashboard.</div></div>
-      <div class="idea"><span class="idea-code">M6</span><div class="idea-name">Build &amp; hold</div><div class="idea-desc">Bars grow up from zero on page load, then stay still.</div></div>
+  <!-- P1 HALO -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none" class="halo">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
     </div>
+    <div class="code">P1</div>
+    <div class="name">Halo</div>
+    <div class="desc">Soft outer glow around whole logo.</div>
   </div>
 
-  <div class="ideas-section">
-    <h2>Page-level "first class" microeffects</h2>
-    <div class="ideas-grid">
-      <div class="idea"><span class="idea-code">E1</span><div class="idea-name">Click ripple</div><div class="idea-desc">Buttons emit a ring/ripple on click.</div></div>
-      <div class="idea"><span class="idea-code">E2</span><div class="idea-name">Cursor trail</div><div class="idea-desc">Faint green particles trail behind your cursor.</div></div>
-      <div class="idea"><span class="idea-code">E3</span><div class="idea-name">Confetti on first visit</div><div class="idea-desc">Tasteful 1-second burst when site first loads.</div></div>
-      <div class="idea"><span class="idea-code">E4</span><div class="idea-name">Number reveal counters</div><div class="idea-desc">All stats count up on scroll into view (already partial).</div></div>
-      <div class="idea"><span class="idea-code">E5</span><div class="idea-name">Section dividers</div><div class="idea-desc">Subtle wave/diagonal between sections.</div></div>
-      <div class="idea"><span class="idea-code">E6</span><div class="idea-name">Sticky bottom CTA</div><div class="idea-desc">Always-visible "Talk to us → Telegram" bar at bottom.</div></div>
-      <div class="idea"><span class="idea-code">E7</span><div class="idea-name">Page transitions</div><div class="idea-desc">Smooth fade between index → pricing → contact.</div></div>
-      <div class="idea"><span class="idea-code">E8</span><div class="idea-name">Scroll progress bar</div><div class="idea-desc">Thin green/gold bar at top showing % scrolled.</div></div>
+  <!-- P2 INNER HIGHLIGHT -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+          <!-- Highlight on left edge of tallest -->
+          <path class="cas cas-3" d="M36 56 V20 L37.5 19.2 V56 Z" fill="rgba(255,255,255,0.35)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
     </div>
+    <div class="code">P2</div>
+    <div class="name">Inner highlight</div>
+    <div class="desc">Light edge on tallest bar = subtle 3D.</div>
+  </div>
+
+  <!-- P3 REFLECTION SHADOW -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <!-- Shadow under bars -->
+        <ellipse cx="32" cy="59" rx="22" ry="2" fill="rgba(0,0,0,0.55)" filter="url(#fusionGlow)"/>
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P3</div>
+    <div class="name">Reflection shadow</div>
+    <div class="desc">Soft shadow grounds the bars.</div>
+  </div>
+
+  <!-- P4 $ HONEY GOLD -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#F4C95C" stroke="#001a0e" stroke-width="0.4" style="letter-spacing:-1px;filter:drop-shadow(0 0 4px rgba(244,201,92,0.6))">$</text>
+      </svg>
+    </div>
+    <div class="code">P4</div>
+    <div class="name">$ in honey gold</div>
+    <div class="desc">$ matches the gold accent palette.</div>
+  </div>
+
+  <!-- P5 $ OUTLINE RING -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" stroke="#F4C95C" stroke-width="0.55" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P5</div>
+    <div class="name">$ gold outline</div>
+    <div class="desc">Dark $ with thin gold rim.</div>
+  </div>
+
+  <!-- P6 $ TILT -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-tilt" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P6</div>
+    <div class="name">$ tilt sway</div>
+    <div class="desc">±1.2° rotation during pulse.</div>
+  </div>
+
+  <!-- P7 RANDOM SPARK -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <!-- Random brighter spark every 7s -->
+        <circle class="big-spark" cx="40" cy="56" r="1.3" fill="#FFE080"/>
+        <circle class="big-spark" cx="20" cy="56" r="1.2" fill="#FFD460" style="animation-delay: -3.5s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P7</div>
+    <div class="name">Random spark</div>
+    <div class="desc">Brighter ember flashes ~every 7s.</div>
+  </div>
+
+  <!-- P8 VARIED EMBERS -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <!-- Sizes & timings randomized -->
+        <circle class="ember" cx="7"  cy="56" r="0.4" fill="#F4C95C" style="animation-delay: -0.3s; animation-duration: 5.2s"/>
+        <circle class="ember" cx="14" cy="56" r="1.0" fill="#FFD480" style="animation-delay: -2.7s; animation-duration: 6.1s"/>
+        <circle class="ember" cx="23" cy="56" r="0.5" fill="#F4C95C" style="animation-delay: -1.1s; animation-duration: 4.3s"/>
+        <circle class="ember" cx="34" cy="56" r="0.9" fill="#E0B040" style="animation-delay: -3.8s; animation-duration: 5.7s"/>
+        <circle class="ember" cx="41" cy="56" r="0.4" fill="#FFD480" style="animation-delay: -0.8s; animation-duration: 4.8s"/>
+        <circle class="ember" cx="49" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -2.2s; animation-duration: 5.5s"/>
+        <circle class="ember" cx="57" cy="56" r="0.5" fill="#E0B040" style="animation-delay: -3.3s; animation-duration: 4.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P8</div>
+    <div class="name">Varied embers</div>
+    <div class="desc">Random sizes + timings = organic.</div>
+  </div>
+
+  <!-- P9 BAR-TOP SPARKLE -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <!-- Sparkles at bar tops -->
+        <circle class="bar-sparkle bs-1" cx="19" cy="38" r="1" fill="#fff"/>
+        <circle class="bar-sparkle bs-2" cx="33" cy="24" r="1.1" fill="#fff"/>
+        <circle class="bar-sparkle bs-3" cx="47" cy="8"  r="1.3" fill="#fff"/>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P9</div>
+    <div class="name">Bar-top sparkle</div>
+    <div class="desc">White spark on each bar at peak.</div>
+  </div>
+
+  <!-- P10 PLATFORM GRADIENT -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <!-- Soft platform glow -->
+        <ellipse cx="32" cy="58" rx="26" ry="2.5" fill="url(#platformGrad)"/>
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P10</div>
+    <div class="name">Platform glow</div>
+    <div class="desc">Soft gradient platform vs hard line.</div>
+  </div>
+
+  <!-- P11 MORE SPACING -->
+  <div class="card">
+    <div class="preview">
+      <svg viewBox="0 0 64 64" fill="none">
+        <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+        <circle class="ember" cx="10" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: 0s"/>
+        <circle class="ember" cx="30" cy="56" r="0.8" fill="#F4C95C" style="animation-delay: -1.8s"/>
+        <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
+        <g filter="url(#fusionGlow)">
+          <!-- Wider gaps: bars at 4-15, 21-32, 38-49 (gap of 6 instead of 3) -->
+          <path class="cas cas-1" d="M4  56 V46 L15 38 V56 Z" fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="cas cas-2" d="M21 56 V34 L32 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="cas cas-3" d="M38 56 V20 L49 8  V56 Z" fill="url(#bar3Grad)"/>
+        </g>
+        <text class="dollar-soft" x="43.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
+    </div>
+    <div class="code">P11</div>
+    <div class="name">More spacing</div>
+    <div class="desc">Wider gaps between bars = breathing.</div>
+  </div>
+
+  <!-- P12 A11Y (visual placeholder) -->
+  <div class="card">
+    <div class="preview" style="font-size: 32px">🛠️</div>
+    <div class="code">P12</div>
+    <div class="name">Accessibility tags</div>
+    <div class="desc">Invisible — adds &lt;title&gt; + &lt;desc&gt; for SEO + screen readers.</div>
   </div>
 
 </div>
 
-<p class="sub" style="margin-top:60px">Reply <strong>ship it</strong> to wire current logo + Honey Gold sitewide. Optionally append microeffect codes like <strong>ship it + E6, E8</strong>.</p>
+<p class="sub" style="margin-top:48px">My recommendation for max polish: <strong>P1 + P3 + P5 + P12</strong>. Halo gives premium aura, shadow grounds it, gold-rim $ ties palette together, a11y is free.<br><br>Reply with your codes.</p>
 
 </body>
 </html>
