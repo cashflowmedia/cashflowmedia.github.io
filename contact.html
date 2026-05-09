@@ -264,33 +264,21 @@
   </div>
 </footer>
 
-<!-- Floating support widget -->
-<div class="support-widget" id="supportWidget">
-  <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="support-option support-option-tg" aria-label="Chat on Telegram">
-    <span class="support-option-label">Telegram</span>
-    <span class="support-option-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-        <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
-      </svg>
-    </span>
-  </a>
-  <a href="https://wa.me/14173007306" target="_blank" rel="noopener" class="support-option support-option-wa" aria-label="Chat on WhatsApp">
-    <span class="support-option-label">WhatsApp</span>
-    <span class="support-option-icon">
-      <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true">
-        <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.8L.5 31.5l7.9-2c2.3 1.2 4.9 1.9 7.6 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.2c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3 0-7.3 5.9-13.2 13.2-13.2S29.2 8 29.2 15.3 23.3 28.7 16 28.7zm7.6-9.9c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-.9.2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-.1-.1-1.4-1.5-1.4-2.6 0-.4.6-1 .9-1.5.2-.3.3-.5.4-.7.1-.3.1-.5 0-.8 0-.2-.9-2.2-1.2-3-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9.9.3 1.8.2 2.5.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9 0-.2-.3-.3-.7-.5z"/>
-      </svg>
-    </span>
-  </a>
-  <button class="support-fab" id="supportFab" aria-label="Open support menu" aria-expanded="false">
+<!-- Floating contact: stacked Telegram + WhatsApp buttons -->
+<div class="support-stack" id="supportStack">
+  <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="support-fab-circle support-fab-tg" aria-label="Chat on Telegram">
     <span class="support-pulse"></span>
-    <svg class="support-fab-icon support-fab-chat" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+      <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
     </svg>
-    <svg class="support-fab-icon support-fab-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
-      <path d="M18 6L6 18M6 6l12 12"/>
+    <span class="support-tooltip">Telegram</span>
+  </a>
+  <a href="https://wa.me/14173007306" target="_blank" rel="noopener" class="support-fab-circle support-fab-wa" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true">
+      <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.8L.5 31.5l7.9-2c2.3 1.2 4.9 1.9 7.6 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.2c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3 0-7.3 5.9-13.2 13.2-13.2S29.2 8 29.2 15.3 23.3 28.7 16 28.7zm7.6-9.9c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-.9.2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-.1-.1-1.4-1.5-1.4-2.6 0-.4.6-1 .9-1.5.2-.3.3-.5.4-.7.1-.3.1-.5 0-.8 0-.2-.9-2.2-1.2-3-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9.9.3 1.8.2 2.5.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9 0-.2-.3-.3-.7-.5z"/>
     </svg>
-  </button>
+    <span class="support-tooltip">WhatsApp</span>
+  </a>
 </div>
 
 <!-- Animation libraries -->

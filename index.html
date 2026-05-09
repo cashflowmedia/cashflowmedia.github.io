@@ -117,15 +117,22 @@
 <aside class="page-nav" id="pageNav" aria-label="On this page">
   <div class="page-nav-track"></div>
   <a href="#hero"          class="page-nav-item is-active"><span class="dot"></span><span class="label">Top</span></a>
+  <a href="#proof"         class="page-nav-item"><span class="dot"></span><span class="label">Reviews</span></a>
   <a href="#narrative"     class="page-nav-item"><span class="dot"></span><span class="label">Cost of Downtime</span></a>
   <a href="#onetime"       class="page-nav-item"><span class="dot"></span><span class="label">One-Time Bundles</span></a>
   <a href="#subscriptions" class="page-nav-item"><span class="dot"></span><span class="label">Subscriptions</span></a>
   <a href="#flagship"      class="page-nav-item"><span class="dot"></span><span class="label">Onyx BM2500</span></a>
   <a href="#verticals"     class="page-nav-item"><span class="dot"></span><span class="label">Verticals</span></a>
   <a href="#ba"            class="page-nav-item"><span class="dot"></span><span class="label">Before / After</span></a>
-  <a href="#proof"         class="page-nav-item"><span class="dot"></span><span class="label">Reviews</span></a>
   <a href="#faq"           class="page-nav-item"><span class="dot"></span><span class="label">FAQ</span></a>
   <a href="#contact"       class="page-nav-item"><span class="dot"></span><span class="label">Contact</span></a>
+</aside>
+
+<!-- Cycling reviews bubble (upper right) -->
+<aside class="review-bubble" id="reviewBubble" aria-live="polite" aria-label="Customer reviews">
+  <div class="review-stars" aria-hidden="true">★★★★★</div>
+  <p class="review-text"></p>
+  <div class="review-author"></div>
 </aside>
 
 <!-- Nav -->
@@ -251,6 +258,69 @@
 
 <div class="section-divider" aria-hidden="true"><span></span></div>
 
+<!-- TESTIMONIALS / PROOF -->
+<section class="section proof" id="proof">
+  <div class="container">
+    <div class="section-head" data-anim="fade-up">
+      <span class="eyebrow"><span class="dot"></span>Operator reviews</span>
+      <h2 class="section-title">Trusted by <span class="gradient-text">advertisers who scale.</span></h2>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-card" data-anim="fade-up">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Replaced three banned accounts in one afternoon. Spent more in week 2 than the entire previous month."</p>
+        <div class="proof-meta">
+          <strong>Verified Operator</strong>
+          <span>eCommerce · 8-figure DTC</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.05">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Onboarded in under 30 minutes. Their team actually picks up at 2am. I switched from two other providers."</p>
+        <div class="proof-meta">
+          <strong>Media Buyer</strong>
+          <span>Lead Gen · Insurance vertical</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.1">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Onyx BM2500 changed how we operate. We don't even pause campaigns anymore. The replacement just happens."</p>
+        <div class="proof-meta">
+          <strong>Agency Founder</strong>
+          <span>Multi-vertical · 7-figure spend</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.15">
+        <div class="proof-stars">★★★★★</div>
+        <p>"The only provider that actually understood our compliance edge cases. Approvals come back faster too."</p>
+        <div class="proof-meta">
+          <strong>Performance Lead</strong>
+          <span>Nutra · International rollout</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.2">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Was burning $4k/day across mobile installs. They held the line through three policy waves last quarter."</p>
+        <div class="proof-meta">
+          <strong>Growth Lead</strong>
+          <span>App / Mobile</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.25">
+        <div class="proof-stars">★★★★★</div>
+        <p>"I tried being cheap. Cost me $40k in a week. Cash Flow paid for itself the day I switched."</p>
+        <div class="proof-meta">
+          <strong>Solo Buyer</strong>
+          <span>Info products / coaching</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span></span></div>
+
 <!-- PAIN NARRATIVE -->
 <section class="section narrative" id="narrative">
   <div class="container">
@@ -295,11 +365,11 @@
   <div class="container">
     <div class="section-head" data-anim="fade-up">
       <span class="eyebrow"><span class="dot"></span>One-Time Bundles</span>
-      <h2 class="section-title">Buy accounts <span class="gradient-text">outright.</span></h2>
+      <h2 class="section-title">Buy accounts <span class="gradient-text">outright</span></h2>
       <p class="section-sub">Best for testing, short campaigns, or stocking up. No subscription required.</p>
     </div>
 
-    <div class="pricing-grid">
+    <div class="pricing-grid pricing-grid-5">
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
           <h3>Profile FB</h3>
@@ -344,6 +414,22 @@
           <li><span class="check">✓</span> Setup support included</li>
         </ul>
         <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy BM10 Instant</span></a>
+      </div>
+
+      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.25">
+        <div class="price-tag price-tag-elite">Flagship</div>
+        <div class="price-head">
+          <h3>Onyx BM2500</h3>
+          <p>Distributed network, auto-replacement.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">15,000</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Up to 2,500 distributed accounts</li>
+          <li><span class="check">✓</span> Auto-replacement 5–10 min</li>
+          <li><span class="check">✓</span> No single point of failure</li>
+          <li><span class="check">✓</span> Dedicated infra manager</li>
+        </ul>
+        <a href="#flagship" class="btn btn-primary btn-block magnetic"><span>Learn More</span></a>
       </div>
 
       <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
@@ -455,7 +541,7 @@
       <div class="flagship-left">
         <span class="eyebrow"><span class="dot"></span>Flagship infrastructure</span>
         <h2 class="flagship-title">
-          <span class="gradient-text">Onyx BM2500.</span><br/>
+          <span class="gradient-text">Onyx BM2500</span><br/>
           Distributed accounts. Auto replacement. Zero panic.
         </h2>
         <p class="flagship-desc">
@@ -521,42 +607,42 @@
 
     <div class="vert-grid">
       <div class="vert-card" data-anim="fade-up">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4v10l-9 4-9-4V7z M3 7l9 4 9-4 M12 11v10" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="vert-emoji" aria-hidden="true">🛒</span>
         <h4>eCommerce</h4>
         <p>DTC brands scaling product launches and seasonal pushes.</p>
       </div>
       <div class="vert-card" data-anim="fade-up" data-delay="0.05">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2s10 4.5 10 10z M8 12l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="vert-emoji" aria-hidden="true">🎯</span>
         <h4>Lead Gen</h4>
         <p>Local services, B2B, agencies, mortgage, insurance.</p>
       </div>
       <div class="vert-card" data-anim="fade-up" data-delay="0.1">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+        <span class="vert-emoji" aria-hidden="true">📱</span>
         <h4>App Installs</h4>
         <p>Mobile apps with high-velocity install funnels.</p>
       </div>
       <div class="vert-card" data-anim="fade-up" data-delay="0.15">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H4z M8 20h8 M12 16v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="vert-emoji" aria-hidden="true">🎬</span>
         <h4>Content / Creators</h4>
         <p>Course creators, info products, personal brands.</p>
       </div>
       <div class="vert-card" data-anim="fade-up" data-delay="0.2">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z M12 22V12 M12 12L4 7 M12 12l8-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="vert-emoji" aria-hidden="true">🎰</span>
         <h4>iGaming</h4>
         <p>Sportsbook, casino, prediction, sweeps where compliant.</p>
       </div>
       <div class="vert-card" data-anim="fade-up" data-delay="0.25">
-        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="vert-emoji" aria-hidden="true">💊</span>
         <h4>Nutra / Health</h4>
         <p>Supplements, wellness, fitness — handled with care.</p>
       </div>
       <div class="vert-card" data-anim="fade-up" data-delay="0.3">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12l5 5L21 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="vert-emoji" aria-hidden="true">₿</span>
         <h4>Crypto / Finance</h4>
         <p>Approved crypto offers, fintech, trading platforms.</p>
       </div>
       <div class="vert-card" data-anim="fade-up" data-delay="0.35">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-12V4l-8-2-8 2v6c0 8 8 12 8 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="vert-emoji" aria-hidden="true">🛡️</span>
         <h4>Grey-Hat &amp; Risk</h4>
         <p>Talk to us — we handle what mainstream providers won't.</p>
       </div>
@@ -571,7 +657,7 @@
   <div class="container">
     <div class="section-head" data-anim="fade-up">
       <span class="eyebrow"><span class="dot"></span>The shift</span>
-      <h2 class="section-title">Before vs. After <span class="gradient-text">Cash Flow Media.</span></h2>
+      <h2 class="section-title">Before vs. After <span class="gradient-text">Cash Flow Media</span></h2>
     </div>
 
     <div class="ba-grid">
@@ -601,68 +687,7 @@
   </div>
 </section>
 
-<div class="section-divider" aria-hidden="true"><span></span></div>
 
-<!-- TESTIMONIALS / PROOF -->
-<section class="section proof" id="proof">
-  <div class="container">
-    <div class="section-head" data-anim="fade-up">
-      <span class="eyebrow"><span class="dot"></span>Operator reviews</span>
-      <h2 class="section-title">Trusted by <span class="gradient-text">advertisers who scale.</span></h2>
-    </div>
-
-    <div class="proof-grid">
-      <div class="proof-card" data-anim="fade-up">
-        <div class="proof-stars">★★★★★</div>
-        <p>"Replaced three banned accounts in one afternoon. Spent more in week 2 than the entire previous month."</p>
-        <div class="proof-meta">
-          <strong>Verified Operator</strong>
-          <span>eCommerce · 8-figure DTC</span>
-        </div>
-      </div>
-      <div class="proof-card" data-anim="fade-up" data-delay="0.05">
-        <div class="proof-stars">★★★★★</div>
-        <p>"Onboarded in under 30 minutes. Their team actually picks up at 2am. I switched from two other providers."</p>
-        <div class="proof-meta">
-          <strong>Media Buyer</strong>
-          <span>Lead Gen · Insurance vertical</span>
-        </div>
-      </div>
-      <div class="proof-card" data-anim="fade-up" data-delay="0.1">
-        <div class="proof-stars">★★★★★</div>
-        <p>"Onyx BM2500 changed how we operate. We don't even pause campaigns anymore. The replacement just happens."</p>
-        <div class="proof-meta">
-          <strong>Agency Founder</strong>
-          <span>Multi-vertical · 7-figure spend</span>
-        </div>
-      </div>
-      <div class="proof-card" data-anim="fade-up" data-delay="0.15">
-        <div class="proof-stars">★★★★★</div>
-        <p>"The only provider that actually understood our compliance edge cases. Approvals come back faster too."</p>
-        <div class="proof-meta">
-          <strong>Performance Lead</strong>
-          <span>Nutra · International rollout</span>
-        </div>
-      </div>
-      <div class="proof-card" data-anim="fade-up" data-delay="0.2">
-        <div class="proof-stars">★★★★★</div>
-        <p>"Was burning $4k/day across mobile installs. They held the line through three policy waves last quarter."</p>
-        <div class="proof-meta">
-          <strong>Growth Lead</strong>
-          <span>App / Mobile</span>
-        </div>
-      </div>
-      <div class="proof-card" data-anim="fade-up" data-delay="0.25">
-        <div class="proof-stars">★★★★★</div>
-        <p>"I tried being cheap. Cost me $40k in a week. Cash Flow paid for itself the day I switched."</p>
-        <div class="proof-meta">
-          <strong>Solo Buyer</strong>
-          <span>Info products / coaching</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div class="section-divider" aria-hidden="true"><span></span></div>
 
@@ -671,7 +696,7 @@
   <div class="container faq-wrap">
     <div class="section-head" data-anim="fade-up">
       <span class="eyebrow"><span class="dot"></span>FAQ</span>
-      <h2 class="section-title">Common questions.</h2>
+      <h2 class="section-title">Common questions</h2>
     </div>
 
     <div class="faq-list">
@@ -824,33 +849,21 @@
   </div>
 </footer>
 
-<!-- Floating support widget (Telegram + WhatsApp) -->
-<div class="support-widget" id="supportWidget">
-  <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="support-option support-option-tg" aria-label="Chat on Telegram">
-    <span class="support-option-label">Telegram</span>
-    <span class="support-option-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-        <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
-      </svg>
-    </span>
-  </a>
-  <a href="https://wa.me/14173007306" target="_blank" rel="noopener" class="support-option support-option-wa" aria-label="Chat on WhatsApp">
-    <span class="support-option-label">WhatsApp</span>
-    <span class="support-option-icon">
-      <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true">
-        <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.8L.5 31.5l7.9-2c2.3 1.2 4.9 1.9 7.6 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.2c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3 0-7.3 5.9-13.2 13.2-13.2S29.2 8 29.2 15.3 23.3 28.7 16 28.7zm7.6-9.9c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-.9.2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-.1-.1-1.4-1.5-1.4-2.6 0-.4.6-1 .9-1.5.2-.3.3-.5.4-.7.1-.3.1-.5 0-.8 0-.2-.9-2.2-1.2-3-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9.9.3 1.8.2 2.5.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9 0-.2-.3-.3-.7-.5z"/>
-      </svg>
-    </span>
-  </a>
-  <button class="support-fab" id="supportFab" aria-label="Open support menu" aria-expanded="false">
+<!-- Floating contact: stacked Telegram + WhatsApp buttons -->
+<div class="support-stack" id="supportStack">
+  <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="support-fab-circle support-fab-tg" aria-label="Chat on Telegram">
     <span class="support-pulse"></span>
-    <svg class="support-fab-icon support-fab-chat" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+      <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
     </svg>
-    <svg class="support-fab-icon support-fab-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
-      <path d="M18 6L6 18M6 6l12 12"/>
+    <span class="support-tooltip">Telegram</span>
+  </a>
+  <a href="https://wa.me/14173007306" target="_blank" rel="noopener" class="support-fab-circle support-fab-wa" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true">
+      <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.8L.5 31.5l7.9-2c2.3 1.2 4.9 1.9 7.6 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.2c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3 0-7.3 5.9-13.2 13.2-13.2S29.2 8 29.2 15.3 23.3 28.7 16 28.7zm7.6-9.9c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-.9.2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-.1-.1-1.4-1.5-1.4-2.6 0-.4.6-1 .9-1.5.2-.3.3-.5.4-.7.1-.3.1-.5 0-.8 0-.2-.9-2.2-1.2-3-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9.9.3 1.8.2 2.5.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9 0-.2-.3-.3-.7-.5z"/>
     </svg>
-  </button>
+    <span class="support-tooltip">WhatsApp</span>
+  </a>
 </div>
 
 <!-- Contact chooser modal -->

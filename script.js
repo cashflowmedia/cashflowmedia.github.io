@@ -219,6 +219,41 @@ if (supportFab && supportWidget) {
   });
 }
 
+/* ---------- Cycling reviews bubble (upper right) ---------- */
+const reviewBubble = document.getElementById('reviewBubble');
+if (reviewBubble) {
+  const reviews = [
+    { text: '"Replaced three banned accounts in one afternoon. Spent more in week 2 than the entire previous month."', author: 'Verified Operator · 8-figure DTC' },
+    { text: '"Onboarded in under 30 minutes. Their team actually picks up at 2am."', author: 'Media Buyer · Insurance' },
+    { text: '"Onyx BM2500 changed how we operate. We don’t even pause campaigns anymore."', author: 'Agency Founder · 7-fig spend' },
+    { text: '"The only provider that actually understood our compliance edge cases."', author: 'Performance Lead · Nutra' },
+    { text: '"Was burning $4k/day. They held the line through three policy waves last quarter."', author: 'Growth Lead · Mobile' },
+    { text: '"I tried being cheap. Cost me $40k in a week. Cash Flow paid for itself the day I switched."', author: 'Solo Buyer · Coaching' }
+  ];
+  const textEl = reviewBubble.querySelector('.review-text');
+  const authorEl = reviewBubble.querySelector('.review-author');
+  let idx = 0;
+
+  function show() {
+    const r = reviews[idx];
+    textEl.textContent = r.text;
+    authorEl.textContent = '— ' + r.author;
+    reviewBubble.classList.add('is-visible');
+  }
+  function hide() { reviewBubble.classList.remove('is-visible'); }
+
+  // Initial show after page settles
+  setTimeout(show, 2800);
+  // Cycle every 7s
+  setInterval(() => {
+    hide();
+    setTimeout(() => {
+      idx = (idx + 1) % reviews.length;
+      show();
+    }, 600);
+  }, 7000);
+}
+
 /* ---------- Side ScrollSpy nav ---------- */
 const pageNav = document.getElementById('pageNav');
 if (pageNav) {
