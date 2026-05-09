@@ -626,5 +626,71 @@ ul, ol { list-style: none; }
   font-size: 12px; color: var(--muted);
 }
 
+/* ========== FLOATING SUPPORT BUTTON ========== */
+.support-fab {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 200;
+  width: 60px; height: 60px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.5);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+  animation: fabIn .8s 2s cubic-bezier(.2,.8,.2,1) backwards;
+}
+.support-fab:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 18px 50px rgba(37, 211, 102, 0.6), 0 0 60px rgba(37, 211, 102, 0.3);
+}
+.support-fab svg { position: relative; z-index: 2; }
+.support-pulse {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.5);
+  animation: fabPulse 2s ease-out infinite;
+}
+@keyframes fabPulse {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+@keyframes fabIn {
+  from { transform: scale(0) rotate(-90deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0); opacity: 1; }
+}
+.support-tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  background: #0a0d0a;
+  color: var(--text);
+  font-size: 13px; font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.support-tooltip::after {
+  content: ''; position: absolute;
+  right: -5px; top: 50%; transform: translateY(-50%) rotate(45deg);
+  width: 8px; height: 8px;
+  background: #0a0d0a;
+  border-right: 1px solid rgba(37, 211, 102, 0.3);
+  border-top: 1px solid rgba(37, 211, 102, 0.3);
+}
+.support-fab:hover .support-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+@media (max-width: 600px) {
+  .support-fab { bottom: 18px; right: 18px; width: 54px; height: 54px; }
+  .support-tooltip { display: none; }
+}
+
 /* ========== ANIM HOOKS (initial state, JS reveals) ========== */
 [data-anim] { opacity: 0; transform: translateY(40px); }
