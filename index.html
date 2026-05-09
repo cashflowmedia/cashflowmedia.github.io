@@ -18,7 +18,7 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-dot" id="cursor-dot"></div>
 
-<!-- Animated background grid -->
+<!-- Animated background -->
 <div class="bg-grid"></div>
 <div class="bg-glow bg-glow-1"></div>
 <div class="bg-glow bg-glow-2"></div>
@@ -31,7 +31,6 @@
   </div>
 </div>
 <script>
-  // Failsafe: hide loader after 3.5s even if main JS errors out.
   setTimeout(function () {
     var l = document.getElementById('loader');
     if (l && l.style.display !== 'none' && parseFloat(getComputedStyle(l).opacity) > 0.5) {
@@ -53,9 +52,10 @@
     <span>CASH FLOW</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Us</a></li>
+    <li><a href="#flagship">Reservoir</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#verticals">Verticals</a></li>
+    <li><a href="#proof">Reviews</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="#contact" class="nav-cta">
@@ -64,27 +64,25 @@
       <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
-  <button class="nav-burger" id="burger" aria-label="Menu">
-    <span></span><span></span>
-  </button>
+  <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-badge" data-anim="fade-up">
     <span class="pulse"></span>
-    <span>24/7 Support · Unlimited Replacements Available</span>
+    <span>Replacements live in under 2 hours · 24/7</span>
   </div>
 
   <h1 class="hero-title">
-    <span class="line"><span class="word">Premium</span> <span class="word">Meta</span> <span class="word">ad</span></span>
-    <span class="line"><span class="word">infrastructure</span> <span class="word">that</span></span>
-    <span class="line"><span class="word gradient-text">never</span> <span class="word gradient-text">stops</span> <span class="word gradient-text">scaling.</span></span>
+    <span class="line"><span class="word">When</span> <span class="word">your</span> <span class="word">accounts</span></span>
+    <span class="line"><span class="word">go</span> <span class="word">down,</span> <span class="word">your</span></span>
+    <span class="line"><span class="word gradient-text">cash</span> <span class="word gradient-text">flow</span> <span class="word gradient-text">shouldn't.</span></span>
   </h1>
 
   <p class="hero-sub" data-anim="fade-up" data-delay="0.6">
-    Stable agency ad accounts and Business Managers for media buyers, agencies,
-    and scaling teams. Replace disabled accounts in hours, not days.
+    Premium agency Meta ad accounts, Business Managers, and 24/7 operational support
+    for media buyers, agencies, and scaling teams. Built so your spend never sleeps.
   </p>
 
   <div class="hero-cta" data-anim="fade-up" data-delay="0.8">
@@ -94,23 +92,23 @@
         <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
-    <a href="#contact" class="btn btn-ghost magnetic">
+    <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
       <span>Talk to Sales</span>
     </a>
   </div>
 
   <div class="hero-stats" data-anim="fade-up" data-delay="1">
     <div class="stat">
-      <div class="stat-num" data-count="500">0</div>
-      <div class="stat-label">Active clients</div>
+      <div class="stat-num">$<span data-count="120">0</span>M+</div>
+      <div class="stat-label">Spend managed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span data-count="2500">0</span>+</div>
+      <div class="stat-label">Accounts in network</div>
     </div>
     <div class="stat">
       <div class="stat-num"><span data-count="99.9">0</span>%</div>
       <div class="stat-label">Uptime guarantee</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num"><span data-count="24">0</span>/7</div>
-      <div class="stat-label">Support coverage</div>
     </div>
     <div class="stat">
       <div class="stat-num">&lt;<span data-count="2">0</span>h</div>
@@ -144,177 +142,398 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
+<!-- PAIN NARRATIVE -->
+<section class="section narrative" id="narrative">
   <div class="container">
     <div class="section-head" data-anim="fade-up">
-      <span class="eyebrow"><span class="dot"></span>What we do</span>
-      <h2 class="section-title">Infrastructure built for <span class="gradient-text">advertisers who scale.</span></h2>
-      <p class="section-sub">Everything you need to run Meta ads without worrying about account stability, approvals, or downtime.</p>
+      <span class="eyebrow"><span class="dot"></span>The cost of downtime</span>
+      <h2 class="section-title">Every disabled account is <span class="gradient-text">money on the floor.</span></h2>
+      <p class="section-sub">Here's what happens to most advertisers when an account goes down — and what happens with us.</p>
     </div>
 
-    <div class="cards">
-      <article class="card" data-anim="fade-up">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l9-4 9 4M3 7l9 4 9-4M12 11v10" stroke="currentColor" stroke-width="1.6"/></svg>
-        </div>
-        <h3>Agency Ad Accounts</h3>
-        <p>Production-ready Meta ad accounts under our agency umbrella. Connect, fund, and start spending the same day.</p>
-        <span class="card-arrow">→</span>
-      </article>
+    <div class="narrative-grid">
+      <div class="narrative-col narrative-bad" data-anim="fade-up">
+        <div class="narrative-tag narrative-tag-bad">Without Cash Flow Media</div>
+        <ul class="narrative-list">
+          <li><span class="narrative-time">Hour 0</span><span>Account flagged. Spend stops mid-campaign.</span></li>
+          <li><span class="narrative-time">Hour 2</span><span>You panic-message your contact. No reply.</span></li>
+          <li><span class="narrative-time">Day 1</span><span>Refund tickets opened. No ETA.</span></li>
+          <li><span class="narrative-time">Day 3</span><span>You scramble for a backup account that isn't warmed.</span></li>
+          <li><span class="narrative-time">Day 5</span><span>Algorithm reset. ROAS halved. Client unhappy.</span></li>
+          <li><span class="narrative-time">Day 7</span><span>You lost the week. Competitors took the inventory.</span></li>
+        </ul>
+      </div>
 
-      <article class="card" data-anim="fade-up" data-delay="0.1">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="19" cy="18" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
-        </div>
-        <h3>Business Manager Setups</h3>
-        <p>Fully configured BMs with proper structure, permissions, and pixel setup — ready for serious operations.</p>
-        <span class="card-arrow">→</span>
-      </article>
-
-      <article class="card" data-anim="fade-up" data-delay="0.2">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </div>
-        <h3>24/7 Operational Support</h3>
-        <p>Onboarding, approvals guidance, troubleshooting, and account-issue resolution — anytime you need it.</p>
-        <span class="card-arrow">→</span>
-      </article>
-
-      <article class="card" data-anim="fade-up" data-delay="0.3">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </div>
-        <h3>Rapid Replacements</h3>
-        <p>If an account gets disabled or restricted, we swap it fast so your campaigns keep running. Unlimited on select plans.</p>
-        <span class="card-arrow">→</span>
-      </article>
-
-      <article class="card" data-anim="fade-up" data-delay="0.4">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M21 7v6h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Scaling Operations</h3>
-        <p>From eCommerce and lead gen to apps and content — we support the verticals others won't touch.</p>
-        <span class="card-arrow">→</span>
-      </article>
-
-      <article class="card" data-anim="fade-up" data-delay="0.5">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-12V4l-8-2-8 2v6c0 8 8 12 8 12z M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Campaign Continuity</h3>
-        <p>Built-in redundancy and fast turnaround keep your spend moving. Your scale doesn't pause when an account flags.</p>
-        <span class="card-arrow">→</span>
-      </article>
+      <div class="narrative-col narrative-good" data-anim="fade-up" data-delay="0.15">
+        <div class="narrative-tag narrative-tag-good">With Cash Flow Media</div>
+        <ul class="narrative-list">
+          <li><span class="narrative-time">0:00</span><span>Account flagged. Auto-detected by our system.</span></li>
+          <li><span class="narrative-time">0:05</span><span>Replacement spun up from the Reservoir network.</span></li>
+          <li><span class="narrative-time">0:30</span><span>Pixel and creatives migrated with our team.</span></li>
+          <li><span class="narrative-time">1:30</span><span>Spend resumed. Algorithm intact.</span></li>
+          <li><span class="narrative-time">2:00</span><span>Daily ops report sent. Nothing lost.</span></li>
+          <li><span class="narrative-time">+1d</span><span>You scaled past your previous best.</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
-<section class="section section-alt" id="why">
-  <div class="container why-grid">
-    <div class="why-left" data-anim="fade-up">
-      <span class="eyebrow"><span class="dot"></span>Why Cash Flow Media</span>
-      <h2 class="section-title">Built by operators who run real Meta spend.</h2>
-      <p class="section-sub">We're not resellers. We run our own infrastructure, manage our own relationships, and we know what scaling actually looks like.</p>
-      <a href="#contact" class="btn btn-primary magnetic">
-        <span>Start scaling</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
+<!-- FLAGSHIP: RESERVOIR 2500 -->
+<section class="section flagship" id="flagship">
+  <div class="container">
+    <div class="flagship-card" data-anim="fade-up">
+      <div class="flagship-left">
+        <span class="eyebrow"><span class="dot"></span>Flagship infrastructure</span>
+        <h2 class="flagship-title">
+          <span class="gradient-text">Reservoir 2500.</span><br/>
+          Distributed accounts. Auto replacement. Zero panic.
+        </h2>
+        <p class="flagship-desc">
+          A private pool of <strong>2,500 sourced accounts</strong> running behind one interface.
+          When one flags, the next is provisioned in <strong>5–10 minutes</strong> — no tickets, no waiting,
+          no spend gap. Built for operators who can't afford to pause.
+        </p>
+        <ul class="flagship-feats">
+          <li><span class="check">✓</span> Up to 2,500 distributed accounts</li>
+          <li><span class="check">✓</span> Auto-replacement in 5–10 minutes</li>
+          <li><span class="check">✓</span> No single point of failure</li>
+          <li><span class="check">✓</span> Dedicated infrastructure manager</li>
+          <li><span class="check">✓</span> Vertical-aware sourcing strategy</li>
+        </ul>
+        <div class="flagship-cta">
+          <a href="#contact" class="btn btn-primary magnetic">
+            <span>Get Reservoir 2500</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="flagship-price">
+            <span class="flagship-price-label">From</span>
+            <span class="flagship-price-num">$15,000</span>
+            <span class="flagship-price-period">one-time</span>
+          </div>
+        </div>
+      </div>
 
-    <ul class="why-list">
-      <li data-anim="fade-up">
-        <span class="why-num">01</span>
-        <div>
-          <h4>Stability over hype</h4>
-          <p>Operational maturity. Accounts that hold up under real scale.</p>
+      <div class="flagship-right">
+        <div class="reservoir-viz">
+          <div class="reservoir-core">
+            <span class="reservoir-num">2500</span>
+            <span class="reservoir-cap">RESERVOIR</span>
+          </div>
+          <div class="reservoir-ring reservoir-ring-1"></div>
+          <div class="reservoir-ring reservoir-ring-2"></div>
+          <div class="reservoir-ring reservoir-ring-3"></div>
+          <span class="reservoir-node" style="--a:0deg"></span>
+          <span class="reservoir-node" style="--a:45deg"></span>
+          <span class="reservoir-node" style="--a:90deg"></span>
+          <span class="reservoir-node" style="--a:135deg"></span>
+          <span class="reservoir-node" style="--a:180deg"></span>
+          <span class="reservoir-node" style="--a:225deg"></span>
+          <span class="reservoir-node" style="--a:270deg"></span>
+          <span class="reservoir-node" style="--a:315deg"></span>
         </div>
-      </li>
-      <li data-anim="fade-up" data-delay="0.1">
-        <span class="why-num">02</span>
-        <div>
-          <h4>Real human support</h4>
-          <p>Direct contact with people who actually solve issues — not ticket queues.</p>
-        </div>
-      </li>
-      <li data-anim="fade-up" data-delay="0.2">
-        <span class="why-num">03</span>
-        <div>
-          <h4>Vertical flexibility</h4>
-          <p>We work with mainstream and policy-sensitive verticals other providers avoid.</p>
-        </div>
-      </li>
-      <li data-anim="fade-up" data-delay="0.3">
-        <span class="why-num">04</span>
-        <div>
-          <h4>Replace fast, scale faster</h4>
-          <p>Disabled doesn't mean done. We swap and you keep moving.</p>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="section" id="pricing">
+<section class="section section-alt" id="pricing">
   <div class="container">
     <div class="section-head" data-anim="fade-up">
       <span class="eyebrow"><span class="dot"></span>Pricing</span>
-      <h2 class="section-title">Pick the plan that <span class="gradient-text">matches your scale.</span></h2>
-      <p class="section-sub">Monthly subscriptions. Cancel anytime. Unlimited replacements available on select tiers.</p>
+      <h2 class="section-title">Pick what <span class="gradient-text">matches your scale.</span></h2>
+      <p class="section-sub">One-time account purchases or monthly subscriptions with unlimited replacements.</p>
+
+      <div class="price-toggle" role="tablist">
+        <button class="price-toggle-btn is-active" data-tab="subs" role="tab">Subscriptions</button>
+        <button class="price-toggle-btn" data-tab="onetime" role="tab">One-time</button>
+      </div>
     </div>
 
-    <div class="pricing-grid">
+    <!-- SUBSCRIPTIONS -->
+    <div class="pricing-grid" data-tab-panel="subs">
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
-          <h3>Starter</h3>
-          <p>For solo media buyers getting started.</p>
+          <h3>Pulse</h3>
+          <p>For solo media buyers and testers.</p>
         </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">—</span><span class="price-period">/mo</span></div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">450</span><span class="price-period">/mo</span></div>
         <ul class="price-feats">
-          <li><span class="check">✓</span> Agency ad account access</li>
-          <li><span class="check">✓</span> Standard BM setup</li>
-          <li><span class="check">✓</span> Email + chat support</li>
-          <li><span class="check">✓</span> Replacements (limited)</li>
+          <li><span class="check">✓</span> 1 agency ad account</li>
+          <li><span class="check">✓</span> Verified Business Manager</li>
+          <li><span class="check">✓</span> 24/7 support</li>
+          <li><span class="check">✓</span> Unlimited replacements</li>
+          <li><span class="check">✓</span> Onboarding assistance</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Starter</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Pulse</span></a>
       </div>
 
       <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
         <div class="price-tag">Most Popular</div>
         <div class="price-head">
-          <h3>Scale</h3>
-          <p>For agencies and teams running real volume.</p>
+          <h3>Surge</h3>
+          <p>For agencies running real volume.</p>
         </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">—</span><span class="price-period">/mo</span></div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">850</span><span class="price-period">/mo</span></div>
         <ul class="price-feats">
-          <li><span class="check">✓</span> Multiple agency ad accounts</li>
-          <li><span class="check">✓</span> Full BM infrastructure</li>
-          <li><span class="check">✓</span> 24/7 priority support</li>
+          <li><span class="check">✓</span> 2 agency ad accounts</li>
+          <li><span class="check">✓</span> Verified BM infrastructure</li>
+          <li><span class="check">✓</span> Priority 24/7 support</li>
           <li><span class="check">✓</span> <strong>Unlimited replacements</strong></li>
           <li><span class="check">✓</span> Approvals guidance</li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Choose Scale</span></a>
+        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Choose Surge</span></a>
       </div>
 
       <div class="price-card" data-anim="fade-up" data-delay="0.2">
         <div class="price-head">
-          <h3>Enterprise</h3>
-          <p>For high-spend operations and policy-sensitive verticals.</p>
+          <h3>Apex</h3>
+          <p>For high-spend operations.</p>
         </div>
-        <div class="price-num"><span class="price-currency">Custom</span></div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">1,950</span><span class="price-period">/mo</span></div>
         <ul class="price-feats">
-          <li><span class="check">✓</span> Custom account allocation</li>
-          <li><span class="check">✓</span> Dedicated account manager</li>
+          <li><span class="check">✓</span> Multi-account allocation</li>
+          <li><span class="check">✓</span> Dedicated channel</li>
           <li><span class="check">✓</span> White-glove onboarding</li>
           <li><span class="check">✓</span> Unlimited replacements</li>
           <li><span class="check">✓</span> Vertical-specific support</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Talk to Sales</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Apex</span></a>
+      </div>
+
+      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
+        <div class="price-tag price-tag-elite">Elite</div>
+        <div class="price-head">
+          <h3>Reign</h3>
+          <p>Unlimited infrastructure for top operators.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">35,000</span><span class="price-period">/mo</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Unlimited accounts &amp; BMs</li>
+          <li><span class="check">✓</span> Dedicated account manager</li>
+          <li><span class="check">✓</span> Same-hour replacements</li>
+          <li><span class="check">✓</span> Custom vertical strategy</li>
+          <li><span class="check">✓</span> Direct-line escalation</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Apply for Reign</span></a>
+      </div>
+    </div>
+
+    <!-- ONE-TIME -->
+    <div class="pricing-grid" data-tab-panel="onetime" hidden>
+      <div class="price-card" data-anim="fade-up">
+        <div class="price-head">
+          <h3>Spark</h3>
+          <p>Aged personal profile, ready to deploy.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">100</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Aged Facebook profile</li>
+          <li><span class="check">✓</span> Verified email + recovery</li>
+          <li><span class="check">✓</span> Login credentials delivered</li>
+          <li><span class="check">✓</span> Setup checklist included</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Spark</span></a>
+      </div>
+
+      <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
+        <div class="price-tag">Best Value</div>
+        <div class="price-head">
+          <h3>Triad</h3>
+          <p>3-pack of verified BM accounts.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">200</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> 3 verified BM accounts</li>
+          <li><span class="check">✓</span> Pre-warmed and ready</li>
+          <li><span class="check">✓</span> Standard wallet config</li>
+          <li><span class="check">✓</span> Quick-start guide</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Buy Triad</span></a>
+      </div>
+
+      <div class="price-card" data-anim="fade-up" data-delay="0.2">
+        <div class="price-head">
+          <h3>Decade</h3>
+          <p>10 accounts with instant wallet delivery.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">550</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> 10 verified ad accounts</li>
+          <li><span class="check">✓</span> Instant wallet provisioning</li>
+          <li><span class="check">✓</span> Bulk allocation interface</li>
+          <li><span class="check">✓</span> Setup support included</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Decade</span></a>
+      </div>
+
+      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
+        <div class="price-tag price-tag-elite">Custom</div>
+        <div class="price-head">
+          <h3>Bespoke</h3>
+          <p>Built around your vertical and scale.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">Custom</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Custom account architecture</li>
+          <li><span class="check">✓</span> Dedicated sourcing strategy</li>
+          <li><span class="check">✓</span> Tailored support SLA</li>
+          <li><span class="check">✓</span> Vertical-specific compliance</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Request Quote</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERTICALS -->
+<section class="section verticals" id="verticals">
+  <div class="container">
+    <div class="section-head" data-anim="fade-up">
+      <span class="eyebrow"><span class="dot"></span>Verticals supported</span>
+      <h2 class="section-title">Built for the <span class="gradient-text">verticals others avoid.</span></h2>
+      <p class="section-sub">From mainstream eCom to high-risk and policy-sensitive — we work with all of it.</p>
+    </div>
+
+    <div class="vert-grid">
+      <div class="vert-card" data-anim="fade-up">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4v10l-9 4-9-4V7z M3 7l9 4 9-4 M12 11v10" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h4>eCommerce</h4>
+        <p>DTC brands scaling product launches and seasonal pushes.</p>
+      </div>
+      <div class="vert-card" data-anim="fade-up" data-delay="0.05">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2s10 4.5 10 10z M8 12l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h4>Lead Gen</h4>
+        <p>Local services, B2B, agencies, mortgage, insurance.</p>
+      </div>
+      <div class="vert-card" data-anim="fade-up" data-delay="0.1">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+        <h4>App Installs</h4>
+        <p>Mobile apps with high-velocity install funnels.</p>
+      </div>
+      <div class="vert-card" data-anim="fade-up" data-delay="0.15">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H4z M8 20h8 M12 16v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h4>Content / Creators</h4>
+        <p>Course creators, info products, personal brands.</p>
+      </div>
+      <div class="vert-card" data-anim="fade-up" data-delay="0.2">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z M12 22V12 M12 12L4 7 M12 12l8-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <h4>iGaming</h4>
+        <p>Sportsbook, casino, prediction, sweeps where compliant.</p>
+      </div>
+      <div class="vert-card" data-anim="fade-up" data-delay="0.25">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h4>Nutra / Health</h4>
+        <p>Supplements, wellness, fitness — handled with care.</p>
+      </div>
+      <div class="vert-card" data-anim="fade-up" data-delay="0.3">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12l5 5L21 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h4>Crypto / Finance</h4>
+        <p>Approved crypto offers, fintech, trading platforms.</p>
+      </div>
+      <div class="vert-card" data-anim="fade-up" data-delay="0.35">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-12V4l-8-2-8 2v6c0 8 8 12 8 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <h4>Grey-Hat &amp; Risk</h4>
+        <p>Talk to us — we handle what mainstream providers won't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section section-alt ba" id="ba">
+  <div class="container">
+    <div class="section-head" data-anim="fade-up">
+      <span class="eyebrow"><span class="dot"></span>The shift</span>
+      <h2 class="section-title">Before vs. After <span class="gradient-text">Cash Flow Media.</span></h2>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-col ba-before" data-anim="fade-up">
+        <h4>Before</h4>
+        <ul>
+          <li>✕ Account bans = days of lost spend</li>
+          <li>✕ Support tickets that go nowhere</li>
+          <li>✕ Scrambling for replacement accounts</li>
+          <li>✕ Vertical providers refuse your offer</li>
+          <li>✕ Algorithm resets every disable</li>
+          <li>✕ Sleep ruined by 3am notifications</li>
+        </ul>
+      </div>
+      <div class="ba-col ba-after" data-anim="fade-up" data-delay="0.15">
+        <h4>After</h4>
+        <ul>
+          <li>✓ Disabled = replaced in &lt; 2 hours</li>
+          <li>✓ Direct line to humans 24/7</li>
+          <li>✓ Reservoir network always ready</li>
+          <li>✓ All major verticals supported</li>
+          <li>✓ Pixel + creative migration handled</li>
+          <li>✓ You sleep. We watch.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS / PROOF -->
+<section class="section proof" id="proof">
+  <div class="container">
+    <div class="section-head" data-anim="fade-up">
+      <span class="eyebrow"><span class="dot"></span>Operator reviews</span>
+      <h2 class="section-title">Trusted by <span class="gradient-text">advertisers who scale.</span></h2>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-card" data-anim="fade-up">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Replaced three banned accounts in one afternoon. Spent more in week 2 than the entire previous month."</p>
+        <div class="proof-meta">
+          <strong>Verified Operator</strong>
+          <span>eCommerce · 8-figure DTC</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.05">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Onboarded in under 30 minutes. Their team actually picks up at 2am. I switched from two other providers."</p>
+        <div class="proof-meta">
+          <strong>Media Buyer</strong>
+          <span>Lead Gen · Insurance vertical</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.1">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Reservoir 2500 changed how we operate. We don't even pause campaigns anymore. The replacement just happens."</p>
+        <div class="proof-meta">
+          <strong>Agency Founder</strong>
+          <span>Multi-vertical · 7-figure spend</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.15">
+        <div class="proof-stars">★★★★★</div>
+        <p>"The only provider that actually understood our compliance edge cases. Approvals come back faster too."</p>
+        <div class="proof-meta">
+          <strong>Performance Lead</strong>
+          <span>Nutra · International rollout</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.2">
+        <div class="proof-stars">★★★★★</div>
+        <p>"Was burning $4k/day across mobile installs. They held the line through three policy waves last quarter."</p>
+        <div class="proof-meta">
+          <strong>Growth Lead</strong>
+          <span>App / Mobile</span>
+        </div>
+      </div>
+      <div class="proof-card" data-anim="fade-up" data-delay="0.25">
+        <div class="proof-stars">★★★★★</div>
+        <p>"I tried being cheap. Cost me $40k in a week. Cash Flow paid for itself the day I switched."</p>
+        <div class="proof-meta">
+          <strong>Solo Buyer</strong>
+          <span>Info products / coaching</span>
+        </div>
       </div>
     </div>
   </div>
@@ -330,43 +549,55 @@
 
     <div class="faq-list">
       <details class="faq-item" data-anim="fade-up">
-        <summary>How fast can I get started?</summary>
-        <p>Most clients are set up the same day. After onboarding, you'll have access to your accounts and BM infrastructure within hours.</p>
+        <summary>How fast are replacements?</summary>
+        <p>Subscriptions: typically under 2 hours, 24/7. Reservoir 2500 customers see auto-replacement in 5–10 minutes via the distributed pool.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.05">
-        <summary>What happens if my account gets disabled?</summary>
-        <p>We replace it. On Scale and Enterprise plans, replacements are unlimited and turnaround is typically under 2 hours.</p>
+        <summary>How fast can I get onboarded?</summary>
+        <p>Most clients are running spend the same day. After payment, you'll have account access and BM setup within hours.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.1">
-        <summary>What verticals do you support?</summary>
-        <p>eCommerce, lead generation, apps, content, and many higher-risk and policy-sensitive verticals. Reach out and we'll confirm fit.</p>
+        <summary>Which verticals do you allow?</summary>
+        <p>eCommerce, lead gen, apps, content, iGaming, nutra, crypto, and many policy-sensitive verticals. If you're unsure, message us with the offer and we'll confirm fit.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.15">
-        <summary>Do you handle approvals?</summary>
-        <p>Yes — our team helps with approvals guidance and troubleshooting around Meta's policies as part of our support.</p>
+        <summary>Do I need to warm up the accounts?</summary>
+        <p>For most setups, no — accounts come pre-warmed. For higher-risk verticals or aggressive scaling, our team will guide you through a short warm-up plan.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.2">
-        <summary>Is there a contract?</summary>
-        <p>No long-term contracts. All plans are monthly and you can cancel anytime.</p>
+        <summary>What's the difference between Reservoir 2500 and a regular subscription?</summary>
+        <p>Subscriptions give you a fixed number of accounts with manual replacements when something goes down. Reservoir 2500 is a private distributed pool that auto-rotates so spend never pauses — built for operators who can't afford downtime.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.25">
+        <summary>Should I pick a one-time bundle or a subscription?</summary>
+        <p>One-time bundles (Spark / Triad / Decade) are best for testing and short campaigns. Subscriptions (Pulse / Surge / Apex / Reign) are for ongoing operations that need replacements and 24/7 support.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.3">
+        <summary>Are there guarantees?</summary>
+        <p>We guarantee unlimited replacements on subscription tiers and the response times listed. We do not guarantee account approval for any specific creative — that's on Meta's policy team.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.35">
+        <summary>How do I reach you?</summary>
+        <p>Telegram, WhatsApp, or the floating button on this page. Direct human reply, 24/7.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- CTA / CONTACT -->
+<!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="container">
     <div class="cta-card" data-anim="fade-up">
       <h2>Ready to stop losing spend to <span class="gradient-text">disabled accounts?</span></h2>
-      <p>Get in touch and we'll match you to the right setup.</p>
+      <p>Reach out — we'll match you to the right tier in minutes.</p>
       <div class="cta-actions">
-        <a href="mailto:hello@cashflowmedia.com" class="btn btn-primary btn-lg magnetic">
-          <span>Get Started</span>
+        <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="btn btn-primary btn-lg magnetic">
+          <span>Telegram Us</span>
           <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
             <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <a href="#" class="btn btn-ghost btn-lg magnetic"><span>Book a Call</span></a>
+        <a href="https://wa.me/14173007306" target="_blank" rel="noopener" class="btn btn-ghost btn-lg magnetic"><span>WhatsApp Us</span></a>
       </div>
     </div>
   </div>
@@ -389,14 +620,15 @@
     </div>
     <div class="footer-col">
       <h5>Product</h5>
-      <a href="#services">Services</a>
+      <a href="#flagship">Reservoir 2500</a>
       <a href="#pricing">Pricing</a>
+      <a href="#verticals">Verticals</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="footer-col">
-      <h5>Company</h5>
-      <a href="#why">About</a>
-      <a href="#contact">Contact</a>
+      <h5>Contact</h5>
+      <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://wa.me/14173007306" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <div class="footer-col">
       <h5>Legal</h5>

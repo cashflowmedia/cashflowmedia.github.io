@@ -147,6 +147,25 @@ gsap.utils.toArray('.section-title').forEach(title => {
   });
 });
 
+/* ---------- Pricing tab toggle ---------- */
+document.querySelectorAll('.price-toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.price-toggle-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+    document.querySelectorAll('[data-tab-panel]').forEach(panel => {
+      const isMatch = panel.dataset.tabPanel === tab;
+      panel.hidden = !isMatch;
+      if (isMatch) {
+        // re-trigger fade-up animations on the visible panel
+        gsap.fromTo(panel.querySelectorAll('.price-card'),
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.7, stagger: 0.07, ease: 'expo.out', overwrite: true }
+        );
+      }
+    });
+  });
+});
+
 /* ---------- Support widget toggle ---------- */
 const supportWidget = document.getElementById('supportWidget');
 const supportFab = document.getElementById('supportFab');
