@@ -140,25 +140,79 @@ ul, ol { list-style: none; }
   50%      { transform: translate(60px, 40px) scale(1.05); }
 }
 
-/* ========== LOADER (uses CFM logo) ========== */
+/* ========== LOADER (uses CFM logo, dramatic) ========== */
 .loader {
   position: fixed; inset: 0;
   background: var(--bg);
   z-index: 10000;
   display: grid; place-items: center;
 }
-.loader-inner { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.loader-logo { width: 96px; height: 96px; overflow: visible; }
+.loader-inner { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.loader-logo { width: 150px; height: 150px; overflow: visible; }
 .loader-text {
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: 0.4em;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   color: #F4C95C;
   animation: pulse 1.4s ease-in-out infinite;
-  margin-top: 4px;
+  margin-top: 12px;
 }
 @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+/* L→R progress sweep under loader logo */
+.loader-progress {
+  width: 240px;
+  height: 3px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 16px;
+  position: relative;
+}
+.loader-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #1aff66 30%, #F4C95C 70%, transparent);
+  border-radius: 2px;
+  animation: progressSweep 1.4s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(244,201,92,0.4);
+}
+@keyframes progressSweep {
+  0%   { left: -40%; }
+  100% { left: 100%; }
+}
+
+/* Loader-only dramatic build cascade (bars build L→R, hold, drop, loop) */
+.cas-load { transform-origin: bottom; transform-box: fill-box; animation: cascadeLoad 2.4s ease-out infinite; }
+.cas-load.cas-1 { animation-delay: 0s; }
+.cas-load.cas-2 { animation-delay: 0.2s; }
+.cas-load.cas-3 { animation-delay: 0.4s; }
+@keyframes cascadeLoad {
+  0%   { transform: scaleY(0); }
+  25%  { transform: scaleY(1.08); }
+  35%  { transform: scaleY(1); }
+  85%  { transform: scaleY(1); }
+  95%  { transform: scaleY(0); }
+  100% { transform: scaleY(0); }
+}
+
+/* Loader $ — pops in after bars build, holds, fades */
+.dollar-load {
+  transform-origin: center; transform-box: fill-box;
+  animation: dollarLoad 2.4s ease-out infinite;
+}
+@keyframes dollarLoad {
+  0%, 25%   { opacity: 0; transform: scale(0.4); }
+  40%       { opacity: 1; transform: scale(1.15); }
+  50%, 85%  { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 6px #F4C95C); }
+  95%       { opacity: 0; transform: scale(0.4); }
+  100%      { opacity: 0; transform: scale(0.4); }
+}
 
 /* ========== LOGO SVG ANIMATIONS (shared across all pages) ========== */
 .cas { transform-origin: bottom; transform-box: fill-box; animation: cascadeSubtle 3.2s ease-in-out infinite; }

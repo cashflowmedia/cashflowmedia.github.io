@@ -58,22 +58,23 @@
       <circle class="ember" cx="34" cy="56" r="0.6" fill="#FFD480" style="animation-delay:-3.4s; animation-duration:6.2s"/>
       <circle class="ember" cx="49" cy="56" r="0.7" fill="#F4C95C" style="animation-delay:-2.1s; animation-duration:4.8s"/>
       <g filter="url(#fusionGlow)">
-        <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
-        <path class="shade-1" d="M8 56 V46 L9.5 46.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
-        <path class="shade-1" d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,0.55)"/>
-        <path class="shade-1" d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,0.4)"/>
-        <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
-        <path class="shade-2" d="M22 56 V34 L23.5 34.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
-        <path class="shade-2" d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,0.55)"/>
-        <path class="shade-2" d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,0.4)"/>
-        <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
-        <path class="shade-3" d="M36 56 V20 L37.5 20.7 V56 Z" fill="rgba(255,255,255,0.5)"/>
-        <path class="shade-3" d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,0.6)"/>
-        <path class="shade-3" d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,0.4)"/>
+        <path class="cas-load cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+        <path class="cas-load cas-1" d="M8 56 V46 L9.5 46.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+        <path class="cas-load cas-1" d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,0.55)"/>
+        <path class="cas-load cas-1" d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,0.4)"/>
+        <path class="cas-load cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+        <path class="cas-load cas-2" d="M22 56 V34 L23.5 34.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+        <path class="cas-load cas-2" d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,0.55)"/>
+        <path class="cas-load cas-2" d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,0.4)"/>
+        <path class="cas-load cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        <path class="cas-load cas-3" d="M36 56 V20 L37.5 20.7 V56 Z" fill="rgba(255,255,255,0.5)"/>
+        <path class="cas-load cas-3" d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,0.6)"/>
+        <path class="cas-load cas-3" d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,0.4)"/>
       </g>
-      <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      <text class="dollar-load" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
     </svg>
     <span class="loader-text">CASH FLOW MEDIA</span>
+    <div class="loader-progress" aria-hidden="true"></div>
   </div>
 </div>
 <script>
@@ -90,16 +91,22 @@
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <span class="logo-mark" aria-hidden="true">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <defs>
-          <linearGradient id="cfmGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#1aff66"/>
-            <stop offset="1" stop-color="#00cc44"/>
-          </linearGradient>
-        </defs>
-        <circle cx="16" cy="16" r="14.5" stroke="url(#cfmGrad)" stroke-width="1.4" opacity="0.45"/>
-        <path d="M22.5 9.5a8.5 8.5 0 1 0 0 13" stroke="url(#cfmGrad)" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="22.5" cy="9.5" r="2" fill="url(#cfmGrad)"/>
+      <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z" fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="shade-1" d="M8 56 V46 L9.5 46.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+          <path class="shade-1" d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,0.55)"/>
+          <path class="shade-1" d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,0.4)"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="shade-2" d="M22 56 V34 L23.5 34.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+          <path class="shade-2" d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,0.55)"/>
+          <path class="shade-2" d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,0.4)"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z" fill="url(#bar3Grad)"/>
+          <path class="shade-3" d="M36 56 V20 L37.5 20.7 V56 Z" fill="rgba(255,255,255,0.5)"/>
+          <path class="shade-3" d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,0.6)"/>
+          <path class="shade-3" d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,0.4)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
       </svg>
     </span>
     <span class="logo-word">CASH FLOW <em>MEDIA</em></span>
@@ -125,7 +132,7 @@
   <div class="container">
     <span class="eyebrow" data-anim="fade-up"><span class="dot"></span>Contact</span>
     <h1 class="page-title" data-anim="fade-up" data-delay="0.1">
-      Reach us in <span class="gradient-text">under 30 seconds.</span>
+      Talk to a real <span class="gradient-text">human operator.</span>
     </h1>
     <p class="page-sub" data-anim="fade-up" data-delay="0.2">
       Pick the channel your team uses. Direct human reply, every hour, every day.
@@ -183,17 +190,23 @@
     <div class="footer-brand">
       <a href="index.html" class="nav-logo">
         <span class="logo-mark" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <defs>
-              <linearGradient id="cfmGradFooter" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#1aff66"/>
-                <stop offset="1" stop-color="#00cc44"/>
-              </linearGradient>
-            </defs>
-            <circle cx="16" cy="16" r="14.5" stroke="url(#cfmGradFooter)" stroke-width="1.4" opacity="0.45"/>
-            <path d="M22.5 9.5a8.5 8.5 0 1 0 0 13" stroke="url(#cfmGradFooter)" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="22.5" cy="9.5" r="2" fill="url(#cfmGradFooter)"/>
-          </svg>
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
+        <g filter="url(#fusionGlow)">
+          <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z" fill="url(#bar1Grad)" opacity="0.85"/>
+          <path class="shade-1" d="M8 56 V46 L9.5 46.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+          <path class="shade-1" d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,0.55)"/>
+          <path class="shade-1" d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,0.4)"/>
+          <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+          <path class="shade-2" d="M22 56 V34 L23.5 34.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+          <path class="shade-2" d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,0.55)"/>
+          <path class="shade-2" d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,0.4)"/>
+          <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z" fill="url(#bar3Grad)"/>
+          <path class="shade-3" d="M36 56 V20 L37.5 20.7 V56 Z" fill="rgba(255,255,255,0.5)"/>
+          <path class="shade-3" d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,0.6)"/>
+          <path class="shade-3" d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,0.4)"/>
+        </g>
+        <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+      </svg>
         </span>
         <span class="logo-word">CASH FLOW <em>MEDIA</em></span>
       </a>
