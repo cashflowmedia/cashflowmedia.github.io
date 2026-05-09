@@ -1892,6 +1892,39 @@ ul, ol { list-style: none; }
   .support-stack { bottom: 18px; right: 18px; gap: 10px; }
   .support-fab-circle { width: 52px; height: 52px; }
   .support-tooltip { display: none; }
+  .support-online { font-size: 9px; padding: 4px 8px; }
+}
+
+/* Small "Online 24/7" label below the floating contact buttons */
+.support-online {
+  display: inline-flex; align-items: center; gap: 6px;
+  align-self: center;
+  padding: 5px 10px;
+  margin-top: 4px;
+  background: rgba(8,11,9,0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(244,201,92,0.3);
+  border-radius: 100px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  animation: fabIn .8s 2s cubic-bezier(.2,.8,.2,1) backwards;
+}
+.support-online-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: livePulse 1.8s ease-out infinite;
+  flex-shrink: 0;
+}
+.support-online-text {
+  color: #F4C95C;
+  text-shadow: 0 0 5px rgba(244,201,92,0.4);
 }
 
 /* ========== CYCLING REVIEW BUBBLE (upper right) ========== */
