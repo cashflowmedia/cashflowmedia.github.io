@@ -372,6 +372,7 @@ ul, ol { list-style: none; }
   filter: drop-shadow(0 0 10px rgba(26,255,102,0.25));
   transition: transform .4s cubic-bezier(.2,.8,.2,1), filter .3s;
 }
+.logo-mark svg { width: 46px; height: 46px; }
 .nav-logo:hover .logo-mark {
   transform: rotate(-8deg) scale(1.05);
   filter: drop-shadow(0 0 18px rgba(26,255,102,0.5));
@@ -380,7 +381,7 @@ ul, ol { list-style: none; }
 .logo-word {
   font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 22px;
   letter-spacing: -0.015em;
   white-space: nowrap;
   background: linear-gradient(120deg, #F4C95C 0%, #FFE4A0 30%, #F4C95C 60%, #FFD480 100%);
@@ -390,8 +391,10 @@ ul, ol { list-style: none; }
   background-size: 250% 100%;
   animation: goldShimmer 5s linear infinite;
   filter:
-    drop-shadow(0 0 4px rgba(244,201,92,0.55))
-    drop-shadow(0 0 10px rgba(244,201,92,0.3))
+    drop-shadow(0 0 6px  rgba(244,201,92,0.7))
+    drop-shadow(0 0 14px rgba(244,201,92,0.45))
+    drop-shadow(0 0 28px rgba(244,201,92,0.25))
+    drop-shadow(0 0 50px rgba(244,201,92,0.12))
     drop-shadow(0 1px 2px rgba(0,0,0,0.4));
 }
 @keyframes goldShimmer {
@@ -399,21 +402,18 @@ ul, ol { list-style: none; }
   100% { background-position: 250% 50%; }
 }
 
-/* "media" — back to VT323 (digital/CRT) but much bigger + more spacing for readability */
+/* "media" — VT323 (digital/CRT), sized down to match CashFlow + softer glow */
 .logo-word em {
   display: inline-block;
   margin-left: 8px;
   font-family: 'VT323', 'Share Tech Mono', monospace;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.7em;
+  font-size: 1.4em;
   line-height: 0.85;
   letter-spacing: 0.1em;
   color: var(--green);
-  text-shadow:
-    0 0 4px rgba(26,255,102,0.75),
-    0 0 9px rgba(26,255,102,0.45),
-    0 0 18px rgba(26,255,102,0.22);
+  text-shadow: 0 0 3px rgba(26,255,102,0.4);
   animation: matrixFlicker 3.5s ease-in-out infinite;
   -webkit-text-fill-color: var(--green);
   background: none;
