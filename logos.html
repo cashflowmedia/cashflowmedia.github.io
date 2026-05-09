@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Logo 3D — Live Preview · Cash Flow Media</title>
+<title>Logo · M2 Cascade · Cash Flow Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -16,58 +16,7 @@
     padding: 60px 24px 80px;
     line-height: 1.5;
     min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
   }
-
-  /* =============== FIRE BG + EMBERS =============== */
-  .fire-bg, .ember-layer {
-    position: fixed; inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .fire-glow {
-    position: fixed;
-    bottom: -200px;
-    left: -10%; right: -10%;
-    height: 60vh;
-    background:
-      radial-gradient(ellipse at 25% 100%, rgba(255,80,20,0.35), transparent 60%),
-      radial-gradient(ellipse at 75% 100%, rgba(255,120,30,0.28), transparent 55%),
-      radial-gradient(ellipse at 50% 100%, rgba(255,160,40,0.18), transparent 70%);
-    filter: blur(40px);
-    animation: fireFlicker 4s ease-in-out infinite;
-    z-index: 0;
-    pointer-events: none;
-  }
-  @keyframes fireFlicker {
-    0%, 100% { opacity: 0.7; transform: scaleY(1) scaleX(1); }
-    33%      { opacity: 1;   transform: scaleY(1.06) scaleX(0.98); }
-    66%      { opacity: 0.85; transform: scaleY(0.95) scaleX(1.02); }
-  }
-  .ember-layer { overflow: hidden; }
-  .ember-layer span {
-    position: absolute;
-    bottom: -8px;
-    left: var(--x);
-    width: var(--w, 3px); height: var(--w, 3px);
-    border-radius: 50%;
-    background: radial-gradient(circle, #ffcc66 0%, #ff7722 50%, #cc3300 100%);
-    box-shadow: 0 0 6px rgba(255,140,40,0.85), 0 0 14px rgba(255,90,20,0.45);
-    opacity: 0;
-    animation: ember var(--d, 12s) ease-out infinite;
-    animation-delay: var(--del, 0s);
-    will-change: transform, opacity;
-  }
-  @keyframes ember {
-    0%   { transform: translate(0, 0) scale(1); opacity: 0; }
-    8%   { opacity: 1; }
-    50%  { transform: translate(20px, -45vh) scale(0.8); opacity: 0.85; }
-    80%  { opacity: 0.4; }
-    100% { transform: translate(-20px, -110vh) scale(0.2); opacity: 0; }
-  }
-
-  /* =============== PAGE =============== */
   h1 {
     text-align: center;
     font-family: 'Space Grotesk', sans-serif;
@@ -75,7 +24,6 @@
     font-weight: 700;
     margin-bottom: 12px;
     letter-spacing: -0.02em;
-    position: relative; z-index: 2;
   }
   .sub {
     text-align: center;
@@ -83,10 +31,10 @@
     max-width: 660px;
     margin: 0 auto 40px;
     font-size: 16px;
-    position: relative; z-index: 2;
   }
   .sub strong { color: #1aff66; }
 
+  /* ============ HERO CARD ============ */
   .hero-card {
     max-width: 640px;
     margin: 0 auto 56px;
@@ -95,9 +43,7 @@
     border-radius: 24px;
     padding: 48px 36px;
     text-align: center;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 80px rgba(255,100,30,0.06);
-    position: relative; z-index: 2;
-    backdrop-filter: blur(2px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
   }
   .hero-preview {
     background: #060808;
@@ -107,7 +53,6 @@
     border: 1px solid rgba(255,255,255,0.04);
     display: grid; place-items: center;
     min-height: 240px;
-    box-shadow: inset 0 -40px 80px rgba(255,80,20,0.08);
   }
   .hero-preview svg { width: 220px; height: 220px; overflow: visible; }
   .hero-name {
@@ -130,42 +75,132 @@
   }
   .hero-horiz span em { font-style: normal; color: #1aff66; margin-left: 4px; }
 
-  /* ============ EQ BAR ANIMATIONS ============ */
-  .eq-bar { transform-origin: bottom; transform-box: fill-box; }
-  .eq-1 { animation: eqPulse 1.4s ease-in-out infinite 0s; }
-  .eq-2 { animation: eqPulse 1.4s ease-in-out infinite -0.45s; }
-  .eq-3 { animation: eqPulse 1.4s ease-in-out infinite -0.85s; }
-  @keyframes eqPulse {
-    0%, 100% { transform: scaleY(0.82); filter: drop-shadow(0 0 4px rgba(26,255,102,0.5)); }
-    50%      { transform: scaleY(1.12); filter: drop-shadow(0 0 18px rgba(26,255,102,0.95)); }
+  /* ============ M2 CASCADE BARS ============ */
+  .cas {
+    transform-origin: bottom;
+    transform-box: fill-box;
+    animation: cascadeBar 3s ease-out infinite;
+    animation-fill-mode: backwards;
+  }
+  .cas-1 { animation-delay: 0s; }
+  .cas-2 { animation-delay: 0.18s; }
+  .cas-3 { animation-delay: 0.36s; }
+  @keyframes cascadeBar {
+    0%   { transform: scaleY(0); }
+    18%  { transform: scaleY(1.06); }
+    25%  { transform: scaleY(1); }
+    88%  { transform: scaleY(1); }
+    100% { transform: scaleY(0); }
   }
 
-  .dollar-pulse {
+  /* $ pops in after bars cascade up */
+  .dollar-cascade {
     transform-origin: 41.5px 32px;
     transform-box: fill-box;
-    animation: dollarPulse 1.4s ease-in-out infinite -0.85s;
+    animation: dollarCascade 3s ease-in-out infinite;
+    animation-fill-mode: backwards;
   }
-  @keyframes dollarPulse {
-    0%, 100% { transform: scale(0.94); }
-    50%      { transform: scale(1.1); }
+  @keyframes dollarCascade {
+    0%, 30%   { opacity: 0; transform: scale(0.4); }
+    42%       { opacity: 1; transform: scale(1.15); }
+    50%, 85%  { opacity: 1; transform: scale(1); }
+    100%      { opacity: 0; transform: scale(0.4); }
   }
 
-  /* sparks */
-  .spark-1 { animation: sparkle 2.4s ease-in-out infinite; }
-  .spark-2 { animation: sparkle 2.4s ease-in-out infinite -0.8s; }
-  @keyframes sparkle {
-    0%, 100% { opacity: 0.3; transform: scale(0.7); }
-    50%      { opacity: 1;   transform: scale(1.3); }
+  /* ============ FIRE/EMBER INSIDE LOGO ============ */
+  .fire-base {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: fireFlick 2.4s ease-in-out infinite;
   }
+  @keyframes fireFlick {
+    0%, 100% { opacity: 0.55; transform: scaleX(1); }
+    50%      { opacity: 0.85; transform: scaleX(1.12); }
+  }
+  .ember {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: emberRise 4s ease-out infinite;
+    filter: drop-shadow(0 0 1.5px #ff8833);
+  }
+  @keyframes emberRise {
+    0%   { transform: translate(0,0) scale(1); opacity: 0; }
+    15%  { opacity: 1; }
+    50%  { transform: translate(2px,-30px) scale(0.7); opacity: 0.7; }
+    100% { transform: translate(-2px,-58px) scale(0.2); opacity: 0; }
+  }
+
+  /* ============ COLOR PICKER ============ */
+  .colors-wrap {
+    max-width: 980px; margin: 0 auto 56px;
+  }
+  .colors-wrap h2 {
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .colors-wrap > p {
+    text-align: center; color: #a8b2ad; font-size: 14px;
+    max-width: 520px; margin: 0 auto 30px;
+  }
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 800px) { .color-grid { grid-template-columns: repeat(2, 1fr); } }
+  .color-card {
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 22px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+    text-align: center;
+    transition: transform .25s, border-color .25s;
+    position: relative;
+  }
+  .color-card.recommended {
+    border-color: rgba(26,255,102,0.4);
+    box-shadow: 0 0 40px rgba(26,255,102,0.08);
+  }
+  .color-card.recommended::before {
+    content: 'PICK';
+    position: absolute;
+    top: -10px; left: 50%; transform: translateX(-50%);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em;
+    background: #1aff66; color: #001a0e;
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .color-card:hover { transform: translateY(-4px); border-color: rgba(26,255,102,0.4); }
+  .color-swatches {
+    display: flex; gap: 0;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .color-swatches > div { flex: 1; }
+  .color-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .color-hex {
+    font-family: monospace;
+    font-size: 12px;
+    color: #1aff66;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .color-desc { color: #a8b2ad; font-size: 12px; line-height: 1.4; }
 
   /* ============ IDEAS GRID ============ */
-  .ideas-wrap {
-    max-width: 980px; margin: 0 auto;
-    position: relative; z-index: 2;
-  }
-  .ideas-section {
-    margin-bottom: 36px;
-  }
+  .ideas-wrap { max-width: 980px; margin: 0 auto; }
+  .ideas-section { margin-bottom: 36px; }
   .ideas-section h2 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px; font-weight: 600;
@@ -176,11 +211,7 @@
     padding-bottom: 12px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .ideas-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
+  .ideas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   @media (max-width: 700px) { .ideas-grid { grid-template-columns: 1fr; } }
   .idea {
     padding: 16px 18px;
@@ -189,11 +220,7 @@
     border-radius: 12px;
     transition: transform .25s, border-color .25s, background .25s;
   }
-  .idea:hover {
-    transform: translateY(-3px);
-    border-color: rgba(26,255,102,0.35);
-    background: linear-gradient(180deg, rgba(26,255,102,0.04), rgba(255,255,255,0.005));
-  }
+  .idea:hover { transform: translateY(-3px); border-color: rgba(26,255,102,0.35); background: linear-gradient(180deg, rgba(26,255,102,0.04), rgba(255,255,255,0.005)); }
   .idea-code {
     display: inline-block;
     font-family: 'Space Grotesk', sans-serif;
@@ -201,42 +228,17 @@
     letter-spacing: 0.15em;
     color: #1aff66;
     background: rgba(26,255,102,0.1);
-    padding: 3px 8px;
-    border-radius: 6px;
+    padding: 3px 8px; border-radius: 6px;
     margin-bottom: 8px;
   }
-  .idea-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 15px; font-weight: 600;
-    margin-bottom: 4px;
-  }
+  .idea-name { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
   .idea-desc { color: #a8b2ad; font-size: 13px; line-height: 1.45; }
 </style>
 </head>
 <body>
 
-<!-- Fire glow + embers -->
-<div class="fire-glow"></div>
-<div class="ember-layer">
-  <span style="--x:6%;--d:9s;--del:0s;--w:3px"></span>
-  <span style="--x:14%;--d:13s;--del:-2s;--w:2px"></span>
-  <span style="--x:22%;--d:11s;--del:-5s;--w:4px"></span>
-  <span style="--x:31%;--d:14s;--del:-1s;--w:2px"></span>
-  <span style="--x:39%;--d:10s;--del:-7s;--w:3px"></span>
-  <span style="--x:48%;--d:12s;--del:-3s;--w:2px"></span>
-  <span style="--x:57%;--d:15s;--del:-8s;--w:4px"></span>
-  <span style="--x:66%;--d:11s;--del:-4s;--w:3px"></span>
-  <span style="--x:74%;--d:13s;--del:-6s;--w:2px"></span>
-  <span style="--x:82%;--d:9s;--del:-2s;--w:3px"></span>
-  <span style="--x:90%;--d:14s;--del:-9s;--w:2px"></span>
-  <span style="--x:96%;--d:10s;--del:-5s;--w:4px"></span>
-  <span style="--x:11%;--d:16s;--del:-11s;--w:2px"></span>
-  <span style="--x:43%;--d:17s;--del:-13s;--w:2px"></span>
-  <span style="--x:78%;--d:18s;--del:-10s;--w:3px"></span>
-</div>
-
-<h1>Logo 3D · Live Preview</h1>
-<p class="sub">EQ-style pulsing bars · synced <strong>$</strong> pulse · subtle fire glow + drifting embers behind. Scroll down for more idea menus.</p>
+<h1>M2 Cascade · Fire-in-Logo</h1>
+<p class="sub">Bars rise in sequence (small → medium → tallest), <strong>$</strong> pops in once they're up, then everything resets and loops. Fire/embers now live <strong>inside</strong> the logo SVG — they travel wherever the logo goes.</p>
 
 <!-- Defs once -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -246,6 +248,11 @@
       <stop offset="0.45" stop-color="#1aff66"/>
       <stop offset="1" stop-color="#ddffcc"/>
     </linearGradient>
+    <radialGradient id="fireGrad" cx="50%" cy="100%" r="50%">
+      <stop offset="0" stop-color="#ff7722" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#ff5511" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#cc2200" stop-opacity="0"/>
+    </radialGradient>
     <filter id="fusionGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="1.8" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -257,33 +264,51 @@
 <div class="hero-card">
   <div class="hero-preview">
     <svg viewBox="0 0 64 64" fill="none">
+      <!-- Fire glow at base -->
+      <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+
+      <!-- Embers (drift up from baseline) -->
+      <circle class="ember" cx="10" cy="56" r="0.7" fill="#ffaa55" style="animation-delay: 0s"/>
+      <circle class="ember" cx="20" cy="56" r="0.5" fill="#ff8833" style="animation-delay: -0.8s"/>
+      <circle class="ember" cx="30" cy="56" r="0.8" fill="#ffcc66" style="animation-delay: -1.6s"/>
+      <circle class="ember" cx="42" cy="56" r="0.6" fill="#ff7722" style="animation-delay: -2.4s"/>
+      <circle class="ember" cx="52" cy="56" r="0.7" fill="#ffaa55" style="animation-delay: -3.2s"/>
+      <circle class="ember" cx="58" cy="56" r="0.5" fill="#ff9944" style="animation-delay: -1.2s"/>
+      <circle class="ember" cx="6"  cy="56" r="0.6" fill="#ffaa55" style="animation-delay: -2.8s"/>
+
+      <!-- Baseline -->
       <line x1="4" y1="58" x2="60" y2="58" stroke="url(#g3d)" stroke-width="1.5" opacity="0.5"/>
+
+      <!-- Cascading bars -->
       <g filter="url(#fusionGlow)">
-        <path d="M8 56 V46 L19 38 V56 Z"  fill="url(#g3d)" opacity="0.55" class="eq-bar eq-1"/>
-        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.78" class="eq-bar eq-2"/>
-        <path d="M36 56 V20 L47 8 V56 Z"  fill="url(#g3d)" class="eq-bar eq-3"/>
+        <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#g3d)" opacity="0.6"/>
+        <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.78"/>
+        <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#g3d)"/>
       </g>
-      <text class="dollar-pulse" x="41.5" y="44" text-anchor="middle"
+
+      <!-- $ pops in last -->
+      <text class="dollar-cascade" x="41.5" y="44" text-anchor="middle"
             font-family="Inter, system-ui, sans-serif"
             font-size="28" font-weight="900"
             fill="#001a0e"
             style="letter-spacing:-1px;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))">$</text>
-      <circle class="spark-1" cx="6"  cy="14" r="1.4" fill="#66ff88"/>
-      <circle class="spark-2" cx="56" cy="42" r="1.1" fill="#1aff66"/>
     </svg>
   </div>
 
-  <div class="hero-name">3D · FUSION ALIVE</div>
-  <div class="hero-desc">All 3 bars pulse on a stagger like an audio meter. The $ pulses in sync with the tallest bar.</div>
+  <div class="hero-name">3D · M2 CASCADE</div>
+  <div class="hero-desc">Bars rise in sequence → $ stamps in → all reset → loop (3s). Fire + embers live inside the logo.</div>
 
   <div class="hero-horiz">
     <svg viewBox="0 0 64 64" fill="none">
+      <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+      <circle class="ember" cx="20" cy="56" r="0.5" fill="#ff8833" style="animation-delay: -0.8s"/>
+      <circle class="ember" cx="42" cy="56" r="0.6" fill="#ff7722" style="animation-delay: -2.4s"/>
       <g filter="url(#fusionGlow)">
-        <path d="M8 56 V46 L19 38 V56 Z"  fill="url(#g3d)" opacity="0.55" class="eq-bar eq-1"/>
-        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.78" class="eq-bar eq-2"/>
-        <path d="M36 56 V20 L47 8 V56 Z"  fill="url(#g3d)" class="eq-bar eq-3"/>
+        <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#g3d)" opacity="0.6"/>
+        <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.78"/>
+        <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#g3d)"/>
       </g>
-      <text class="dollar-pulse" x="41.5" y="44" text-anchor="middle"
+      <text class="dollar-cascade" x="41.5" y="44" text-anchor="middle"
             font-family="Inter, system-ui, sans-serif"
             font-size="28" font-weight="900"
             fill="#001a0e"
@@ -293,44 +318,106 @@
   </div>
 </div>
 
-<!-- IDEAS MENU -->
+<!-- COLOR PICKER -->
+<div class="colors-wrap">
+  <h2>Best color to pair with green?</h2>
+  <p>Each swatch shows the green next to the candidate accent. Reply with the code.</p>
+
+  <div class="color-grid">
+    <div class="color-card recommended">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#FFB400"></div>
+      </div>
+      <div class="color-name">Gold</div>
+      <div class="color-hex">C1 · #FFB400</div>
+      <div class="color-desc">Money + premium. Pairs with the warm fire/embers we just added. Use for elite tiers (Onyx, Agency Unlimited).</div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#FF6B35"></div>
+      </div>
+      <div class="color-name">Coral</div>
+      <div class="color-hex">C2 · #FF6B35</div>
+      <div class="color-desc">Warm energetic accent. Reinforces the ember palette. Bold for "hot" callouts.</div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#2563EB"></div>
+      </div>
+      <div class="color-name">Royal Blue</div>
+      <div class="color-hex">C3 · #2563EB</div>
+      <div class="color-desc">Trust + finance. Cool contrast to green's warmth. Banking vibe.</div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#E91E63"></div>
+      </div>
+      <div class="color-name">Magenta</div>
+      <div class="color-hex">C4 · #E91E63</div>
+      <div class="color-desc">Modern fintech edge. High visual punch for featured plans / new badges.</div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#8B5CF6"></div>
+      </div>
+      <div class="color-name">Violet</div>
+      <div class="color-hex">C5 · #8B5CF6</div>
+      <div class="color-desc">Premium SaaS feel. Think Stripe, Linear. Adds maturity.</div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#E8DCB4"></div>
+      </div>
+      <div class="color-name">Champagne</div>
+      <div class="color-hex">C6 · #E8DCB4</div>
+      <div class="color-desc">Soft warm cream. Quiet luxury. Less aggressive than gold.</div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#00E5FF"></div>
+      </div>
+      <div class="color-name">Cyan</div>
+      <div class="color-hex">C7 · #00E5FF</div>
+      <div class="color-desc">Tech / futuristic. Bright contrast. Risk: too "crypto-bro."</div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatches">
+        <div style="background:#1aff66"></div>
+        <div style="background:#FFFFFF"></div>
+      </div>
+      <div class="color-name">Pure White</div>
+      <div class="color-hex">C8 · #FFFFFF</div>
+      <div class="color-desc">Maximum clarity. Used by Cash App, Stripe. Clean modern feel.</div>
+    </div>
+  </div>
+</div>
+
+<!-- IDEAS MENU (still here from before) -->
 <div class="ideas-wrap">
 
   <div class="ideas-section">
     <h2>Bar motion alternatives</h2>
     <div class="ideas-grid">
-      <div class="idea"><span class="idea-code">M1</span><div class="idea-name">EQ pulse (current)</div><div class="idea-desc">3 bars bouncing on a stagger like an audio meter.</div></div>
-      <div class="idea"><span class="idea-code">M2</span><div class="idea-name">Cascade rise</div><div class="idea-desc">Bars rise from baseline one after another, then settle. Loops every 3s.</div></div>
-      <div class="idea"><span class="idea-code">M3</span><div class="idea-name">Heartbeat</div><div class="idea-desc">All bars pulse together once, pause, pulse twice. Living, calm.</div></div>
+      <div class="idea"><span class="idea-code">M1</span><div class="idea-name">EQ pulse</div><div class="idea-desc">3 bars bouncing on a stagger like an audio meter.</div></div>
+      <div class="idea"><span class="idea-code">M2</span><div class="idea-name">Cascade rise (current)</div><div class="idea-desc">Bars rise from baseline in sequence, then reset. 3s loop.</div></div>
+      <div class="idea"><span class="idea-code">M3</span><div class="idea-name">Heartbeat</div><div class="idea-desc">All bars pulse together once, pause, pulse twice.</div></div>
       <div class="idea"><span class="idea-code">M4</span><div class="idea-name">Wave</div><div class="idea-desc">Heights ripple left-to-right like a wave passing through.</div></div>
       <div class="idea"><span class="idea-code">M5</span><div class="idea-name">Random ticker</div><div class="idea-desc">Heights flicker subtly random — like a real spend dashboard.</div></div>
-      <div class="idea"><span class="idea-code">M6</span><div class="idea-name">Build &amp; hold</div><div class="idea-desc">Bars grow up from zero on page load, then stay still. Cinematic intro.</div></div>
-    </div>
-  </div>
-
-  <div class="ideas-section">
-    <h2>$ effects</h2>
-    <div class="ideas-grid">
-      <div class="idea"><span class="idea-code">D1</span><div class="idea-name">Pulse with bars (current)</div><div class="idea-desc">$ scales 0.94 ↔ 1.10 in sync with tallest bar.</div></div>
-      <div class="idea"><span class="idea-code">D2</span><div class="idea-name">Counter-pulse</div><div class="idea-desc">$ shrinks when bar grows, grows when bar settles. Tension.</div></div>
-      <div class="idea"><span class="idea-code">D3</span><div class="idea-name">Color shift</div><div class="idea-desc">$ cycles green → gold → green slowly. Money tone.</div></div>
-      <div class="idea"><span class="idea-code">D4</span><div class="idea-name">Sheen pass</div><div class="idea-desc">A light reflection sweeps across the $ every 4s.</div></div>
-      <div class="idea"><span class="idea-code">D5</span><div class="idea-name">Tilt sway</div><div class="idea-desc">$ rocks ±3° gently like a coin spinning slow.</div></div>
-      <div class="idea"><span class="idea-code">D6</span><div class="idea-name">Stamp drop</div><div class="idea-desc">$ scales in from 1.6 → 1.0 every 4s, like getting stamped.</div></div>
-    </div>
-  </div>
-
-  <div class="ideas-section">
-    <h2>Background atmospheres (alternatives or additions)</h2>
-    <div class="ideas-grid">
-      <div class="idea"><span class="idea-code">B1</span><div class="idea-name">Fire + embers (current)</div><div class="idea-desc">Warm bottom glow + small embers drifting up. "Heat."</div></div>
-      <div class="idea"><span class="idea-code">B2</span><div class="idea-name">Money rain</div><div class="idea-desc">Small $ / 💵 emojis falling slowly behind the content.</div></div>
-      <div class="idea"><span class="idea-code">B3</span><div class="idea-name">Aurora</div><div class="idea-desc">Soft green northern-lights gradient slowly rotating. Calm.</div></div>
-      <div class="idea"><span class="idea-code">B4</span><div class="idea-name">Constellation</div><div class="idea-desc">Tiny stars + slow lines drawing between them. Tech.</div></div>
-      <div class="idea"><span class="idea-code">B5</span><div class="idea-name">Light rays</div><div class="idea-desc">Soft god-rays from top corner. Premium.</div></div>
-      <div class="idea"><span class="idea-code">B6</span><div class="idea-name">Smoke wisps</div><div class="idea-desc">Slow drifting smoke at the edges. Cinematic.</div></div>
-      <div class="idea"><span class="idea-code">B7</span><div class="idea-name">Pulse grid</div><div class="idea-desc">Faint dot grid where dots pulse outward in waves.</div></div>
-      <div class="idea"><span class="idea-code">B8</span><div class="idea-name">Cursor heat</div><div class="idea-desc">Warm glow follows your cursor — feels alive.</div></div>
+      <div class="idea"><span class="idea-code">M6</span><div class="idea-name">Build &amp; hold</div><div class="idea-desc">Bars grow up from zero on page load, then stay still.</div></div>
     </div>
   </div>
 
@@ -341,8 +428,8 @@
       <div class="idea"><span class="idea-code">E2</span><div class="idea-name">Cursor trail</div><div class="idea-desc">Faint green particles trail behind your cursor.</div></div>
       <div class="idea"><span class="idea-code">E3</span><div class="idea-name">Confetti on first visit</div><div class="idea-desc">Tasteful 1-second burst when site first loads.</div></div>
       <div class="idea"><span class="idea-code">E4</span><div class="idea-name">Number reveal counters</div><div class="idea-desc">All stats count up on scroll into view (already partial).</div></div>
-      <div class="idea"><span class="idea-code">E5</span><div class="idea-name">Section dividers</div><div class="idea-desc">Subtle wave/diagonal between sections so transitions feel intentional.</div></div>
-      <div class="idea"><span class="idea-code">E6</span><div class="idea-name">Sticky bottom CTA</div><div class="idea-desc">Always-visible "Talk to us → Telegram" bar at the bottom.</div></div>
+      <div class="idea"><span class="idea-code">E5</span><div class="idea-name">Section dividers</div><div class="idea-desc">Subtle wave/diagonal between sections.</div></div>
+      <div class="idea"><span class="idea-code">E6</span><div class="idea-name">Sticky bottom CTA</div><div class="idea-desc">Always-visible "Talk to us → Telegram" bar at bottom.</div></div>
       <div class="idea"><span class="idea-code">E7</span><div class="idea-name">Page transitions</div><div class="idea-desc">Smooth fade between index → pricing → contact.</div></div>
       <div class="idea"><span class="idea-code">E8</span><div class="idea-name">Scroll progress bar</div><div class="idea-desc">Thin green bar at top showing % of page scrolled.</div></div>
     </div>
@@ -350,7 +437,7 @@
 
 </div>
 
-<p class="sub" style="margin-top:60px">Reply with codes (e.g. <strong>M1, D3, B3, E1, E6</strong>) — or <strong>ship it</strong> to wire current logo (M1+D1+B1) sitewide.</p>
+<p class="sub" style="margin-top:60px">Reply <strong>ship it C1</strong> (or whatever color code) to wire the logo + accent color sitewide. Optionally append microeffect codes like <strong>ship it C1 + E6, E8</strong>.</p>
 
 </body>
 </html>
