@@ -1736,6 +1736,20 @@ ul, ol { list-style: none; }
   font-size: 13px;
   letter-spacing: 3px;
   filter: drop-shadow(0 0 4px rgba(244,201,92,0.4));
+  margin-bottom: 4px;
+}
+.review-content {
+  /* Animated container — fades + slides between reviews */
+  will-change: opacity, transform;
+}
+.review-content.swap {
+  animation: reviewSwap 0.9s cubic-bezier(.4, 0, .2, 1);
+}
+@keyframes reviewSwap {
+  0%   { opacity: 1; transform: translateY(0); filter: blur(0); }
+  40%  { opacity: 0; transform: translateY(-10px); filter: blur(2px); }
+  50%  { opacity: 0; transform: translateY(10px); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 .review-text {
   font-size: 12.5px;

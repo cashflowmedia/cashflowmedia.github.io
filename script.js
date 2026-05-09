@@ -230,28 +230,35 @@ if (reviewBubble) {
     { text: '"Was burning $4k/day. They held the line through three policy waves last quarter."', author: 'Growth Lead · Mobile' },
     { text: '"I tried being cheap. Cost me $40k in a week. Cash Flow paid for itself the day I switched."', author: 'Solo Buyer · Coaching' }
   ];
+  const content = reviewBubble.querySelector('.review-content');
   const textEl = reviewBubble.querySelector('.review-text');
   const authorEl = reviewBubble.querySelector('.review-author');
   let idx = 0;
 
-  function show() {
-    const r = reviews[idx];
+  function setReview(r) {
     textEl.textContent = r.text;
     authorEl.textContent = '— ' + r.author;
+  }
+  function showFirst() {
+    setReview(reviews[idx]);
     reviewBubble.classList.add('is-visible');
   }
-  function hide() { reviewBubble.classList.remove('is-visible'); }
-
-  // Initial show after page settles
-  setTimeout(show, 2800);
-  // Cycle every 7s
-  setInterval(() => {
-    hide();
+  function swap() {
+    // Cancel any in-flight animation, restart cleanly
+    content.classList.remove('swap');
+    void content.offsetWidth; // force reflow so animation re-triggers
+    content.classList.add('swap');
+    // Swap the text at the midpoint of the animation (when content is invisible)
     setTimeout(() => {
       idx = (idx + 1) % reviews.length;
-      show();
-    }, 600);
-  }, 7000);
+      setReview(reviews[idx]);
+    }, 450);
+  }
+
+  // Initial appearance after page settles
+  setTimeout(showFirst, 2800);
+  // Cycle every 7s with smooth blur+slide crossfade
+  setInterval(swap, 7000);
 }
 
 /* ---------- Side ScrollSpy nav ---------- */
