@@ -168,15 +168,16 @@
   </div>
 </section>
 
-<!-- ONE-TIME BUNDLES (now first) -->
-<section class="section pricing-section" id="onetime">
+<!-- ONE-TIME BUNDLES (matches home layout: 5-card grid) -->
+<section class="section section-alt" id="onetime">
   <div class="container">
-    <div class="pricing-band-head" data-anim="fade-up">
-      <h2>One-Time Bundles</h2>
-      <p>Buy accounts outright. Best for testing, short campaigns, or stocking up.</p>
+    <div class="section-head" data-anim="fade-up">
+      <span class="eyebrow"><span class="dot"></span>One-Time Bundles</span>
+      <h2 class="section-title">Buy accounts <span class="gradient-text">outright</span></h2>
+      <p class="section-sub">Best for testing, short campaigns, or stocking up. No subscription required.</p>
     </div>
 
-    <div class="pricing-grid pricing-grid-3">
+    <div class="pricing-grid pricing-grid-5">
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
           <h3>Profile FB</h3>
@@ -222,21 +223,54 @@
         </ul>
         <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy BM10 Instant</span></a>
       </div>
+
+      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.25">
+        <div class="price-tag price-tag-elite">Flagship</div>
+        <div class="price-head">
+          <h3>Onyx BM2500</h3>
+          <p>Distributed network, auto-replacement.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">15,000</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Up to 2,500 distributed accounts</li>
+          <li><span class="check">✓</span> Auto-replacement 5–10 min</li>
+          <li><span class="check">✓</span> No single point of failure</li>
+          <li><span class="check">✓</span> Dedicated infra manager</li>
+        </ul>
+        <a href="index.html#flagship" class="btn btn-primary btn-block magnetic"><span>Learn More</span></a>
+      </div>
+
+      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3" id="custom">
+        <div class="price-tag price-tag-elite">Custom</div>
+        <div class="price-head">
+          <h3>Custom Enterprise</h3>
+          <p>Built around your vertical and scale.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">Custom</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Custom account architecture</li>
+          <li><span class="check">✓</span> Dedicated sourcing strategy</li>
+          <li><span class="check">✓</span> Tailored support SLA</li>
+          <li><span class="check">✓</span> Vertical-specific compliance</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Request Quote</span></a>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="section-divider" aria-hidden="true"><span></span></div>
 
-<!-- SUBSCRIPTIONS (now second) -->
-<section class="section section-alt pricing-section" id="subscriptions">
+<!-- MONTHLY SUBSCRIPTIONS (matches home layout: 4-card grid) -->
+<section class="section" id="subscriptions">
   <div class="container">
-    <div class="pricing-band-head" data-anim="fade-up">
-      <h2>Monthly Subscriptions</h2>
-      <p>Ongoing access with unlimited replacements and 24/7 support.</p>
+    <div class="section-head" data-anim="fade-up">
+      <span class="eyebrow"><span class="dot"></span>Monthly Subscriptions</span>
+      <h2 class="section-title">Ongoing access with <span class="gradient-text">unlimited replacements</span></h2>
+      <p class="section-sub">For agencies and operators running real volume. 24/7 support included.</p>
     </div>
 
-    <div class="pricing-grid pricing-grid-3">
+    <div class="pricing-grid">
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
           <h3>Solo</h3>
@@ -285,64 +319,13 @@
         </ul>
         <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Choose Top Agency</span></a>
       </div>
-    </div>
-  </div>
-</section>
 
-<div class="section-divider" aria-hidden="true"><span></span></div>
-
-<!-- CUSTOM ENTERPRISE -->
-<section class="section section-alt" id="custom">
-  <div class="container">
-    <div class="custom-card" data-anim="fade-up">
-      <div class="custom-left">
-        <span class="eyebrow"><span class="dot"></span>Custom Enterprise</span>
-        <h2>Need something <span class="gradient-text">built around you?</span></h2>
-        <p>Custom account architecture, dedicated sourcing, tailored support SLAs, and vertical-specific compliance — designed around your spend, scale, and offer.</p>
-      </div>
-      <div class="custom-right">
-        <ul class="price-feats">
-          <li><span class="check">✓</span> Custom account architecture</li>
-          <li><span class="check">✓</span> Dedicated sourcing strategy</li>
-          <li><span class="check">✓</span> Tailored support SLA</li>
-          <li><span class="check">✓</span> Vertical-specific compliance</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary btn-lg magnetic"><span>Request Quote</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"><span></span></div>
-
-<!-- FLAGSHIP TIERS -->
-<section class="section pricing-section" id="flagship-tiers">
-  <div class="container">
-    <div class="pricing-band-head" data-anim="fade-up">
-      <h2>Flagship Infrastructure</h2>
-      <p>Top-tier offerings for operators who can't afford to pause.</p>
-    </div>
-
-    <div class="flagship-grid">
-      <div class="flagship-tier" data-anim="fade-up">
-        <div class="price-tag price-tag-elite">Distributed Pool</div>
-        <h3>Onyx BM2500</h3>
-        <p class="flagship-tier-sub">A private 2,500-account network with auto-replacement in 5–10 minutes.</p>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">15,000</span><span class="price-period">one-time</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> Up to 2,500 distributed accounts</li>
-          <li><span class="check">✓</span> Auto-replacement 5–10 minutes</li>
-          <li><span class="check">✓</span> No single point of failure</li>
-          <li><span class="check">✓</span> Dedicated infrastructure manager</li>
-          <li><span class="check">✓</span> Vertical-aware sourcing</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Get Onyx BM2500</span></a>
-      </div>
-
-      <div class="flagship-tier" data-anim="fade-up" data-delay="0.1">
-        <div class="price-tag price-tag-elite">Elite Subscription</div>
-        <h3>Agency Unlimited</h3>
-        <p class="flagship-tier-sub">Unlimited accounts &amp; BMs for top agencies and high-volume operators.</p>
+      <div class="price-card price-card-elite" data-anim="fade-up" data-delay="0.3">
+        <div class="price-tag price-tag-elite">Elite</div>
+        <div class="price-head">
+          <h3>Agency Unlimited</h3>
+          <p>Unlimited infrastructure for top operators.</p>
+        </div>
         <div class="price-num"><span class="price-currency">$</span><span class="price-val">35,000</span><span class="price-period">/mo</span></div>
         <ul class="price-feats">
           <li><span class="check">✓</span> Unlimited accounts &amp; BMs</li>
@@ -351,7 +334,7 @@
           <li><span class="check">✓</span> Custom vertical strategy</li>
           <li><span class="check">✓</span> Direct-line escalation</li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Get Agency Unlimited</span></a>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Get Agency Unlimited</span></a>
       </div>
     </div>
   </div>
