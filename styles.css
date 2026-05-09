@@ -379,6 +379,8 @@ ul, ol { list-style: none; }
 }
 /* "CashFlow" — gold gradient with shimmer, premium display font */
 .logo-word {
+  display: inline-flex;
+  align-items: baseline;
   font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
   font-weight: 800;
   font-size: 22px;
@@ -410,7 +412,7 @@ ul, ol { list-style: none; }
   font-style: normal;
   font-weight: 400;
   font-size: 1.4em;
-  line-height: 0.85;
+  line-height: 1;
   letter-spacing: 0.1em;
   color: var(--green);
   text-shadow:
@@ -421,7 +423,7 @@ ul, ol { list-style: none; }
   -webkit-text-fill-color: var(--green);
   background: none;
   filter: none;
-  vertical-align: -2px;
+  align-self: baseline;
 }
 @keyframes matrixFlicker {
   0%, 88%, 100% { opacity: 1; }
