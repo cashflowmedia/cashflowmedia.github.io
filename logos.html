@@ -89,15 +89,15 @@
     35%, 55% { transform: scaleY(1.05); }
   }
 
-  /* $ always visible, very subtle pulse from its own center */
+  /* $ always visible, smooth continuous swell from its own center */
   .dollar-soft {
     transform-origin: center;
     transform-box: fill-box;
-    animation: dollarSoft 3.2s ease-in-out infinite 0.44s;
+    animation: dollarSoft 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.44s;
   }
   @keyframes dollarSoft {
     0%, 100% { transform: scale(0.99); filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)); }
-    40%, 55% { transform: scale(1.03); filter: drop-shadow(0 0 5px #F4C95C) drop-shadow(0 1px 2px rgba(0,0,0,0.3)); }
+    50%      { transform: scale(1.06); filter: drop-shadow(0 0 6px #F4C95C) drop-shadow(0 1px 2px rgba(0,0,0,0.3)); }
   }
 
   /* Honey gold fire base */
@@ -245,9 +245,6 @@
       <circle class="ember" cx="52" cy="56" r="0.7" fill="#F4C95C" style="animation-delay: -3.6s"/>
       <circle class="ember" cx="58" cy="56" r="0.5" fill="#FFD480" style="animation-delay: -1.4s"/>
       <circle class="ember" cx="6"  cy="56" r="0.6" fill="#E0B040" style="animation-delay: -3.2s"/>
-
-      <!-- Baseline -->
-      <line x1="4" y1="58" x2="60" y2="58" stroke="#F4C95C" stroke-width="1.2" opacity="0.45"/>
 
       <!-- Multicolor cascading bars -->
       <g filter="url(#fusionGlow)">
