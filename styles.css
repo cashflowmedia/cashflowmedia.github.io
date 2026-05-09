@@ -430,14 +430,14 @@ ul, ol { list-style: none; }
   font-size: 1.55em;
   line-height: 1;
   letter-spacing: 0.14em;
-  color: #00ff55;
+  color: var(--green);
   text-shadow:
-    0 0 1px  #1aff66,
-    0 0 2px  #00ff66,
-    0 0 4px  rgba(26,255,102,1),
-    0 0 8px  rgba(26,255,102,0.85);
+    0 0 3px  rgba(26,255,102,1),
+    0 0 8px  rgba(26,255,102,0.7),
+    0 0 16px rgba(26,255,102,0.45),
+    0 0 32px rgba(26,255,102,0.22);
   animation: matrixFlicker 3.5s ease-in-out infinite;
-  -webkit-text-fill-color: #00ff55;
+  -webkit-text-fill-color: var(--green);
   background: none;
   filter: none;
   align-self: baseline;
@@ -520,17 +520,15 @@ ul, ol { list-style: none; }
   animation: gradientShift 6s linear infinite;
 }
 
-/* "Media" within a heading — solid green with VERY strong glow (matches wordmark vibe) */
+/* "Media" within a heading — tight halo, intensely saturated green */
 .heading-media {
-  color: #b8ffce;
+  color: #00ff55;
   text-shadow:
-    0 0 2px  rgba(180,255,210,1),
+    0 0 1px  #1aff66,
+    0 0 3px  #00ff66,
     0 0 6px  rgba(26,255,102,1),
-    0 0 14px rgba(26,255,102,0.95),
-    0 0 28px rgba(26,255,102,0.8),
-    0 0 56px rgba(26,255,102,0.55),
-    0 0 100px rgba(26,255,102,0.35),
-    0 0 160px rgba(26,255,102,0.2);
+    0 0 14px rgba(26,255,102,0.85),
+    0 0 28px rgba(26,255,102,0.4);
 }
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
