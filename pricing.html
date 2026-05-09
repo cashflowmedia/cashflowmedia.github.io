@@ -16,7 +16,7 @@
 
 <!-- Custom cursor -->
 <div class="cursor" id="cursor"></div>
-<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-dot" id="cursor-dot">$</div>
 
 <!-- Background -->
 <div class="bg-fx" aria-hidden="true">
@@ -24,11 +24,56 @@
   <div class="bg-glow bg-glow-2"></div>
 </div>
 
-<!-- Loader -->
+<!-- Shared SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bar1Grad" x1="0" y1="60" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#006622"/><stop offset="1" stop-color="#1aff66"/>
+    </linearGradient>
+    <linearGradient id="bar2Grad" x1="0" y1="60" x2="0" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#008833"/><stop offset="0.6" stop-color="#1aff66"/><stop offset="1" stop-color="#aaff99"/>
+    </linearGradient>
+    <linearGradient id="bar3Grad" x1="0" y1="60" x2="0" y2="6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#008833"/><stop offset="0.45" stop-color="#1aff66"/><stop offset="0.78" stop-color="#aaff99"/><stop offset="1" stop-color="#F4C95C"/>
+    </linearGradient>
+    <radialGradient id="fireGrad" cx="50%" cy="100%" r="60%">
+      <stop offset="0" stop-color="#F4C95C" stop-opacity="0.75"/>
+      <stop offset="0.5" stop-color="#D49A30" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#604016" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fusionGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+</svg>
+
+<!-- Loader (uses CFM logo) -->
 <div class="loader" id="loader">
   <div class="loader-inner">
+    <svg class="loader-logo" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <ellipse cx="32" cy="59" rx="22" ry="2" fill="rgba(0,0,0,0.6)" filter="url(#fusionGlow)"/>
+      <ellipse class="fire-base" cx="32" cy="60" rx="28" ry="6" fill="url(#fireGrad)"/>
+      <circle class="ember" cx="14" cy="56" r="0.8" fill="#F4C95C" style="animation-delay:-1.2s; animation-duration:5.5s"/>
+      <circle class="ember" cx="34" cy="56" r="0.6" fill="#FFD480" style="animation-delay:-3.4s; animation-duration:6.2s"/>
+      <circle class="ember" cx="49" cy="56" r="0.7" fill="#F4C95C" style="animation-delay:-2.1s; animation-duration:4.8s"/>
+      <g filter="url(#fusionGlow)">
+        <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z"  fill="url(#bar1Grad)" opacity="0.85"/>
+        <path class="shade-1" d="M8 56 V46 L9.5 46.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+        <path class="shade-1" d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,0.55)"/>
+        <path class="shade-1" d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,0.4)"/>
+        <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#bar2Grad)" opacity="0.95"/>
+        <path class="shade-2" d="M22 56 V34 L23.5 34.7 V56 Z" fill="rgba(255,255,255,0.45)"/>
+        <path class="shade-2" d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,0.55)"/>
+        <path class="shade-2" d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,0.4)"/>
+        <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z"  fill="url(#bar3Grad)"/>
+        <path class="shade-3" d="M36 56 V20 L37.5 20.7 V56 Z" fill="rgba(255,255,255,0.5)"/>
+        <path class="shade-3" d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,0.6)"/>
+        <path class="shade-3" d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,0.4)"/>
+      </g>
+      <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="900" fill="#001a0e" style="letter-spacing:-1px">$</text>
+    </svg>
     <span class="loader-text">CASH FLOW MEDIA</span>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
 </div>
 <script>
@@ -80,7 +125,7 @@
   <div class="container">
     <span class="eyebrow" data-anim="fade-up"><span class="dot"></span>Pricing</span>
     <h1 class="page-title" data-anim="fade-up" data-delay="0.1">
-      Pick what <span class="gradient-text">matches your scale.</span>
+      Pick what matches your <span class="gradient-text">cash flow goal.</span>
     </h1>
     <p class="page-sub" data-anim="fade-up" data-delay="0.2">
       Subscriptions with unlimited replacements, one-time account bundles, and
@@ -89,8 +134,68 @@
   </div>
 </section>
 
-<!-- SUBSCRIPTIONS -->
-<section class="section pricing-section" id="subscriptions">
+<!-- ONE-TIME BUNDLES (now first) -->
+<section class="section pricing-section" id="onetime">
+  <div class="container">
+    <div class="pricing-band-head" data-anim="fade-up">
+      <h2>One-Time Bundles</h2>
+      <p>Buy accounts outright. Best for testing, short campaigns, or stocking up.</p>
+    </div>
+
+    <div class="pricing-grid pricing-grid-3">
+      <div class="price-card" data-anim="fade-up">
+        <div class="price-head">
+          <h3>Profile FB</h3>
+          <p>Aged personal profile, ready to deploy.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">100</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> Aged Facebook profile</li>
+          <li><span class="check">✓</span> Verified email + recovery</li>
+          <li><span class="check">✓</span> Login credentials delivered</li>
+          <li><span class="check">✓</span> Setup checklist included</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Profile FB</span></a>
+      </div>
+
+      <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
+        <div class="price-tag">Best Value</div>
+        <div class="price-head">
+          <h3>BM3 Verified</h3>
+          <p>3-pack of verified BM accounts.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">200</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> 3 verified BM accounts</li>
+          <li><span class="check">✓</span> Pre-warmed and ready</li>
+          <li><span class="check">✓</span> Standard wallet config</li>
+          <li><span class="check">✓</span> Quick-start guide</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Buy BM3 Verified</span></a>
+      </div>
+
+      <div class="price-card" data-anim="fade-up" data-delay="0.2">
+        <div class="price-head">
+          <h3>BM10 Instant</h3>
+          <p>10 accounts with instant wallet delivery.</p>
+        </div>
+        <div class="price-num"><span class="price-currency">$</span><span class="price-val">550</span><span class="price-period">one-time</span></div>
+        <ul class="price-feats">
+          <li><span class="check">✓</span> 10 verified ad accounts</li>
+          <li><span class="check">✓</span> Instant wallet provisioning</li>
+          <li><span class="check">✓</span> Bulk allocation interface</li>
+          <li><span class="check">✓</span> Setup support included</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy BM10 Instant</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider" aria-hidden="true"><span></span></div>
+
+<!-- SUBSCRIPTIONS (now second) -->
+<section class="section section-alt pricing-section" id="subscriptions">
   <div class="container">
     <div class="pricing-band-head" data-anim="fade-up">
       <h2>Monthly Subscriptions</h2>
@@ -150,63 +255,7 @@
   </div>
 </section>
 
-<!-- ONE-TIME BUNDLES -->
-<section class="section section-alt pricing-section" id="onetime">
-  <div class="container">
-    <div class="pricing-band-head" data-anim="fade-up">
-      <h2>One-Time Bundles</h2>
-      <p>Buy accounts outright. Best for testing, short campaigns, or stocking up.</p>
-    </div>
-
-    <div class="pricing-grid pricing-grid-3">
-      <div class="price-card" data-anim="fade-up">
-        <div class="price-head">
-          <h3>Profile FB</h3>
-          <p>Aged personal profile, ready to deploy.</p>
-        </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">100</span><span class="price-period">one-time</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> Aged Facebook profile</li>
-          <li><span class="check">✓</span> Verified email + recovery</li>
-          <li><span class="check">✓</span> Login credentials delivered</li>
-          <li><span class="check">✓</span> Setup checklist included</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy Profile FB</span></a>
-      </div>
-
-      <div class="price-card price-card-featured" data-anim="fade-up" data-delay="0.1">
-        <div class="price-tag">Best Value</div>
-        <div class="price-head">
-          <h3>BM3 Verified</h3>
-          <p>3-pack of verified BM accounts.</p>
-        </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">200</span><span class="price-period">one-time</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> 3 verified BM accounts</li>
-          <li><span class="check">✓</span> Pre-warmed and ready</li>
-          <li><span class="check">✓</span> Standard wallet config</li>
-          <li><span class="check">✓</span> Quick-start guide</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary btn-block magnetic"><span>Buy BM3 Verified</span></a>
-      </div>
-
-      <div class="price-card" data-anim="fade-up" data-delay="0.2">
-        <div class="price-head">
-          <h3>BM10 Instant</h3>
-          <p>10 accounts with instant wallet delivery.</p>
-        </div>
-        <div class="price-num"><span class="price-currency">$</span><span class="price-val">550</span><span class="price-period">one-time</span></div>
-        <ul class="price-feats">
-          <li><span class="check">✓</span> 10 verified ad accounts</li>
-          <li><span class="check">✓</span> Instant wallet provisioning</li>
-          <li><span class="check">✓</span> Bulk allocation interface</li>
-          <li><span class="check">✓</span> Setup support included</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost btn-block magnetic"><span>Buy BM10 Instant</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="section-divider" aria-hidden="true"><span></span></div>
 
 <!-- FLAGSHIP TIERS -->
 <section class="section pricing-section" id="flagship-tiers">
@@ -250,6 +299,8 @@
   </div>
 </section>
 
+<div class="section-divider" aria-hidden="true"><span></span></div>
+
 <!-- CUSTOM ENTERPRISE -->
 <section class="section section-alt">
   <div class="container">
@@ -271,6 +322,8 @@
     </div>
   </div>
 </section>
+
+<div class="section-divider" aria-hidden="true"><span></span></div>
 
 <!-- COMPARE TABLE -->
 <section class="section pricing-section">
@@ -306,6 +359,8 @@
     </div>
   </div>
 </section>
+
+<div class="section-divider" aria-hidden="true"><span></span></div>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
