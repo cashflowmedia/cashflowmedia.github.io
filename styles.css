@@ -1482,6 +1482,89 @@ ul, ol { list-style: none; }
 .contact-modal-hint a { color: var(--green); transition: opacity .2s; }
 .contact-modal-hint a:hover { opacity: 0.8; }
 
+/* ========== 24/7 LIVE INDICATORS (contact page) ========== */
+.live-pill {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 22px;
+  padding: 10px 20px;
+  background:
+    linear-gradient(135deg, rgba(26,255,102,0.12), rgba(244,201,92,0.10));
+  border: 1px solid rgba(26,255,102,0.4);
+  border-radius: 100px;
+  font-family: 'Space Grotesk', sans-serif;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4), 0 0 24px rgba(26,255,102,0.15);
+}
+.live-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green), 0 0 0 0 rgba(26,255,102,0.6);
+  animation: livePulse 1.8s ease-out infinite;
+}
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 8px var(--green), 0 0 0 0   rgba(26,255,102,0.7); }
+  100% { box-shadow: 0 0 8px var(--green), 0 0 0 12px rgba(26,255,102,0); }
+}
+.live-text {
+  color: var(--green);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.live-sep { color: rgba(255,255,255,0.25); font-size: 14px; }
+.live-247 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #F4C95C;
+  text-shadow: 0 0 8px rgba(244,201,92,0.5);
+}
+.live-slash { color: rgba(244,201,92,0.55); margin: 0 1px; font-weight: 500; }
+
+/* Inline 24/7 badge on each contact channel card */
+.contact-channel { position: relative; }
+.channel-247 {
+  position: absolute; top: 18px; right: 18px;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #F4C95C;
+  background: rgba(244,201,92,0.08);
+  border: 1px solid rgba(244,201,92,0.35);
+  border-radius: 100px;
+  box-shadow: 0 0 12px rgba(244,201,92,0.15);
+}
+.channel-247 .live-dot { width: 7px; height: 7px; }
+
+/* "Always-on coverage" promoted card with big 24/7 number */
+.info-247 {
+  background:
+    radial-gradient(ellipse at top, rgba(26,255,102,0.10), transparent 70%),
+    linear-gradient(180deg, rgba(244,201,92,0.06), rgba(244,201,92,0.01));
+  border: 1.5px solid rgba(244,201,92,0.45);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.45), 0 0 50px rgba(244,201,92,0.12), 0 0 30px rgba(26,255,102,0.08);
+}
+.info-247-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 14px;
+  background: linear-gradient(120deg, var(--green) 0%, #aaff99 40%, #F4C95C 80%, #FFE4A0 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradientShift 6s linear infinite;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)) drop-shadow(0 0 18px rgba(244,201,92,0.25));
+}
+.info-247-slash {
+  -webkit-text-fill-color: rgba(244,201,92,0.55);
+  font-weight: 400;
+  margin: 0 2px;
+}
+
 /* ========== CONTACT PAGE ========== */
 .contact-section { padding: 60px 0 120px; }
 .contact-grid {
