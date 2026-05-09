@@ -120,10 +120,35 @@ ScrollTrigger.create({
   }
 });
 
-/* ---------- Smooth anchor links via Lenis ---------- */
+/* ---------- Contact chooser modal ---------- */
+const contactModal = document.getElementById('contactModal');
+function openContactModal() {
+  if (!contactModal) return;
+  contactModal.classList.add('open');
+  contactModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function closeContactModal() {
+  if (!contactModal) return;
+  contactModal.classList.remove('open');
+  contactModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+if (contactModal) {
+  contactModal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeContactModal));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeContactModal(); });
+}
+
+/* ---------- Smooth anchor links via Lenis (with contact-modal hijack) ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const id = link.getAttribute('href');
+    // #contact links open the chooser modal instead of scrolling
+    if (id === '#contact' && contactModal) {
+      e.preventDefault();
+      openContactModal();
+      return;
+    }
     if (id.length > 1) {
       const target = document.querySelector(id);
       if (target) {

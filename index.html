@@ -77,6 +77,13 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-emojis" aria-hidden="true">
+    <span style="--x:6%;--y:18%;--d:22s;--del:0s">💰</span>
+    <span style="--x:88%;--y:24%;--d:26s;--del:-6s">📈</span>
+    <span style="--x:14%;--y:62%;--d:30s;--del:-3s">💵</span>
+    <span style="--x:82%;--y:68%;--d:24s;--del:-12s">💸</span>
+    <span style="--x:48%;--y:88%;--d:28s;--del:-9s">🚀</span>
+  </div>
   <div class="hero-badge" data-anim="fade-up">
     <span class="pulse"></span>
     <span>Replacements live in under 2 hours · 24/7</span>
@@ -100,7 +107,7 @@
         <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
-    <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
+    <a href="#contact" class="btn btn-ghost magnetic">
       <span>Talk to Sales</span>
     </a>
   </div>
@@ -252,13 +259,13 @@
       <p class="section-sub">One-time account purchases or monthly subscriptions with unlimited replacements.</p>
 
       <div class="price-toggle" role="tablist">
-        <button class="price-toggle-btn is-active" data-tab="subs" role="tab">Subscriptions</button>
-        <button class="price-toggle-btn" data-tab="onetime" role="tab">One-time</button>
+        <button class="price-toggle-btn is-active" data-tab="onetime" role="tab">One-time</button>
+        <button class="price-toggle-btn" data-tab="subs" role="tab">Subscriptions</button>
       </div>
     </div>
 
     <!-- SUBSCRIPTIONS -->
-    <div class="pricing-grid" data-tab-panel="subs">
+    <div class="pricing-grid" data-tab-panel="subs" hidden>
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
           <h3>Solo</h3>
@@ -327,7 +334,7 @@
     </div>
 
     <!-- ONE-TIME -->
-    <div class="pricing-grid" data-tab-panel="onetime" hidden>
+    <div class="pricing-grid" data-tab-panel="onetime">
       <div class="price-card" data-anim="fade-up">
         <div class="price-head">
           <h3>Profile FB</h3>
@@ -553,36 +560,76 @@
 
     <div class="faq-list">
       <details class="faq-item" data-anim="fade-up">
-        <summary>How fast are replacements?</summary>
-        <p>Subscriptions: typically under 2 hours, 24/7. Onyx BM2500 customers see auto-replacement in 5–10 minutes via the distributed pool.</p>
+        <summary>Do all monthly packages include unlimited replacements?</summary>
+        <p>Yes. Every subscription tier — Solo, Scale, Top Agency, and Agency Unlimited — includes unlimited account swaps throughout the billing period, plus 24/7 support.</p>
       </details>
-      <details class="faq-item" data-anim="fade-up" data-delay="0.05">
-        <summary>How fast can I get onboarded?</summary>
-        <p>Most clients are running spend the same day. After payment, you'll have account access and BM setup within hours.</p>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.03">
+        <summary>How fast can we start?</summary>
+        <p>Onboarding is built for speed — most clients are running spend the same day. Reach out on Telegram or WhatsApp and we'll walk you through setup.</p>
       </details>
-      <details class="faq-item" data-anim="fade-up" data-delay="0.1">
-        <summary>Which verticals do you allow?</summary>
-        <p>eCommerce, lead gen, apps, content, iGaming, nutra, crypto, and many policy-sensitive verticals. If you're unsure, message us with the offer and we'll confirm fit.</p>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.06">
+        <summary>Do you work with iGaming and sensitive verticals?</summary>
+        <p>Yes. We support operators across mainstream and policy-sensitive verticals — iGaming, casinos, nutra, crypto, peptides, dating, finance — with the same uptime focus as eCom.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.09">
+        <summary>What do you need from us before onboarding?</summary>
+        <p>Your vertical, target GEOs, expected daily spend, and the package you want. We handle the rest.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.12">
+        <summary>Is support really available 24/7?</summary>
+        <p>Yes — direct human reply on Telegram or WhatsApp, every hour of every day. No ticket queues.</p>
       </details>
       <details class="faq-item" data-anim="fade-up" data-delay="0.15">
-        <summary>Do I need to warm up the accounts?</summary>
-        <p>For most setups, no — accounts come pre-warmed. For higher-risk verticals or aggressive scaling, our team will guide you through a short warm-up plan.</p>
+        <summary>Can I contact you through WhatsApp instead of Telegram?</summary>
+        <p>Both channels are available — pick whichever your team prefers. Same response time on either.</p>
       </details>
-      <details class="faq-item" data-anim="fade-up" data-delay="0.2">
-        <summary>What's the difference between Onyx BM2500 and a regular subscription?</summary>
-        <p>Subscriptions give you a fixed number of accounts with manual replacements when something goes down. Onyx BM2500 is a private distributed pool that auto-rotates so spend never pauses — built for operators who can't afford downtime.</p>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.18">
+        <summary>Which package is best for testing?</summary>
+        <p>BM3 Verified ($200, one-time). You get verified status, three accounts, and no subscription commitment.</p>
       </details>
-      <details class="faq-item" data-anim="fade-up" data-delay="0.25">
-        <summary>Should I pick a one-time bundle or a subscription?</summary>
-        <p>One-time bundles (Profile FB / BM3 Verified / BM10 Instant) are best for testing and short campaigns. Subscriptions (Solo / Scale / Top Agency / Agency Unlimited) are for ongoing operations that need replacements and 24/7 support.</p>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.21">
+        <summary>Which package is best for aggressive scaling?</summary>
+        <p>Top Agency or Agency Unlimited. For uncapped scaling with auto-replacement, the Onyx BM2500 + Agency Unlimited combo is the gold standard.</p>
       </details>
-      <details class="faq-item" data-anim="fade-up" data-delay="0.3">
-        <summary>Are there guarantees?</summary>
-        <p>We guarantee unlimited replacements on subscription tiers and the response times listed. We do not guarantee account approval for any specific creative — that's on Meta's policy team.</p>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.24">
+        <summary>What does the BM10 Instant purchase include?</summary>
+        <p>One Business Manager containing ten ad accounts, with instant wallet provisioning. No subscription required.</p>
       </details>
-      <details class="faq-item" data-anim="fade-up" data-delay="0.35">
-        <summary>How do I reach you?</summary>
-        <p>Telegram, WhatsApp, or the floating button on this page. Direct human reply, 24/7.</p>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.27">
+        <summary>What is the Agency Unlimited package?</summary>
+        <p>$35,000/month enterprise tier with unlimited BMs and accounts, dedicated account manager, same-hour replacements, and direct-line escalation.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.30">
+        <summary>What is Profile FB and what is it for?</summary>
+        <p>An aged Facebook profile ($100). Used for spinning up new BMs, admin role assignments, or as a backup login.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.33">
+        <summary>What is BM3 Verified?</summary>
+        <p>A verified Business Manager ($200) containing three ad accounts. Stronger trust profile than fresh BMs.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.36">
+        <summary>What is Onyx BM2500 and how is it different from a normal BM2500?</summary>
+        <p>Onyx is our distributed-sourcing system with proprietary CRM and auto-replacement in 5–10 minutes — including BM-level recovery. A normal BM2500 is a static block of accounts; Onyx self-heals.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.39">
+        <summary>Do I need to warm up my accounts before scaling?</summary>
+        <p>Yes. Spend small initial dollars to build trust signals before pushing real volume. We provide the playbook.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.42">
+        <summary>Which verticals do you actually support?</summary>
+        <p>Nutra, iGaming, casinos, finance, peptides, crypto, dating, plus mainstream eCommerce, lead gen, apps, and content. Message us your offer and we'll confirm fit.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.45">
+        <summary>What happens if an account dies? How does replacement work?</summary>
+        <p>Subscriptions get unlimited swaps via support. Onyx clients get auto-replacement in 5–10 minutes. One-time purchases include limited replacement coverage for minimal-spend issues.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.48">
+        <summary>Do you guarantee unbans or approvals?</summary>
+        <p>No legitimate service can guarantee Meta's approval outcomes. We provide structured guidance and best-practice support — Meta's policy team makes the final call.</p>
+      </details>
+      <details class="faq-item" data-anim="fade-up" data-delay="0.51">
+        <summary>Can we start with one account and scale later?</summary>
+        <p>Yes. Many clients start with Solo or BM3 Verified and upgrade to larger packages as they grow.</p>
       </details>
     </div>
   </div>
@@ -680,6 +727,40 @@
       <path d="M18 6L6 18M6 6l12 12"/>
     </svg>
   </button>
+</div>
+
+<!-- Contact chooser modal -->
+<div class="contact-modal" id="contactModal" aria-hidden="true" role="dialog" aria-labelledby="contactModalTitle">
+  <div class="contact-modal-backdrop" data-close></div>
+  <div class="contact-modal-card">
+    <button class="contact-modal-close" aria-label="Close" data-close>
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="contact-modal-emoji" aria-hidden="true">💬</div>
+    <h3 id="contactModalTitle">Let's talk.</h3>
+    <p>Pick how you want to chat — both have direct human reply, 24/7.</p>
+    <div class="contact-modal-options">
+      <a href="https://t.me/CashFlowMediaNow" target="_blank" rel="noopener" class="contact-option contact-option-tg">
+        <span class="contact-option-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+        </span>
+        <span class="contact-option-text">
+          <strong>Telegram</strong>
+          <small>@CashFlowMediaNow</small>
+        </span>
+      </a>
+      <a href="https://wa.me/14173007306" target="_blank" rel="noopener" class="contact-option contact-option-wa">
+        <span class="contact-option-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.8L.5 31.5l7.9-2c2.3 1.2 4.9 1.9 7.6 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.2c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3 0-7.3 5.9-13.2 13.2-13.2S29.2 8 29.2 15.3 23.3 28.7 16 28.7zm7.6-9.9c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-.9.2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-.1-.1-1.4-1.5-1.4-2.6 0-.4.6-1 .9-1.5.2-.3.3-.5.4-.7.1-.3.1-.5 0-.8 0-.2-.9-2.2-1.2-3-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9.9.3 1.8.2 2.5.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9 0-.2-.3-.3-.7-.5z"/></svg>
+        </span>
+        <span class="contact-option-text">
+          <strong>WhatsApp</strong>
+          <small>+1 417 300 7306</small>
+        </span>
+      </a>
+    </div>
+    <p class="contact-modal-hint">Or visit our <a href="contact.html">full contact page →</a></p>
+  </div>
 </div>
 
 <!-- Animation libraries -->
