@@ -591,7 +591,12 @@ ul, ol { list-style: none; }
   text-shadow: 0 4px 40px rgba(0,0,0,0.6);
 }
 .hero-title .gradient-text {
-  filter: drop-shadow(0 0 28px rgba(26,255,102,0.45));
+  /* Layered drop-shadows for a smooth, falling-off halo (no hard edge) */
+  filter:
+    drop-shadow(0 0 8px  rgba(26,255,102,0.30))
+    drop-shadow(0 0 22px rgba(26,255,102,0.22))
+    drop-shadow(0 0 50px rgba(26,255,102,0.14))
+    drop-shadow(0 0 90px rgba(26,255,102,0.08));
 }
 .hero-title .line { display: block; overflow: hidden; padding-bottom: 0.05em; }
 .hero-title .word {
