@@ -376,7 +376,7 @@ ul, ol { list-style: none; }
 }
 .eyebrow .dot {
   width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green); box-shadow: 0 0 8px var(--green);
+  background: #F4C95C; box-shadow: 0 0 8px rgba(244,201,92,0.7);
 }
 .gradient-text {
   background: linear-gradient(120deg, var(--green) 0%, var(--green-3) 50%, #fff 100%);
@@ -420,6 +420,23 @@ ul, ol { list-style: none; }
   border: 1px solid var(--line);
 }
 .btn-ghost:hover { border-color: var(--green); color: var(--green); background: rgba(26,255,102,0.05); }
+
+/* Gold variant — for high-emphasis non-primary CTAs (e.g. WhatsApp Us) */
+.btn-gold {
+  background: linear-gradient(120deg, #F4C95C, #FFD480);
+  color: #2a1f00;
+  box-shadow: 0 8px 24px rgba(244,201,92,0.3);
+}
+.btn-gold::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, #FFD480, #FFE4A0);
+  opacity: 0; transition: opacity .3s ease;
+}
+.btn-gold:hover::before { opacity: 1; }
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(244,201,92,0.5), 0 0 50px rgba(244,201,92,0.35);
+}
 .btn-block { width: 100%; }
 .btn-lg { padding: 18px 32px; font-size: 15px; }
 
@@ -609,13 +626,14 @@ ul, ol { list-style: none; }
   width: 48px; height: 48px;
   display: grid; place-items: center;
   border-radius: 12px;
-  background: rgba(26,255,102,0.08);
-  border: 1px solid rgba(26,255,102,0.2);
+  background: linear-gradient(135deg, rgba(26,255,102,0.10), rgba(244,201,92,0.10));
+  border: 1px solid rgba(244,201,92,0.28);
   margin-bottom: 22px;
   color: var(--green);
-  transition: transform .35s ease;
+  transition: transform .35s ease, border-color .3s;
+  box-shadow: inset 0 0 12px rgba(244,201,92,0.08);
 }
-.card:hover .card-icon { transform: rotate(-6deg) scale(1.05); }
+.card:hover .card-icon { transform: rotate(-6deg) scale(1.05); border-color: rgba(244,201,92,0.55); }
 .card-icon svg { width: 22px; height: 22px; }
 .card h3 {
   font-family: 'Space Grotesk', sans-serif;
@@ -685,10 +703,11 @@ ul, ol { list-style: none; }
 .price-card-featured:hover { transform: scale(1.02) translateY(-6px); }
 .price-tag {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--green); color: #001a0e;
+  background: linear-gradient(120deg, #F4C95C, #FFD480);
+  color: #2a1f00;
   padding: 6px 14px; border-radius: 100px;
   font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-  box-shadow: 0 8px 24px rgba(26,255,102,0.4);
+  box-shadow: 0 8px 24px rgba(244,201,92,0.45);
 }
 .price-head h3 {
   font-family: 'Space Grotesk', sans-serif;
