@@ -30,6 +30,16 @@
     <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
 </div>
+<script>
+  // Failsafe: hide loader after 3.5s even if main JS errors out.
+  setTimeout(function () {
+    var l = document.getElementById('loader');
+    if (l && l.style.display !== 'none' && parseFloat(getComputedStyle(l).opacity) > 0.5) {
+      l.style.transition = 'opacity .5s'; l.style.opacity = '0';
+      setTimeout(function () { l.style.display = 'none'; }, 500);
+    }
+  }, 3500);
+</script>
 
 <!-- Nav -->
 <nav class="nav" id="nav">
@@ -403,7 +413,7 @@
 <!-- Animation libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
