@@ -474,7 +474,7 @@ ul, ol { list-style: none; }
   background: #F4C95C; box-shadow: 0 0 8px rgba(244,201,92,0.7);
 }
 .gradient-text {
-  background: linear-gradient(120deg, var(--green) 0%, #aaff99 35%, #F4C95C 70%, #fff 100%);
+  background: linear-gradient(120deg, var(--green) 0%, var(--green-3) 50%, #fff 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
