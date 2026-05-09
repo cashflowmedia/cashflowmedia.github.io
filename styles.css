@@ -285,17 +285,15 @@ ul, ol { list-style: none; }
   100% { transform: scaleY(0); }
 }
 
-/* Loader $ — pops in after bars build, holds, fades */
+/* Loader $ — visible immediately, gentle pulse + glow throughout */
 .dollar-load {
   transform-origin: center; transform-box: fill-box;
-  animation: dollarLoad 2.4s ease-out infinite;
+  opacity: 1;
+  animation: dollarLoad 2.4s ease-in-out infinite;
 }
 @keyframes dollarLoad {
-  0%, 25%   { opacity: 0; transform: scale(0.4); }
-  40%       { opacity: 1; transform: scale(1.15); }
-  50%, 85%  { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 6px #F4C95C); }
-  95%       { opacity: 0; transform: scale(0.4); }
-  100%      { opacity: 0; transform: scale(0.4); }
+  0%, 100% { opacity: 1; transform: scale(1);    filter: drop-shadow(0 0 4px #F4C95C); }
+  50%      { opacity: 1; transform: scale(1.08); filter: drop-shadow(0 0 10px #F4C95C); }
 }
 
 /* ========== LOGO SVG ANIMATIONS (shared across all pages) ========== */
