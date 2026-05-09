@@ -35,6 +35,30 @@ document.querySelectorAll('a, button, .card, .price-card, .faq-item summary').fo
   el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
 });
 
+/* Occasional embers floating off the $ cursor */
+function spawnCursorEmber() {
+  if (mouseX === 0 && mouseY === 0) return; // skip until mouse has moved
+  const ember = document.createElement('div');
+  ember.className = 'cursor-ember';
+  // Spawn slightly offset around the $ so it looks like it comes off the strokes
+  const offX = (Math.random() - 0.5) * 10;
+  const offY = (Math.random() - 0.5) * 8;
+  ember.style.left = (mouseX + offX) + 'px';
+  ember.style.top  = (mouseY + offY) + 'px';
+  ember.style.setProperty('--drift', ((Math.random() - 0.5) * 30) + 'px');
+  document.body.appendChild(ember);
+  setTimeout(() => ember.remove(), 1700);
+}
+function emberLoop() {
+  spawnCursorEmber();
+  // Random interval between 1.6s and 4.5s — feels organic
+  setTimeout(emberLoop, 1600 + Math.random() * 2900);
+}
+// Start after page settles + only on devices with hover-cursor
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  setTimeout(emberLoop, 2500);
+}
+
 /* ---------- Loader ---------- */
 /* Loader fade is handled by inline script (real progress tracking).
    We just trigger the hero intro shortly after window.load. */
