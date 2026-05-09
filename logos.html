@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Logo Concepts — Cash Flow Media</title>
+<title>Logo 3 — Spicy Variants</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -27,33 +27,31 @@
   .sub {
     text-align: center;
     color: #a8b2ad;
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto 48px;
     font-size: 16px;
   }
   .sub strong { color: #1aff66; }
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1280px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 980px;
     margin: 0 auto;
   }
-  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 800px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px)  { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
   .card {
     background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 18px;
-    padding: 28px 22px 22px;
+    border-radius: 20px;
+    padding: 36px 28px 26px;
     text-align: center;
     transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, box-shadow .3s;
   }
   .card:hover {
     transform: translateY(-6px);
-    border-color: rgba(26,255,102,0.4);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    border-color: rgba(26,255,102,0.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 60px rgba(26,255,102,0.1);
   }
   .num {
     display: inline-block;
@@ -64,202 +62,219 @@
     color: #1aff66;
     background: rgba(26,255,102,0.08);
     border: 1px solid rgba(26,255,102,0.25);
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 100px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
   }
   .preview {
     background: #060808;
-    padding: 22px;
-    border-radius: 14px;
-    margin-bottom: 18px;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 22px;
     border: 1px solid rgba(255,255,255,0.04);
+    min-height: 180px;
+    display: grid;
+    place-items: center;
   }
-  .preview svg { display: block; margin: 0 auto; width: 96px; height: 96px; }
+  .preview svg { display: block; width: 130px; height: 130px; overflow: visible; }
   .name {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 6px;
     letter-spacing: -0.01em;
   }
-  .desc { color: #a8b2ad; font-size: 13px; margin-bottom: 18px; min-height: 38px; }
+  .heat {
+    display: inline-block;
+    font-size: 13px;
+    color: #ffaa44;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .desc { color: #a8b2ad; font-size: 14px; margin-bottom: 22px; min-height: 42px; }
   .horiz {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 12px;
     justify-content: center;
-    padding: 14px 0 0;
+    padding: 18px 0 0;
     border-top: 1px solid rgba(255,255,255,0.06);
   }
-  .horiz svg { width: 30px; height: 30px; }
+  .horiz svg { width: 36px; height: 36px; overflow: visible; }
   .horiz span {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.22em;
     color: #f3f5f4;
   }
   .horiz span em { font-style: normal; color: #1aff66; margin-left: 3px; }
+
+  /* Animations */
+  .pulse-bar { transform-origin: bottom; animation: barPulse 2s ease-in-out infinite; }
+  @keyframes barPulse {
+    0%, 100% { transform: scaleY(1); filter: drop-shadow(0 0 6px #1aff66); }
+    50%      { transform: scaleY(1.04); filter: drop-shadow(0 0 18px #1aff66); }
+  }
+  .spark-1 { animation: sparkle 2.4s ease-in-out infinite; }
+  .spark-2 { animation: sparkle 2.4s ease-in-out infinite -0.8s; }
+  .spark-3 { animation: sparkle 2.4s ease-in-out infinite -1.6s; }
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.7); }
+    50%      { opacity: 1;   transform: scale(1.3); }
+  }
+  .glow-bars { filter: drop-shadow(0 0 6px rgba(26,255,102,0.6)); }
+  .arrow-rise { animation: arrowRise 2.6s ease-in-out infinite; }
+  @keyframes arrowRise {
+    0%, 100% { transform: translateY(0); opacity: 0.7; }
+    50%      { transform: translateY(-3px); opacity: 1; }
+  }
 </style>
 </head>
 <body>
 
-<h1>Logo Concepts — Pick One</h1>
-<p class="sub">Each shown big (badge) and small (nav). Reply with the <strong>number</strong> and I'll wire it across all 3 pages + push.</p>
+<h1>Logo 3 — Spicy Variants</h1>
+<p class="sub">Four levels of heat 🌶️. Reply with the variant code (e.g. <strong>3B</strong>) and I'll wire it everywhere.</p>
 
 <div class="grid">
 
-  <!-- 1 COIN -->
+  <!-- 3A SPARK -->
   <div class="card">
-    <div class="num">01</div>
+    <div class="num">3A · SPARK</div>
     <div class="preview">
-      <svg viewBox="0 0 64 64">
-        <defs><linearGradient id="g1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <circle cx="32" cy="32" r="28" fill="url(#g1)"/>
-        <circle cx="32" cy="32" r="25" stroke="#001a0e" stroke-width="0.8" fill="none" opacity="0.4"/>
-        <text x="32" y="44" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="36" font-weight="800" fill="#001a0e">$</text>
+      <svg viewBox="0 0 64 64" fill="none">
+        <defs>
+          <linearGradient id="g3a" x1="0" y1="56" x2="0" y2="6" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#00aa3a"/>
+            <stop offset="0.5" stop-color="#1aff66"/>
+            <stop offset="1" stop-color="#66ff88"/>
+          </linearGradient>
+        </defs>
+        <line x1="4" y1="58" x2="60" y2="58" stroke="url(#g3a)" stroke-width="1.2" opacity="0.4"/>
+        <rect x="8"  y="42" width="11" height="14" rx="2" fill="url(#g3a)" opacity="0.45"/>
+        <rect x="22" y="30" width="11" height="26" rx="2" fill="url(#g3a)" opacity="0.7"/>
+        <rect x="36" y="14" width="11" height="42" rx="2" fill="url(#g3a)" class="glow-bars"/>
+        <g class="arrow-rise">
+          <path d="M37 9 L41.5 4 L46 9" stroke="#66ff88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </g>
+        <text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="800" fill="#001a0e">$</text>
       </svg>
     </div>
-    <div class="name">COIN</div>
-    <div class="desc">Solid green circle, bold dollar sign. Classic, instant money read.</div>
+    <div class="name">SPARK</div>
+    <div class="heat">🌶️ Mild</div>
+    <div class="desc">Adds a baseline + animated up-arrow chevron + outer glow on tallest bar. Subtle, executive.</div>
     <div class="horiz">
-      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="url(#g1)"/><text x="32" y="44" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="36" font-weight="800" fill="#001a0e">$</text></svg>
+      <svg viewBox="0 0 64 64" fill="none"><line x1="4" y1="58" x2="60" y2="58" stroke="url(#g3a)" stroke-width="1.2" opacity="0.4"/><rect x="8" y="42" width="11" height="14" rx="2" fill="url(#g3a)" opacity="0.45"/><rect x="22" y="30" width="11" height="26" rx="2" fill="url(#g3a)" opacity="0.7"/><rect x="36" y="14" width="11" height="42" rx="2" fill="url(#g3a)"/><path d="M37 9 L41.5 4 L46 9" stroke="#66ff88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="800" fill="#001a0e">$</text></svg>
       <span>CASH FLOW <em>MEDIA</em></span>
     </div>
   </div>
 
-  <!-- 2 HEX VAULT -->
+  <!-- 3B APEX -->
   <div class="card">
-    <div class="num">02</div>
+    <div class="num">3B · APEX</div>
     <div class="preview">
       <svg viewBox="0 0 64 64" fill="none">
-        <defs><linearGradient id="g2" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" stroke="url(#g2)" stroke-width="2.5" stroke-linejoin="round"/>
-        <text x="32" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="30" font-weight="800" fill="url(#g2)">$</text>
+        <defs>
+          <linearGradient id="g3b" x1="0" y1="60" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#00aa3a"/>
+            <stop offset="0.5" stop-color="#1aff66"/>
+            <stop offset="1" stop-color="#aaffcc"/>
+          </linearGradient>
+        </defs>
+        <path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3b)" opacity="0.45"/>
+        <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3b)" opacity="0.72"/>
+        <path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3b)"/>
+        <text x="41.5" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="800" fill="#001a0e">$</text>
       </svg>
     </div>
-    <div class="name">HEX VAULT</div>
-    <div class="desc">Hexagon outline with $ inside. Premium, structured, secure.</div>
+    <div class="name">APEX</div>
+    <div class="heat">🌶️🌶️ Medium</div>
+    <div class="desc">Bars cut diagonally like blades pointing up-right. Aggressive, bold, no-nonsense.</div>
     <div class="horiz">
-      <svg viewBox="0 0 64 64" fill="none"><path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" stroke="url(#g2)" stroke-width="2.5" stroke-linejoin="round"/><text x="32" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="30" font-weight="800" fill="url(#g2)">$</text></svg>
+      <svg viewBox="0 0 64 64" fill="none"><path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3b)" opacity="0.45"/><path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3b)" opacity="0.72"/><path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3b)"/><text x="41.5" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="800" fill="#001a0e">$</text></svg>
       <span>CASH FLOW <em>MEDIA</em></span>
     </div>
   </div>
 
-  <!-- 3 GROWTH -->
+  <!-- 3C NEON -->
   <div class="card">
-    <div class="num">03</div>
+    <div class="num">3C · NEON</div>
     <div class="preview">
       <svg viewBox="0 0 64 64" fill="none">
-        <defs><linearGradient id="g3" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <rect x="8"  y="40" width="11" height="16" rx="2" fill="url(#g3)" opacity="0.45"/>
-        <rect x="22" y="28" width="11" height="28" rx="2" fill="url(#g3)" opacity="0.7"/>
-        <rect x="36" y="14" width="11" height="42" rx="2" fill="url(#g3)"/>
-        <text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="800" fill="#001a0e">$</text>
+        <defs>
+          <linearGradient id="g3c" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#1aff66"/>
+            <stop offset="1" stop-color="#00cc44"/>
+          </linearGradient>
+          <filter id="neon3c" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.2" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#neon3c)">
+          <rect x="8"  y="40" width="11" height="16" rx="2" fill="url(#g3c)" opacity="0.45"/>
+          <rect x="22" y="28" width="11" height="28" rx="2" fill="url(#g3c)" opacity="0.72"/>
+          <rect x="36" y="14" width="11" height="42" rx="2" fill="url(#g3c)" class="pulse-bar"/>
+        </g>
+        <text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="800" fill="#001a0e" style="filter:drop-shadow(0 0 4px #00ff66)">$</text>
+        <circle class="spark-1" cx="52" cy="10" r="1.5" fill="#66ff88"/>
+        <circle class="spark-2" cx="56" cy="16" r="1" fill="#1aff66"/>
+        <circle class="spark-3" cx="50" cy="20" r="0.8" fill="#1aff66"/>
       </svg>
     </div>
-    <div class="name">GROWTH</div>
-    <div class="desc">Three ascending bars with $ on the tallest. Chart + money.</div>
+    <div class="name">NEON</div>
+    <div class="heat">🌶️🌶️🌶️ Hot</div>
+    <div class="desc">Heavy outer glow on bars + pulsing tallest bar + sparkle dots. Fully alive.</div>
     <div class="horiz">
-      <svg viewBox="0 0 64 64" fill="none"><rect x="8" y="40" width="11" height="16" rx="2" fill="url(#g3)" opacity="0.45"/><rect x="22" y="28" width="11" height="28" rx="2" fill="url(#g3)" opacity="0.7"/><rect x="36" y="14" width="11" height="42" rx="2" fill="url(#g3)"/><text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="800" fill="#001a0e">$</text></svg>
+      <svg viewBox="0 0 64 64" fill="none"><g filter="url(#neon3c)"><rect x="8" y="40" width="11" height="16" rx="2" fill="url(#g3c)" opacity="0.45"/><rect x="22" y="28" width="11" height="28" rx="2" fill="url(#g3c)" opacity="0.72"/><rect x="36" y="14" width="11" height="42" rx="2" fill="url(#g3c)"/></g><text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="800" fill="#001a0e">$</text></svg>
       <span>CASH FLOW <em>MEDIA</em></span>
     </div>
   </div>
 
-  <!-- 4 LIGHTNING -->
+  <!-- 3D FUSION -->
   <div class="card">
-    <div class="num">04</div>
+    <div class="num">3D · FUSION</div>
     <div class="preview">
       <svg viewBox="0 0 64 64" fill="none">
-        <defs><linearGradient id="g4" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <path d="M44 22 Q44 14 32 14 Q22 14 22 22 Q22 28 30 30 L36 32 Q44 34 44 40 Q44 50 32 50 Q20 50 20 42" stroke="url(#g4)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-        <path d="M36 4 L24 30 H32 L28 60 L42 32 H34 L36 4 Z" fill="url(#g4)"/>
+        <defs>
+          <linearGradient id="g3d" x1="0" y1="60" x2="0" y2="4" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#008833"/>
+            <stop offset="0.45" stop-color="#1aff66"/>
+            <stop offset="1" stop-color="#ddffcc"/>
+          </linearGradient>
+          <linearGradient id="g3dArrow" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#1aff66"/>
+            <stop offset="1" stop-color="#66ff88"/>
+          </linearGradient>
+          <filter id="fusionGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="1.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <line x1="4" y1="58" x2="60" y2="58" stroke="url(#g3d)" stroke-width="1.5" opacity="0.5"/>
+        <g filter="url(#fusionGlow)">
+          <path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3d)" opacity="0.5"/>
+          <path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.75"/>
+          <path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3d)" class="pulse-bar"/>
+        </g>
+        <g class="arrow-rise">
+          <path d="M50 14 L58 6 M58 6 L52 6 M58 6 L58 12" stroke="url(#g3dArrow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </g>
+        <text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="800" fill="#001a0e" style="filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))">$</text>
+        <circle class="spark-1" cx="6" cy="14" r="1.2" fill="#66ff88"/>
+        <circle class="spark-2" cx="56" cy="42" r="1" fill="#1aff66"/>
       </svg>
     </div>
-    <div class="name">LIGHTNING</div>
-    <div class="desc">$ with a lightning bolt as the vertical. Fast money.</div>
+    <div class="name">FUSION</div>
+    <div class="heat">🌶️🌶️🌶️🌶️ Extra Hot</div>
+    <div class="desc">All-in: blade-cut bars + glow + pulsing tallest + diagonal "going up" arrow + sparks. Maximum spice.</div>
     <div class="horiz">
-      <svg viewBox="0 0 64 64" fill="none"><path d="M44 22 Q44 14 32 14 Q22 14 22 22 Q22 28 30 30 L36 32 Q44 34 44 40 Q44 50 32 50 Q20 50 20 42" stroke="url(#g4)" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M36 4 L24 30 H32 L28 60 L42 32 H34 L36 4 Z" fill="url(#g4)"/></svg>
-      <span>CASH FLOW <em>MEDIA</em></span>
-    </div>
-  </div>
-
-  <!-- 5 ORBIT -->
-  <div class="card">
-    <div class="num">05</div>
-    <div class="preview">
-      <svg viewBox="0 0 64 64" fill="none">
-        <defs><linearGradient id="g5" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <ellipse cx="32" cy="32" rx="28" ry="13" stroke="url(#g5)" stroke-width="1.6" stroke-dasharray="3 3" transform="rotate(-18 32 32)" opacity="0.7"/>
-        <ellipse cx="32" cy="32" rx="28" ry="13" stroke="url(#g5)" stroke-width="1" transform="rotate(20 32 32)" opacity="0.3"/>
-        <text x="32" y="44" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="36" font-weight="800" fill="url(#g5)">$</text>
-      </svg>
-    </div>
-    <div class="name">ORBIT</div>
-    <div class="desc">$ with elliptical orbit ring. System / network feel.</div>
-    <div class="horiz">
-      <svg viewBox="0 0 64 64" fill="none"><ellipse cx="32" cy="32" rx="28" ry="13" stroke="url(#g5)" stroke-width="1.6" stroke-dasharray="3 3" transform="rotate(-18 32 32)" opacity="0.7"/><text x="32" y="44" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="36" font-weight="800" fill="url(#g5)">$</text></svg>
-      <span>CASH FLOW <em>MEDIA</em></span>
-    </div>
-  </div>
-
-  <!-- 6 DIAMOND -->
-  <div class="card">
-    <div class="num">06</div>
-    <div class="preview">
-      <svg viewBox="0 0 64 64" fill="none">
-        <defs><linearGradient id="g6" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <path d="M32 6 L58 32 L32 58 L6 32 Z" stroke="url(#g6)" stroke-width="2.5" stroke-linejoin="round"/>
-        <path d="M32 6 L32 58 M6 32 L58 32" stroke="url(#g6)" stroke-width="0.6" opacity="0.25"/>
-        <text x="32" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="800" fill="url(#g6)">$</text>
-      </svg>
-    </div>
-    <div class="name">DIAMOND</div>
-    <div class="desc">Diamond outline with $ centered. Luxury / gem vibe.</div>
-    <div class="horiz">
-      <svg viewBox="0 0 64 64" fill="none"><path d="M32 6 L58 32 L32 58 L6 32 Z" stroke="url(#g6)" stroke-width="2.5" stroke-linejoin="round"/><text x="32" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="800" fill="url(#g6)">$</text></svg>
-      <span>CASH FLOW <em>MEDIA</em></span>
-    </div>
-  </div>
-
-  <!-- 7 WAVE -->
-  <div class="card">
-    <div class="num">07</div>
-    <div class="preview">
-      <svg viewBox="0 0 64 64" fill="none">
-        <defs><linearGradient id="g7" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <path d="M44 22 Q44 14 32 14 Q22 14 22 22 Q22 28 30 30 L36 32 Q44 34 44 40 Q44 50 32 50 Q20 50 20 42" stroke="url(#g7)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-        <path d="M32 4 Q38 12 32 20 Q26 28 32 36 Q38 44 32 52 Q26 58 32 60" stroke="url(#g7)" stroke-width="3" stroke-linecap="round" fill="none"/>
-      </svg>
-    </div>
-    <div class="name">WAVE</div>
-    <div class="desc">$ with a flowing wavy vertical. Literally "cash flow."</div>
-    <div class="horiz">
-      <svg viewBox="0 0 64 64" fill="none"><path d="M44 22 Q44 14 32 14 Q22 14 22 22 Q22 28 30 30 L36 32 Q44 34 44 40 Q44 50 32 50 Q20 50 20 42" stroke="url(#g7)" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M32 4 Q38 12 32 20 Q26 28 32 36 Q38 44 32 52 Q26 58 32 60" stroke="url(#g7)" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
-      <span>CASH FLOW <em>MEDIA</em></span>
-    </div>
-  </div>
-
-  <!-- 8 SHIELD -->
-  <div class="card">
-    <div class="num">08</div>
-    <div class="preview">
-      <svg viewBox="0 0 64 64" fill="none">
-        <defs><linearGradient id="g8" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1aff66"/><stop offset="1" stop-color="#00cc44"/></linearGradient></defs>
-        <path d="M32 6 L54 14 V32 Q54 48 32 58 Q10 48 10 32 V14 L32 6 Z" stroke="url(#g8)" stroke-width="2.5" stroke-linejoin="round"/>
-        <text x="32" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="26" font-weight="800" fill="url(#g8)">$</text>
-      </svg>
-    </div>
-    <div class="name">SHIELD</div>
-    <div class="desc">Shield outline + $. Trust, protection, account-proof vibe.</div>
-    <div class="horiz">
-      <svg viewBox="0 0 64 64" fill="none"><path d="M32 6 L54 14 V32 Q54 48 32 58 Q10 48 10 32 V14 L32 6 Z" stroke="url(#g8)" stroke-width="2.5" stroke-linejoin="round"/><text x="32" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="26" font-weight="800" fill="url(#g8)">$</text></svg>
+      <svg viewBox="0 0 64 64" fill="none"><g filter="url(#fusionGlow)"><path d="M8 56 V46 L19 38 V56 Z" fill="url(#g3d)" opacity="0.5"/><path d="M22 56 V34 L33 24 V56 Z" fill="url(#g3d)" opacity="0.75"/><path d="M36 56 V20 L47 8 V56 Z" fill="url(#g3d)"/></g><path d="M50 14 L58 6 M58 6 L52 6 M58 6 L58 12" stroke="url(#g3dArrow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="41.5" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="800" fill="#001a0e">$</text></svg>
       <span>CASH FLOW <em>MEDIA</em></span>
     </div>
   </div>
 
 </div>
 
-<p class="sub" style="margin-top:48px">Reply with the number you want — or describe a hybrid (e.g. "01 but with the orbit ring from 05").</p>
+<p class="sub" style="margin-top:48px">Reply <strong>3A</strong>, <strong>3B</strong>, <strong>3C</strong>, or <strong>3D</strong> — or describe your own remix.</p>
 
 </body>
 </html>
