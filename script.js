@@ -147,5 +147,30 @@ gsap.utils.toArray('.section-title').forEach(title => {
   });
 });
 
+/* ---------- Support widget toggle ---------- */
+const supportWidget = document.getElementById('supportWidget');
+const supportFab = document.getElementById('supportFab');
+if (supportFab && supportWidget) {
+  supportFab.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = supportWidget.classList.toggle('open');
+    supportFab.setAttribute('aria-expanded', open);
+  });
+  // close on outside click
+  document.addEventListener('click', e => {
+    if (!supportWidget.contains(e.target) && supportWidget.classList.contains('open')) {
+      supportWidget.classList.remove('open');
+      supportFab.setAttribute('aria-expanded', 'false');
+    }
+  });
+  // close on escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && supportWidget.classList.contains('open')) {
+      supportWidget.classList.remove('open');
+      supportFab.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 /* ---------- Footer year ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();

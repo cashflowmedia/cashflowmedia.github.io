@@ -626,31 +626,52 @@ ul, ol { list-style: none; }
   font-size: 12px; color: var(--muted);
 }
 
-/* ========== FLOATING SUPPORT BUTTON ========== */
-.support-fab {
+/* ========== FLOATING SUPPORT WIDGET ========== */
+.support-widget {
   position: fixed;
   bottom: 28px; right: 28px;
   z-index: 200;
+  display: flex; flex-direction: column; align-items: flex-end;
+  gap: 14px;
+}
+.support-fab {
+  position: relative;
   width: 60px; height: 60px;
   display: grid; place-items: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  color: #fff;
-  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.5);
-  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+  background: linear-gradient(135deg, var(--green), var(--green-2));
+  color: #001a0e;
+  box-shadow: 0 12px 32px rgba(16,255,149,0.4);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .3s, background .3s;
   animation: fabIn .8s 2s cubic-bezier(.2,.8,.2,1) backwards;
+  cursor: none;
 }
 .support-fab:hover {
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 18px 50px rgba(37, 211, 102, 0.6), 0 0 60px rgba(37, 211, 102, 0.3);
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 18px 50px rgba(16,255,149,0.55), 0 0 60px rgba(16,255,149,0.3);
 }
-.support-fab svg { position: relative; z-index: 2; }
 .support-pulse {
   position: absolute; inset: 0;
   border-radius: 50%;
-  background: rgba(37, 211, 102, 0.5);
+  background: rgba(16,255,149,0.5);
   animation: fabPulse 2s ease-out infinite;
+  z-index: 0;
 }
+.support-fab-icon {
+  position: absolute;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease;
+  z-index: 2;
+}
+.support-fab-close { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+.support-widget.open .support-fab {
+  background: linear-gradient(135deg, #1a1a1a, #050605);
+  color: var(--green);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+}
+.support-widget.open .support-fab-chat { opacity: 0; transform: rotate(90deg) scale(0.6); }
+.support-widget.open .support-fab-close { opacity: 1; transform: rotate(0) scale(1); }
+.support-widget.open .support-pulse { animation: none; opacity: 0; }
+
 @keyframes fabPulse {
   0%   { transform: scale(1); opacity: 0.6; }
   100% { transform: scale(1.7); opacity: 0; }
@@ -659,37 +680,51 @@ ul, ol { list-style: none; }
   from { transform: scale(0) rotate(-90deg); opacity: 0; }
   to   { transform: scale(1) rotate(0); opacity: 1; }
 }
-.support-tooltip {
-  position: absolute;
-  right: calc(100% + 14px);
-  top: 50%;
-  transform: translateY(-50%) translateX(8px);
-  background: #0a0d0a;
+
+/* Option buttons (Telegram/WhatsApp) */
+.support-option {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 10px 14px 10px 18px;
+  background: rgba(10,13,10,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
   color: var(--text);
-  font-size: 13px; font-weight: 500;
-  padding: 8px 14px;
+  font-size: 14px; font-weight: 500;
   border-radius: 100px;
-  border: 1px solid rgba(37, 211, 102, 0.3);
-  white-space: nowrap;
-  opacity: 0; pointer-events: none;
-  transition: opacity .25s ease, transform .25s ease;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+  transform: translateY(20px) scale(0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .4s cubic-bezier(.2,.8,.2,1), opacity .3s, border-color .3s;
 }
-.support-tooltip::after {
-  content: ''; position: absolute;
-  right: -5px; top: 50%; transform: translateY(-50%) rotate(45deg);
-  width: 8px; height: 8px;
-  background: #0a0d0a;
-  border-right: 1px solid rgba(37, 211, 102, 0.3);
-  border-top: 1px solid rgba(37, 211, 102, 0.3);
-}
-.support-fab:hover .support-tooltip {
+.support-widget.open .support-option {
   opacity: 1;
-  transform: translateY(-50%) translateX(0);
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
+.support-widget.open .support-option-tg { transition-delay: .12s; }
+.support-widget.open .support-option-wa { transition-delay: .04s; }
+.support-option:hover { border-color: rgba(16,255,149,0.4); }
+.support-option-label {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.04em;
+}
+.support-option-icon {
+  display: grid; place-items: center;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0;
+}
+.support-option-tg .support-option-icon { background: linear-gradient(135deg, #2AABEE, #229ED9); }
+.support-option-wa .support-option-icon { background: linear-gradient(135deg, #25D366, #128C7E); }
+
 @media (max-width: 600px) {
-  .support-fab { bottom: 18px; right: 18px; width: 54px; height: 54px; }
-  .support-tooltip { display: none; }
+  .support-widget { bottom: 18px; right: 18px; }
+  .support-fab { width: 54px; height: 54px; }
+  .support-option { font-size: 13px; padding: 8px 12px 8px 16px; }
+  .support-option-icon { width: 34px; height: 34px; }
 }
 
 /* ========== ANIM HOOKS (initial state, JS reveals) ========== */
