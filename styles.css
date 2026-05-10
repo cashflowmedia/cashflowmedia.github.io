@@ -2012,7 +2012,7 @@ ul, ol { list-style: none; }
 }
 .support-fab-circle:hover .support-tooltip { opacity: 1; transform: translateY(-50%) translateX(0); }
 @media (max-width: 600px) {
-  .support-stack { bottom: 18px; right: 18px; gap: 10px; }
+  .support-stack { bottom: 18px; right: 6px; gap: 10px; }
   .support-fab-circle { width: 52px; height: 52px; }
   .support-tooltip { display: none; }
   .support-online { font-size: 9px; padding: 4px 8px; }
