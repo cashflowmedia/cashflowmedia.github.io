@@ -331,13 +331,17 @@ ul, ol { list-style: none; }
 .ember {
   transform-box: fill-box; transform-origin: center;
   animation: emberRise 4.5s ease-out infinite;
-  filter: drop-shadow(0 0 1.5px #F4C95C);
+  /* Brighter, multi-layer halo so each ember reads more luminous */
+  filter:
+    drop-shadow(0 0 0.8px #FFF4D0)
+    drop-shadow(0 0 2px   #FFE4A0)
+    drop-shadow(0 0 4px   rgba(244,201,92,0.85));
 }
 @keyframes emberRise {
-  0%   { transform: translate(0,0) scale(1); opacity: 0; }
+  0%   { transform: translate(0,0) scale(1);    opacity: 0; }
   15%  { opacity: 1; }
-  50%  { transform: translate(2px,-30px) scale(0.7); opacity: 0.75; }
-  100% { transform: translate(-2px,-58px) scale(0.2); opacity: 0; }
+  50%  { transform: translate(2px,-30px) scale(0.85); opacity: 1; }
+  100% { transform: translate(-2px,-58px) scale(0.25); opacity: 0; }
 }
 .big-spark {
   transform-box: fill-box; transform-origin: center;
@@ -406,7 +410,7 @@ ul, ol { list-style: none; }
   align-items: baseline;
   font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
   font-weight: 800;
-  font-size: 22px;
+  font-size: 28px;
   letter-spacing: -0.015em;
   white-space: nowrap;
 }
