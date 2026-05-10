@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CashFlow Media · favicon
+     Simplified mark optimized for 16-64px display:
+     - No CFM letters (illegible below ~24px)
+     - No embers / halo / sparkles
+     - Solid background so the mark reads in any browser tab
+     - Heavier $ stroke (0.8 vs logo's 0.4) so the gold edge survives downscaling -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="b1" x1="0" y1="60" x2="0" y2="36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#006622"/><stop offset="1" stop-color="#1aff66"/></linearGradient>
+    <linearGradient id="b2" x1="0" y1="60" x2="0" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008833"/><stop offset="0.6" stop-color="#1aff66"/><stop offset="1" stop-color="#aaff99"/></linearGradient>
+    <linearGradient id="b3" x1="0" y1="60" x2="0" y2="6"  gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008833"/><stop offset="0.45" stop-color="#1aff66"/><stop offset="0.78" stop-color="#aaff99"/><stop offset="1" stop-color="#F4C95C"/></linearGradient>
+  </defs>
+  <!-- rounded dark background tile so the mark works on any browser-tab color -->
+  <rect width="64" height="64" rx="10" fill="#0c0e0d"/>
+  <path d="M8 56 V46 L19 38 V56 Z" fill="url(#b1)"/>
+  <path d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,0.5)"/>
+  <path d="M22 56 V34 L33 24 V56 Z" fill="url(#b2)"/>
+  <path d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,0.5)"/>
+  <path d="M36 56 V20 L47 8 V56 Z" fill="url(#b3)"/>
+  <path d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,0.55)"/>
+  <text x="41.5" y="46" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="900" fill="#0a0500" stroke="#F4C95C" stroke-width="0.9" style="paint-order:stroke fill;letter-spacing:-1px">$</text>
+</svg>
