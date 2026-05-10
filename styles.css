@@ -485,10 +485,11 @@ ul, ol { list-style: none; }
 }
 /* "CashFlow" portion — gold gradient text + gold ambient bloom (scoped here so green 'media' isn't tinted gold) */
 .logo-cf {
+  /* SOLID GOLD FALLBACK — shows if background-clip:text fails (old iOS Safari, etc.) so text never renders dark */
+  color: #F4C95C;
   background: linear-gradient(120deg, #F4C95C 0%, #FFE4A0 30%, #F4C95C 60%, #FFD480 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-size: 250% 100%;
   animation: goldShimmer 5s linear infinite;
   filter:
@@ -497,6 +498,21 @@ ul, ol { list-style: none; }
     drop-shadow(0 0 28px rgba(244,201,92,0.25))
     drop-shadow(0 0 50px rgba(244,201,92,0.12))
     drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+/* Only make the text-fill transparent where background-clip:text is actually supported — prevents invisible/dark text on browsers that don't render the gradient clip */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .logo-cf {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+/* Mobile: pare the 5-layer drop-shadow down to 2 — too many stacked drop-shadows on gradient-clipped text causes mobile Safari/Chrome to fall back to solid black on lower-end GPUs */
+@media (max-width: 600px) {
+  .logo-cf {
+    filter:
+      drop-shadow(0 0 4px  rgba(244,201,92,0.7))
+      drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+  }
 }
 @keyframes goldShimmer {
   0%   { background-position: 0% 50%; }
