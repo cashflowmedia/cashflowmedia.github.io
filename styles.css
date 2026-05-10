@@ -423,16 +423,16 @@ ul, ol { list-style: none; }
   100% { background-position: 250% 50%; }
 }
 
-/* "media" — VT323 (digital/CRT), bigger size + wider tracking for M clarity, strong green glow */
+/* "media" — Share Tech Mono (clean terminal/matrix vibe but every letter stays legible) */
 .logo-word em {
   display: inline-block;
   margin-left: 9px;
-  font-family: 'VT323', 'Share Tech Mono', monospace;
+  font-family: 'Share Tech Mono', 'JetBrains Mono', 'VT323', monospace;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.55em;
+  font-size: 1.15em;
   line-height: 1;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   color: var(--green);
   text-shadow:
     0 0 2px rgba(26,255,102,0.85),
