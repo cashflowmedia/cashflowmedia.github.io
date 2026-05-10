@@ -657,117 +657,163 @@
   </div>
 </div>
 
-<!-- CRM demo data + interactivity -->
+<!-- CRM demo data + interactivity (defensive: each block in its own try/catch, runs on DOMContentLoaded) -->
 <script>
 (function() {
-  // Synthetic account data
-  var accounts = [
-    { name: 'AcctOnyx-001', bm: 'act_724913852', status: 'active',   today:  842, r7:  4920, r30: 18420, capDaily: 1500, last: 'campaign launched · 14m ago' },
-    { name: 'AcctOnyx-002', bm: 'act_938472119', status: 'active',   today: 1240, r7:  7610, r30: 28810, capDaily: 2500, last: 'budget raised · 1h ago' },
-    { name: 'AcctOnyx-003', bm: 'act_182039475', status: 'warming',  today:   42, r7:   210, r30:   210, capDaily:  100, last: 'warmup day 3 of 7' },
-    { name: 'AcctOnyx-004', bm: 'act_562871094', status: 'active',   today: 2104, r7: 11580, r30: 41220, capDaily: 3000, last: 'creative refreshed · 3h ago' },
-    { name: 'AcctOnyx-005', bm: 'act_409182736', status: 'replaced', today:    0, r7:  3210, r30: 14920, capDaily: 2000, last: 'auto-replaced · 6h ago' },
-    { name: 'AcctOnyx-006', bm: 'act_873625109', status: 'active',   today:  618, r7:  3860, r30: 12740, capDaily: 1500, last: 'pixel verified · 2d ago' },
-    { name: 'AcctOnyx-007', bm: 'act_274916083', status: 'warming',  today:   28, r7:   140, r30:   140, capDaily:  100, last: 'warmup day 2 of 7' },
-    { name: 'AcctOnyx-008', bm: 'act_651092384', status: 'active',   today: 1567, r7:  9340, r30: 33510, capDaily: 2500, last: 'audience expanded · 1d ago' },
-    { name: 'AcctOnyx-009', bm: 'act_390582714', status: 'disabled', today:    0, r7:  1240, r30:  6890, capDaily:    0, last: 'flagged · awaiting replacement' },
-    { name: 'AcctOnyx-010', bm: 'act_817264503', status: 'active',   today:  956, r7:  5720, r30: 21360, capDaily: 2000, last: 'CBO enabled · 4h ago' },
-    { name: 'AcctOnyx-011', bm: 'act_502938174', status: 'active',   today:  398, r7:  2840, r30:  9920, capDaily: 1000, last: 'campaign duplicated · 9h ago' },
-    { name: 'AcctOnyx-012', bm: 'act_146298375', status: 'active',   today:  723, r7:  4310, r30: 16580, capDaily: 1500, last: 'ad approved · 28m ago' }
-  ];
+  function init() {
+    var $ = function(id) { return document.getElementById(id); };
 
-  var statusLabel = { active:'Active', warming:'Warming up', disabled:'Disabled', replaced:'Replaced' };
+    // === Force-reveal ALL data-anim sections on this page ===
+    // GSAP normally handles this on scroll, but if anything upstream errors,
+    // sections would stay at opacity:0 and look like "buttons don't work".
+    try {
+      var revealed = document.querySelectorAll('[data-anim]');
+      revealed.forEach(function(el) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    } catch (e) { console.warn('reveal fallback failed', e); }
 
-  var filterRange  = document.getElementById('filterRange');
-  var filterStatus = document.getElementById('filterStatus');
-  var filterSort   = document.getElementById('filterSort');
-  var filterReset  = document.getElementById('filterReset');
-  var rowsEl       = document.getElementById('crmRows');
-  var emptyEl      = document.getElementById('crmEmpty');
-  var kpiTotal     = document.getElementById('kpiTotal');
-  var kpiActive    = document.getElementById('kpiActive');
-  var kpiSpend     = document.getElementById('kpiSpend');
-  var kpiSpendRange= document.getElementById('kpiSpendRange');
-  var kpiReplaced  = document.getElementById('kpiReplaced');
+    // === Synthetic account data ===
+    var accounts = [
+      { name: 'AcctOnyx-001', bm: 'act_724913852', status: 'active',   today:  842, r7:  4920, r30: 18420, capDaily: 1500, last: 'campaign launched 14m ago' },
+      { name: 'AcctOnyx-002', bm: 'act_938472119', status: 'active',   today: 1240, r7:  7610, r30: 28810, capDaily: 2500, last: 'budget raised 1h ago' },
+      { name: 'AcctOnyx-003', bm: 'act_182039475', status: 'warming',  today:   42, r7:   210, r30:   210, capDaily:  100, last: 'warmup day 3 of 7' },
+      { name: 'AcctOnyx-004', bm: 'act_562871094', status: 'active',   today: 2104, r7: 11580, r30: 41220, capDaily: 3000, last: 'creative refreshed 3h ago' },
+      { name: 'AcctOnyx-005', bm: 'act_409182736', status: 'replaced', today:    0, r7:  3210, r30: 14920, capDaily: 2000, last: 'auto-replaced 6h ago' },
+      { name: 'AcctOnyx-006', bm: 'act_873625109', status: 'active',   today:  618, r7:  3860, r30: 12740, capDaily: 1500, last: 'pixel verified 2d ago' },
+      { name: 'AcctOnyx-007', bm: 'act_274916083', status: 'warming',  today:   28, r7:   140, r30:   140, capDaily:  100, last: 'warmup day 2 of 7' },
+      { name: 'AcctOnyx-008', bm: 'act_651092384', status: 'active',   today: 1567, r7:  9340, r30: 33510, capDaily: 2500, last: 'audience expanded 1d ago' },
+      { name: 'AcctOnyx-009', bm: 'act_390582714', status: 'disabled', today:    0, r7:  1240, r30:  6890, capDaily:    0, last: 'flagged - awaiting replacement' },
+      { name: 'AcctOnyx-010', bm: 'act_817264503', status: 'active',   today:  956, r7:  5720, r30: 21360, capDaily: 2000, last: 'CBO enabled 4h ago' },
+      { name: 'AcctOnyx-011', bm: 'act_502938174', status: 'active',   today:  398, r7:  2840, r30:  9920, capDaily: 1000, last: 'campaign duplicated 9h ago' },
+      { name: 'AcctOnyx-012', bm: 'act_146298375', status: 'active',   today:  723, r7:  4310, r30: 16580, capDaily: 1500, last: 'ad approved 28m ago' }
+    ];
+    var statusLabel = { active:'Active', warming:'Warming up', disabled:'Disabled', replaced:'Replaced' };
 
-  function spendForRange(a, range) {
-    if (range === 'today' || range === 'yesterday') return a.today;
-    if (range === '7') return a.r7;
-    if (range === '30') return a.r30;
-    return a.r30 * 1.4; // "all time" fudge
+    function spendForRange(a, range) {
+      if (range === 'today' || range === 'yesterday') return a.today;
+      if (range === '7') return a.r7;
+      if (range === '30') return a.r30;
+      return Math.round(a.r30 * 1.4);
+    }
+    function rangeLabel(r){return {today:'Today',yesterday:'Yesterday','7':'Last 7 days','30':'Last 30 days',all:'All time'}[r];}
+    function fmt(n){return '$' + n.toLocaleString();}
+
+    function render() {
+      var filterRange  = $('filterRange'), filterStatus = $('filterStatus'), filterSort = $('filterSort');
+      var rowsEl = $('crmRows'), emptyEl = $('crmEmpty');
+      if (!filterRange || !rowsEl) return;
+      var range = filterRange.value, status = filterStatus.value, sort = filterSort.value;
+      var rows = accounts.slice();
+      if (status !== 'all') rows = rows.filter(function(a){ return a.status === status; });
+      var totalRangeSpend = rows.reduce(function(s,a){ return s + spendForRange(a, range); }, 0);
+      if (sort === 'spend-desc') rows.sort(function(a,b){ return spendForRange(b,range) - spendForRange(a,range); });
+      if (sort === 'spend-asc')  rows.sort(function(a,b){ return spendForRange(a,range) - spendForRange(b,range); });
+      if (sort === 'name-asc')   rows.sort(function(a,b){ return a.name.localeCompare(b.name); });
+      if (sort === 'name-desc')  rows.sort(function(a,b){ return b.name.localeCompare(a.name); });
+      if (sort === 'status')     rows.sort(function(a,b){ return a.status.localeCompare(b.status); });
+
+      rowsEl.innerHTML = '';
+      if (emptyEl) emptyEl.hidden = !!rows.length;
+      rows.forEach(function(a){
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><div class="crm-acct-name">' + a.name + '</div></td>' +
+          '<td><code class="crm-bm">' + a.bm + '</code></td>' +
+          '<td><span class="crm-badge crm-badge-' + a.status + '">' + statusLabel[a.status] + '</span></td>' +
+          '<td class="num">' + fmt(a.today) + '</td>' +
+          '<td class="num">' + fmt(spendForRange(a, range)) + '</td>' +
+          '<td class="num">' + (a.capDaily ? fmt(a.capDaily) : '-') + '</td>' +
+          '<td class="crm-last">' + a.last + '</td>';
+        rowsEl.appendChild(tr);
+      });
+
+      var kpiTotal = $('kpiTotal'), kpiActive = $('kpiActive'), kpiSpend = $('kpiSpend');
+      var kpiSpendRange = $('kpiSpendRange'), kpiReplaced = $('kpiReplaced');
+      if (kpiTotal)      kpiTotal.textContent    = accounts.length;
+      if (kpiActive)     kpiActive.textContent   = accounts.filter(function(a){ return a.status==='active'; }).length;
+      if (kpiSpend)      kpiSpend.textContent    = fmt(Math.round(totalRangeSpend));
+      if (kpiSpendRange) kpiSpendRange.textContent = rangeLabel(range);
+      if (kpiReplaced)   kpiReplaced.textContent = accounts.filter(function(a){ return a.status==='replaced'; }).length;
+    }
+
+    // === Filters ===
+    try {
+      ['filterRange','filterStatus','filterSort'].forEach(function(id){
+        var el = $(id); if (el) el.addEventListener('change', render);
+      });
+      var resetBtn = $('filterReset');
+      if (resetBtn) resetBtn.addEventListener('click', function() {
+        var fr = $('filterRange'), fs = $('filterStatus'), fo = $('filterSort');
+        if (fr) fr.value = '7'; if (fs) fs.value = 'all'; if (fo) fo.value = 'spend-desc';
+        render();
+      });
+    } catch (e) { console.warn('filter setup failed', e); }
+
+    // === Modal ===
+    var modal = $('bindModal');
+    function openModal(){ if (!modal) return; modal.hidden = false; modal.setAttribute('aria-hidden','false'); requestAnimationFrame(function(){ modal.classList.add('is-open'); }); }
+    function closeModal(){ if (!modal) return; modal.classList.remove('is-open'); setTimeout(function(){ modal.hidden = true; modal.setAttribute('aria-hidden','true'); }, 200); }
+    try {
+      var bindBtn = $('bindBtn');
+      if (bindBtn) bindBtn.addEventListener('click', openModal);
+      if (modal) modal.addEventListener('click', function(e){ if (e.target.matches('[data-close-modal]')) closeModal(); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal && !modal.hidden) closeModal(); });
+    } catch (e) { console.warn('modal setup failed', e); }
+
+    // === Toast ===
+    var toast = $('crmToast'), toastTimer;
+    function showToast(msg) {
+      if (!toast) { alert(msg); return; }
+      toast.textContent = msg; toast.hidden = false;
+      requestAnimationFrame(function(){ toast.classList.add('is-show'); });
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function(){ toast.classList.remove('is-show'); setTimeout(function(){ toast.hidden = true; }, 250); }, 2800);
+    }
+
+    try {
+      var bindSubmit = $('bindSubmit');
+      if (bindSubmit) bindSubmit.addEventListener('click', function() {
+        var inp = $('bindBmId');
+        var id = inp ? inp.value.trim() : '';
+        closeModal();
+        showToast(id ? ('Bind request sent for BM ' + id + ' - notify in Telegram') : 'Demo mode - in production this fires the bind request');
+      });
+      var pdfBtn = $('pdfBtn');
+      if (pdfBtn) pdfBtn.addEventListener('click', function() {
+        showToast('Demo mode - the live CRM generates a branded PDF for the active filter range');
+      });
+    } catch (e) { console.warn('button setup failed', e); }
+
+    // === Year + initial render ===
+    try { var y = $('year'); if (y) y.textContent = new Date().getFullYear(); } catch (e) {}
+    try { render(); } catch (e) { console.warn('initial render failed', e); }
+
+    // === Anchor-link smooth scroll fallback (in case script.js never wires it) ===
+    try {
+      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var id = link.getAttribute('href');
+          if (id && id.length > 1) {
+            var target = document.querySelector(id);
+            if (target) {
+              // only intervene if no other handler already prevented default
+              setTimeout(function() {
+                if (!e.defaultPrevented) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 0);
+            }
+          }
+        });
+      });
+    } catch (e) { console.warn('anchor scroll fallback failed', e); }
   }
-  function rangeLabel(r){return {today:'Today',yesterday:'Yesterday','7':'Last 7 days','30':'Last 30 days',all:'All time'}[r];}
-  function fmt(n){return '$' + n.toLocaleString();}
 
-  function render() {
-    var range = filterRange.value, status = filterStatus.value, sort = filterSort.value;
-    var rows = accounts.slice();
-    if (status !== 'all') rows = rows.filter(function(a){ return a.status === status; });
-    var totalRangeSpend = rows.reduce(function(s,a){ return s + spendForRange(a, range); }, 0);
-    if (sort === 'spend-desc') rows.sort(function(a,b){ return spendForRange(b,range) - spendForRange(a,range); });
-    if (sort === 'spend-asc')  rows.sort(function(a,b){ return spendForRange(a,range) - spendForRange(b,range); });
-    if (sort === 'name-asc')   rows.sort(function(a,b){ return a.name.localeCompare(b.name); });
-    if (sort === 'name-desc')  rows.sort(function(a,b){ return b.name.localeCompare(a.name); });
-    if (sort === 'status')     rows.sort(function(a,b){ return a.status.localeCompare(b.status); });
-
-    rowsEl.innerHTML = '';
-    if (!rows.length) { emptyEl.hidden = false; } else { emptyEl.hidden = true; }
-    rows.forEach(function(a){
-      var tr = document.createElement('tr');
-      tr.innerHTML =
-        '<td><div class="crm-acct-name">' + a.name + '</div></td>' +
-        '<td><code class="crm-bm">' + a.bm + '</code></td>' +
-        '<td><span class="crm-badge crm-badge-' + a.status + '">' + statusLabel[a.status] + '</span></td>' +
-        '<td class="num">' + fmt(a.today) + '</td>' +
-        '<td class="num">' + fmt(spendForRange(a, range)) + '</td>' +
-        '<td class="num">' + (a.capDaily ? fmt(a.capDaily) : '—') + '</td>' +
-        '<td class="crm-last">' + a.last + '</td>';
-      rowsEl.appendChild(tr);
-    });
-
-    // KPIs
-    kpiTotal.textContent    = accounts.length;
-    kpiActive.textContent   = accounts.filter(function(a){ return a.status==='active'; }).length;
-    kpiSpend.textContent    = fmt(Math.round(totalRangeSpend));
-    kpiSpendRange.textContent = rangeLabel(range);
-    kpiReplaced.textContent = accounts.filter(function(a){ return a.status==='replaced'; }).length;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-
-  [filterRange, filterStatus, filterSort].forEach(function(el){ el.addEventListener('change', render); });
-  filterReset.addEventListener('click', function() {
-    filterRange.value = '7'; filterStatus.value = 'all'; filterSort.value = 'spend-desc'; render();
-  });
-
-  // Bind New BM modal
-  var modal = document.getElementById('bindModal');
-  var bindBtn = document.getElementById('bindBtn');
-  function openModal(){ modal.hidden = false; modal.setAttribute('aria-hidden','false'); requestAnimationFrame(function(){ modal.classList.add('is-open'); }); }
-  function closeModal(){ modal.classList.remove('is-open'); setTimeout(function(){ modal.hidden = true; modal.setAttribute('aria-hidden','true'); }, 200); }
-  bindBtn.addEventListener('click', openModal);
-  modal.addEventListener('click', function(e){ if (e.target.matches('[data-close-modal]')) closeModal(); });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !modal.hidden) closeModal(); });
-
-  // Toast
-  var toast = document.getElementById('crmToast'), toastTimer;
-  function showToast(msg) {
-    toast.textContent = msg; toast.hidden = false;
-    requestAnimationFrame(function(){ toast.classList.add('is-show'); });
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function(){ toast.classList.remove('is-show'); setTimeout(function(){ toast.hidden = true; }, 250); }, 2800);
-  }
-  document.getElementById('bindSubmit').addEventListener('click', function() {
-    var id = document.getElementById('bindBmId').value.trim();
-    closeModal();
-    showToast(id ? ('Bind request sent for BM ' + id + ' · we’ll notify you in Telegram') : 'Demo mode · in production this fires the bind request');
-  });
-  document.getElementById('pdfBtn').addEventListener('click', function() {
-    showToast('Demo mode · the live CRM generates a branded PDF for the active filter range');
-  });
-
-  // Year
-  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
-
-  render();
 })();
 </script>
 
