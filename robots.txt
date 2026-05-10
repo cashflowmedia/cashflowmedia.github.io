@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /logo.html
 Disallow: /.export/
 Disallow: /combined.html
 Disallow: /logos.html
