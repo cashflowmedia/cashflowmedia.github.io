@@ -41,6 +41,12 @@
       <stop offset="0.45" stop-color="#5a3a14"/>
       <stop offset="1" stop-color="#0a0500"/>
     </linearGradient>
+    <linearGradient id="coinGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE4A0"/>
+      <stop offset="0.3" stop-color="#F4C95C"/>
+      <stop offset="0.7" stop-color="#D49A30"/>
+      <stop offset="1" stop-color="#5a3a14"/>
+    </linearGradient>
     <radialGradient id="fireGrad" cx="50%" cy="100%" r="60%">
       <stop offset="0" stop-color="#F4C95C" stop-opacity="0.75"/>
       <stop offset="0.5" stop-color="#D49A30" stop-opacity="0.35"/>
@@ -167,6 +173,25 @@
   <a href="#" class="nav-logo">
     <span class="logo-mark" aria-hidden="true">
       <svg width="72" height="72" viewBox="0 0 64 64" fill="none" overflow="visible">
+        <!-- Pile of gold coins under the bars -->
+        <g class="coin-pile" filter="drop-shadow(0 0.5px 0.6px rgba(0,0,0,0.6))">
+          <ellipse cx="8"  cy="62"   rx="3"   ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="18" cy="62.5" rx="4"   ry="1"    fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="32" cy="62.7" rx="4.5" ry="1.1"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="46" cy="62.5" rx="4"   ry="1"    fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="56" cy="62"   rx="3"   ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="13" cy="60.5" rx="3"   ry="0.85" fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="25" cy="60.8" rx="3.5" ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="38" cy="60.8" rx="3.5" ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="51" cy="60.5" rx="3"   ry="0.85" fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="19" cy="58.8" rx="2.5" ry="0.7"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="32" cy="59.0" rx="3"   ry="0.8"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="45" cy="58.8" rx="2.5" ry="0.7"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="32" cy="62.4" rx="3.5" ry="0.2"  fill="#FFF4D0" opacity="0.55"/>
+          <ellipse cx="18" cy="62.2" rx="3"   ry="0.2"  fill="#FFF4D0" opacity="0.55"/>
+          <ellipse cx="46" cy="62.2" rx="3"   ry="0.2"  fill="#FFF4D0" opacity="0.55"/>
+          <ellipse cx="32" cy="58.7" rx="2.2" ry="0.18" fill="#FFF4D0" opacity="0.55"/>
+        </g>
         <circle class="ember" cx="8"  cy="58" r="0.7" fill="#F4C95C" style="animation-delay:-0.5s; animation-duration:5.2s; pointer-events:none"/>
         <circle class="ember" cx="16" cy="57" r="0.5" fill="#FFD480" style="animation-delay:-2.7s; animation-duration:6.0s; pointer-events:none"/>
         <circle class="ember" cx="22" cy="58" r="0.6" fill="#FFE4A0" style="animation-delay:-1.4s; animation-duration:4.8s; pointer-events:none"/>
@@ -190,9 +215,9 @@
           <path class="shade-3" d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,0.4)"/>
         </g>
         <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Bowlby One, Inter, sans-serif" font-size=" 22" font-weight="400" fill="#0a0500" stroke="#F4C95C" stroke-width="0.4" style="letter-spacing:-1px;paint-order:stroke fill">$</text>
-        <text class="gold-inlay" x="13.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" style="letter-spacing:0.02em">C</text>
-        <text class="gold-inlay" x="27.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" style="letter-spacing:0.02em">F</text>
-        <text class="gold-inlay" x="41.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" style="letter-spacing:0.02em">M</text>
+        <text class="gold-inlay" x="13.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" stroke="#F4C95C" stroke-width="0.06" style="paint-order:stroke fill;letter-spacing:0.02em">C</text>
+        <text class="gold-inlay" x="27.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" stroke="#F4C95C" stroke-width="0.06" style="paint-order:stroke fill;letter-spacing:0.02em">F</text>
+        <text class="gold-inlay" x="41.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" stroke="#F4C95C" stroke-width="0.06" style="paint-order:stroke fill;letter-spacing:0.02em">M</text>
       </svg>
     </span>
     <span class="logo-word"><span class="logo-cf">CashFlow</span><em>media</em></span>
@@ -844,6 +869,25 @@
       <a href="#" class="nav-logo">
         <span class="logo-mark" aria-hidden="true">
           <svg width="72" height="72" viewBox="0 0 64 64" fill="none" overflow="visible">
+        <!-- Pile of gold coins under the bars -->
+        <g class="coin-pile" filter="drop-shadow(0 0.5px 0.6px rgba(0,0,0,0.6))">
+          <ellipse cx="8"  cy="62"   rx="3"   ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="18" cy="62.5" rx="4"   ry="1"    fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="32" cy="62.7" rx="4.5" ry="1.1"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="46" cy="62.5" rx="4"   ry="1"    fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="56" cy="62"   rx="3"   ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="13" cy="60.5" rx="3"   ry="0.85" fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="25" cy="60.8" rx="3.5" ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="38" cy="60.8" rx="3.5" ry="0.9"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="51" cy="60.5" rx="3"   ry="0.85" fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="19" cy="58.8" rx="2.5" ry="0.7"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="32" cy="59.0" rx="3"   ry="0.8"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="45" cy="58.8" rx="2.5" ry="0.7"  fill="url(#coinGold)" stroke="#5a3a14" stroke-width="0.1"/>
+          <ellipse cx="32" cy="62.4" rx="3.5" ry="0.2"  fill="#FFF4D0" opacity="0.55"/>
+          <ellipse cx="18" cy="62.2" rx="3"   ry="0.2"  fill="#FFF4D0" opacity="0.55"/>
+          <ellipse cx="46" cy="62.2" rx="3"   ry="0.2"  fill="#FFF4D0" opacity="0.55"/>
+          <ellipse cx="32" cy="58.7" rx="2.2" ry="0.18" fill="#FFF4D0" opacity="0.55"/>
+        </g>
         <circle class="ember" cx="8"  cy="58" r="0.7" fill="#F4C95C" style="animation-delay:-0.5s; animation-duration:5.2s; pointer-events:none"/>
         <circle class="ember" cx="16" cy="57" r="0.5" fill="#FFD480" style="animation-delay:-2.7s; animation-duration:6.0s; pointer-events:none"/>
         <circle class="ember" cx="22" cy="58" r="0.6" fill="#FFE4A0" style="animation-delay:-1.4s; animation-duration:4.8s; pointer-events:none"/>
@@ -867,9 +911,9 @@
           <path class="shade-3" d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,0.4)"/>
         </g>
         <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Bowlby One, Inter, sans-serif" font-size=" 22" font-weight="400" fill="#0a0500" stroke="#F4C95C" stroke-width="0.4" style="letter-spacing:-1px;paint-order:stroke fill">$</text>
-        <text class="gold-inlay" x="13.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" style="letter-spacing:0.02em">C</text>
-        <text class="gold-inlay" x="27.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" style="letter-spacing:0.02em">F</text>
-        <text class="gold-inlay" x="41.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" style="letter-spacing:0.02em">M</text>
+        <text class="gold-inlay" x="13.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" stroke="#F4C95C" stroke-width="0.06" style="paint-order:stroke fill;letter-spacing:0.02em">C</text>
+        <text class="gold-inlay" x="27.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" stroke="#F4C95C" stroke-width="0.06" style="paint-order:stroke fill;letter-spacing:0.02em">F</text>
+        <text class="gold-inlay" x="41.5" y="55.2" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" font-size="10" fill="#0a0500" stroke="#F4C95C" stroke-width="0.06" style="paint-order:stroke fill;letter-spacing:0.02em">M</text>
       </svg>
         </span>
         <span class="logo-word"><span class="logo-cf">CashFlow</span><em>media</em></span>
