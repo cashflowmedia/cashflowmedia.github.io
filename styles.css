@@ -241,17 +241,80 @@ ul, ol { list-style: none; }
   display: grid; place-items: center;
 }
 .loader-inner { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.loader-logo { width: 150px; height: 150px; overflow: visible; }
+.loader-logo {
+  width: 180px; height: 180px; overflow: visible;
+  /* WOW: subtle breath pulse on the whole logomark */
+  animation: loaderBreath 3.6s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes loaderBreath {
+  0%, 100% { transform: scale(1)   rotate(0deg); }
+  50%      { transform: scale(1.05) rotate(0.4deg); }
+}
 .loader-text {
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: 0.4em;
   font-weight: 700;
   font-size: 14px;
-  color: #F4C95C;
-  animation: pulse 1.4s ease-in-out infinite;
-  margin-top: 12px;
+  margin-top: 16px;
+  /* WOW: gold gradient text with traveling shine */
+  background: linear-gradient(120deg, #F4C95C 0%, #FFE4A0 25%, #FFFFFF 50%, #FFE4A0 75%, #F4C95C 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(244,201,92,0.5));
+  animation: loaderTextShine 3s linear infinite;
 }
+@keyframes loaderTextShine { to { background-position: 200% 0; } }
 @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+/* WOW: Rotating halo rings around the loader logo */
+.loader-halo {
+  transform-origin: 32px 32px;
+  transform-box: fill-box;
+  animation: loaderHaloSpin 14s linear infinite;
+}
+.loader-halo.halo-counter {
+  animation: loaderHaloSpin 9s linear infinite reverse;
+}
+@keyframes loaderHaloSpin { to { transform: rotate(360deg); } }
+
+/* WOW: Sparkle stars popping at random positions around the logo */
+.loader-sparkles .spark {
+  transform-box: fill-box; transform-origin: center;
+  opacity: 0;
+  animation: loaderSpark 3.6s ease-out infinite;
+  filter: drop-shadow(0 0 1.5px currentColor);
+}
+.loader-sparkles .spark:nth-child(1) { animation-delay: 0s;   color: #F4C95C; }
+.loader-sparkles .spark:nth-child(2) { animation-delay: 0.4s; color: #1aff66; }
+.loader-sparkles .spark:nth-child(3) { animation-delay: 0.9s; color: #F4C95C; }
+.loader-sparkles .spark:nth-child(4) { animation-delay: 1.4s; color: #1aff66; }
+.loader-sparkles .spark:nth-child(5) { animation-delay: 1.8s; color: #F4C95C; }
+.loader-sparkles .spark:nth-child(6) { animation-delay: 2.2s; color: #1aff66; }
+.loader-sparkles .spark:nth-child(7) { animation-delay: 2.7s; color: #F4C95C; }
+.loader-sparkles .spark:nth-child(8) { animation-delay: 3.1s; color: #1aff66; }
+@keyframes loaderSpark {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  8%       { opacity: 1; transform: scale(2.4) rotate(60deg); }
+  20%      { opacity: 0; transform: scale(0.8) rotate(120deg); }
+}
+
+/* WOW: CFM letters fade-in with bouncy pop, synced to bars cascade (2.4s cycle) */
+.cfm-load {
+  opacity: 0;
+  transform-origin: center; transform-box: fill-box;
+  animation: cfmLoadIn 2.4s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+.cfm-load.cfm-c { animation-delay: 0.55s; }
+.cfm-load.cfm-f { animation-delay: 0.65s; }
+.cfm-load.cfm-m { animation-delay: 0.75s; }
+@keyframes cfmLoadIn {
+  0%, 12%  { opacity: 0; transform: translateY(-3px) scale(0.4); }
+  22%, 78% { opacity: 1; transform: translateY(0)    scale(1); }
+  92%, 100%{ opacity: 0; transform: translateY(0)    scale(0.85); }
+}
 
 /* Real progress bar — fills as the page actually loads */
 .loader-progress {
@@ -265,11 +328,15 @@ ul, ol { list-style: none; }
 .loader-progress-fill {
   width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #1aff66 0%, #66ff88 50%, #F4C95C 100%);
+  /* WOW: traveling shine across the fill */
+  background: linear-gradient(90deg, #1aff66 0%, #aaff99 25%, #FFE4A0 50%, #aaff99 75%, #1aff66 100%);
+  background-size: 200% 100%;
   border-radius: 3px;
-  box-shadow: 0 0 8px rgba(244,201,92,0.5);
+  box-shadow: 0 0 12px rgba(26,255,102,0.6), 0 0 20px rgba(244,201,92,0.35);
   transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: loaderProgressShine 1.6s linear infinite;
 }
+@keyframes loaderProgressShine { to { background-position: 200% 0; } }
 
 /* Loader-only dramatic build cascade (bars build L→R, hold, drop, loop) */
 .cas-load { transform-origin: bottom; transform-box: fill-box; animation: cascadeLoad 2.4s ease-out infinite; }
