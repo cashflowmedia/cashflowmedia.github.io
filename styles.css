@@ -630,14 +630,14 @@ ul, ol { list-style: none; }
   text-shadow: 0 4px 40px rgba(0,0,0,0.6);
 }
 .hero-title .gradient-text {
-  /* Soft, natural ambient glow — wide diffuse halo with low opacity layers */
+  /* Soft rounded ambient glow — tight enough that it isn't clipped into a horizontal stripe */
   filter:
-    drop-shadow(0 0 14px  rgba(26,255,102,0.20))
-    drop-shadow(0 0 36px  rgba(26,255,102,0.14))
-    drop-shadow(0 0 80px  rgba(26,255,102,0.08))
-    drop-shadow(0 0 160px rgba(26,255,102,0.04));
+    drop-shadow(0 0 6px  rgba(26,255,102,0.5))
+    drop-shadow(0 0 14px rgba(26,255,102,0.28))
+    drop-shadow(0 0 28px rgba(26,255,102,0.16));
 }
-.hero-title .line { display: block; overflow: hidden; padding-bottom: 0.05em; }
+/* Visible overflow so the green halo can bleed above/below the line instead of being clipped to a rectangle (looked like a highlighter strip) */
+.hero-title .line { display: block; overflow: visible; padding-bottom: 0.05em; }
 .hero-title .word {
   display: inline-block;
   transform: translateY(110%);
