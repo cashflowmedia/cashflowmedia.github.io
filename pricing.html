@@ -140,67 +140,53 @@
   <a href="index.html" class="nav-logo">
     <span class="logo-mark" aria-hidden="true">
       <svg width="72" height="72" viewBox="0 0 64 64" fill="none" overflow="visible">
-        <!-- Natural pile of gold coins under the bars (taller, bigger, centered under bars at x~27.5) -->
+        <!-- Pile of gold coins — shorter (3 layers), bigger coins, centered under bars -->
         <g class="coin-pile" filter="drop-shadow(0 0.7px 1px rgba(0,0,0,0.7))">
-          <!-- ground shadow blob anchors the pile -->
-          <ellipse cx="27.5" cy="63.9" rx="32" ry="1.6" fill="rgba(0,0,0,0.6)" filter="blur(0.5px)"/>
+          <!-- ground shadow -->
+          <ellipse cx="27.5" cy="64.1" rx="34" ry="1.7" fill="rgba(0,0,0,0.6)" filter="blur(0.5px)"/>
 
-          <!-- foundation row (largest coins, fully visible) -->
-          <ellipse cx="3"   cy="63.4" rx="2.6" ry="1.1"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" opacity="0.85" transform="rotate(-12 3 63.4)"/>
-          <ellipse cx="9"   cy="63.7" rx="4.5" ry="1.5"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(6 9 63.7)"/>
-          <ellipse cx="17"  cy="63.85" rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-3 17 63.85)"/>
-          <ellipse cx="27.5" cy="63.95" rx="6.5" ry="1.95" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-1 27.5 63.95)"/>
-          <ellipse cx="38"  cy="63.85" rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(4 38 63.85)"/>
-          <ellipse cx="46"  cy="63.7" rx="4.5" ry="1.5"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-7 46 63.7)"/>
-          <ellipse cx="52"  cy="63.4" rx="2.6" ry="1.1"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" opacity="0.85" transform="rotate(9 52 63.4)"/>
+          <!-- foundation row (huge coins) -->
+          <ellipse cx="2"    cy="63.4"  rx="2.8" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  opacity="0.85" transform="rotate(-15 2 63.4)"/>
+          <ellipse cx="8"    cy="63.7"  rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(7 8 63.7)"/>
+          <ellipse cx="17"   cy="63.85" rx="6.5" ry="1.95" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-3 17 63.85)"/>
+          <ellipse cx="27.5" cy="63.95" rx="8"   ry="2.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.25" transform="rotate(-1 27.5 63.95)"/>
+          <ellipse cx="38"   cy="63.85" rx="6.5" ry="1.95" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(5 38 63.85)"/>
+          <ellipse cx="47"   cy="63.7"  rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-7 47 63.7)"/>
+          <ellipse cx="53"   cy="63.4"  rx="2.8" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  opacity="0.85" transform="rotate(10 53 63.4)"/>
 
-          <!-- "fallen / leaning" coins at edges (face-on profile) -->
-          <ellipse cx="-1"  cy="63.6" rx="1.6" ry="2.1" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(72 -1 63.6)"/>
-          <ellipse cx="56"  cy="63.5" rx="1.6" ry="2.1" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-68 56 63.5)"/>
+          <!-- fallen / leaning edge coins (face-on, tilted) -->
+          <ellipse cx="-1"   cy="63.6"  rx="1.7" ry="2.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(72 -1 63.6)"/>
+          <ellipse cx="56"   cy="63.5"  rx="1.7" ry="2.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-68 56 63.5)"/>
 
-          <!-- second row -->
-          <ellipse cx="6"   cy="61.9" rx="3.4" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-14 6 61.9)"/>
-          <ellipse cx="13"  cy="62.1" rx="4.5" ry="1.4"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(7 13 62.1)"/>
-          <ellipse cx="22"  cy="62.25" rx="5.0" ry="1.5" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-3 22 62.25)"/>
-          <ellipse cx="32"  cy="62.25" rx="5.2" ry="1.55" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(5 32 62.25)"/>
-          <ellipse cx="41"  cy="62.1" rx="4.5" ry="1.4"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-9 41 62.1)"/>
-          <ellipse cx="49"  cy="61.9" rx="3.4" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(11 49 61.9)"/>
+          <!-- mid row -->
+          <ellipse cx="6"    cy="62.0"  rx="4"   ry="1.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-13 6 62.0)"/>
+          <ellipse cx="14"   cy="62.15" rx="5.5" ry="1.65" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(8 14 62.15)"/>
+          <ellipse cx="24"   cy="62.25" rx="6"   ry="1.8" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-3 24 62.25)"/>
+          <ellipse cx="34"   cy="62.2"  rx="5.8" ry="1.75" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(6 34 62.2)"/>
+          <ellipse cx="43"   cy="62.05" rx="5"   ry="1.5" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-10 43 62.05)"/>
+          <ellipse cx="50"   cy="61.9"  rx="3.6" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(11 50 61.9)"/>
 
-          <!-- third row -->
-          <ellipse cx="10"  cy="60.1" rx="3.6" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(8 10 60.1)"/>
-          <ellipse cx="18"  cy="60.3" rx="4.4" ry="1.35" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-6 18 60.3)"/>
-          <ellipse cx="27"  cy="60.4" rx="4.8" ry="1.45" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(3 27 60.4)"/>
-          <ellipse cx="36"  cy="60.3" rx="4.4" ry="1.35" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-9 36 60.3)"/>
-          <ellipse cx="44"  cy="60.1" rx="3.6" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(13 44 60.1)"/>
+          <!-- top peek row (smaller coins, just under bars) -->
+          <ellipse cx="11"   cy="60.2"  rx="3.6" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-12 11 60.2)"/>
+          <ellipse cx="19"   cy="60.4"  rx="4.5" ry="1.4" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(7 19 60.4)"/>
+          <ellipse cx="36"   cy="60.4"  rx="4.5" ry="1.4" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-8 36 60.4)"/>
+          <ellipse cx="44"   cy="60.2"  rx="3.6" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(13 44 60.2)"/>
 
-          <!-- fourth row -->
-          <ellipse cx="14"  cy="58.5" rx="3.2" ry="1.0" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-12 14 58.5)"/>
-          <ellipse cx="22"  cy="58.7" rx="4.0" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(5 22 58.7)"/>
-          <ellipse cx="32"  cy="58.75" rx="4.2" ry="1.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-3 32 58.75)"/>
-          <ellipse cx="41"  cy="58.5" rx="3.2" ry="1.0" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(10 41 58.5)"/>
+          <!-- crown face-up coin at the top (bigger, clearly a coin with $ marking) -->
+          <ellipse cx="27.5" cy="59.7"  rx="4"   ry="3"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.25" transform="rotate(-3 27.5 59.7)"/>
+          <ellipse cx="27.5" cy="59.7"  rx="3.1" ry="2.3" fill="none" stroke="#7a4f1c" stroke-width="0.18" opacity="0.7" transform="rotate(-3 27.5 59.7)"/>
+          <text x="27.5" y="61.0" text-anchor="middle" font-family="Bowlby One, Inter, sans-serif" font-weight="900" font-size="3.4" fill="#3a2510" transform="rotate(-3 27.5 61.0)">$</text>
 
-          <!-- fifth row (peek under bars) -->
-          <ellipse cx="20"  cy="57.0" rx="2.8" ry="0.9" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-14 20 57.0)"/>
-          <ellipse cx="28"  cy="57.2" rx="3.4" ry="1.1" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(4 28 57.2)"/>
-          <ellipse cx="36"  cy="57.0" rx="2.8" ry="0.9" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-7 36 57.0)"/>
-
-          <!-- crown face-up coin (more circular — clearly a coin) -->
-          <ellipse cx="27.5" cy="55.6" rx="3.0" ry="2.4" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-4 27.5 55.6)"/>
-          <!-- inner rim ring of crown coin -->
-          <ellipse cx="27.5" cy="55.6" rx="2.2" ry="1.7" fill="none" stroke="#7a4f1c" stroke-width="0.15" opacity="0.7" transform="rotate(-4 27.5 55.6)"/>
-          <!-- tiny "$" on the crown coin face, marking it as a coin -->
-          <text x="27.5" y="56.6" text-anchor="middle" font-family="Bowlby One, Inter, sans-serif" font-weight="900" font-size="2.6" fill="#3a2510" transform="rotate(-4 27.5 56.6)">$</text>
-
-          <!-- top rim highlights catching light on big coins -->
-          <ellipse cx="27.5" cy="63.55" rx="5.4" ry="0.22" fill="#FFF4D0" opacity="0.65" transform="rotate(-1 27.5 63.55)"/>
-          <ellipse cx="17"   cy="63.5" rx="4.4" ry="0.2"  fill="#FFF4D0" opacity="0.55" transform="rotate(-3 17 63.5)"/>
-          <ellipse cx="38"   cy="63.5" rx="4.4" ry="0.2"  fill="#FFF4D0" opacity="0.55" transform="rotate(4 38 63.5)"/>
-          <ellipse cx="22"   cy="61.95" rx="3.8" ry="0.18" fill="#FFE4A0" opacity="0.55" transform="rotate(-3 22 61.95)"/>
-          <ellipse cx="32"   cy="61.95" rx="4.0" ry="0.18" fill="#FFE4A0" opacity="0.55" transform="rotate(5 32 61.95)"/>
-          <ellipse cx="27"   cy="60.1"  rx="3.6" ry="0.18" fill="#FFE4A0" opacity="0.55" transform="rotate(3 27 60.1)"/>
-          <ellipse cx="32"   cy="58.5"  rx="3.0" ry="0.16" fill="#FFE4A0" opacity="0.55" transform="rotate(-3 32 58.5)"/>
-          <ellipse cx="28"   cy="56.95" rx="2.6" ry="0.16" fill="#FFE4A0" opacity="0.55" transform="rotate(4 28 56.95)"/>
-          <ellipse cx="27.5" cy="54.0"  rx="2.2" ry="0.18" fill="#FFF4D0" opacity="0.7"  transform="rotate(-4 27.5 54.0)"/>
+          <!-- top rim highlights -->
+          <ellipse cx="27.5" cy="63.4"  rx="6.6" ry="0.28" fill="#FFF4D0" opacity="0.75" transform="rotate(-1 27.5 63.4)"/>
+          <ellipse cx="17"   cy="63.4"  rx="5.4" ry="0.22" fill="#FFF4D0" opacity="0.6"  transform="rotate(-3 17 63.4)"/>
+          <ellipse cx="38"   cy="63.4"  rx="5.4" ry="0.22" fill="#FFF4D0" opacity="0.6"  transform="rotate(5 38 63.4)"/>
+          <ellipse cx="14"   cy="61.85" rx="4.6" ry="0.2"  fill="#FFE4A0" opacity="0.6"  transform="rotate(8 14 61.85)"/>
+          <ellipse cx="24"   cy="61.95" rx="5"   ry="0.2"  fill="#FFE4A0" opacity="0.6"  transform="rotate(-3 24 61.95)"/>
+          <ellipse cx="34"   cy="61.9"  rx="4.8" ry="0.2"  fill="#FFE4A0" opacity="0.6"  transform="rotate(6 34 61.9)"/>
+          <ellipse cx="19"   cy="60.1"  rx="3.7" ry="0.17" fill="#FFE4A0" opacity="0.6"  transform="rotate(7 19 60.1)"/>
+          <ellipse cx="36"   cy="60.1"  rx="3.7" ry="0.17" fill="#FFE4A0" opacity="0.6"  transform="rotate(-8 36 60.1)"/>
+          <ellipse cx="27.5" cy="57.5"  rx="3.2" ry="0.22" fill="#FFF4D0" opacity="0.75" transform="rotate(-3 27.5 57.5)"/>
         </g>
         <circle class="ember" cx="8"  cy="58" r="0.7" fill="#F4C95C" style="animation-delay:-0.5s; animation-duration:5.2s; pointer-events:none"/>
         <circle class="ember" cx="16" cy="57" r="0.5" fill="#FFD480" style="animation-delay:-2.7s; animation-duration:6.0s; pointer-events:none"/>
@@ -570,67 +556,53 @@
       <a href="index.html" class="nav-logo">
         <span class="logo-mark" aria-hidden="true">
           <svg width="72" height="72" viewBox="0 0 64 64" fill="none" overflow="visible">
-        <!-- Natural pile of gold coins under the bars (taller, bigger, centered under bars at x~27.5) -->
+        <!-- Pile of gold coins — shorter (3 layers), bigger coins, centered under bars -->
         <g class="coin-pile" filter="drop-shadow(0 0.7px 1px rgba(0,0,0,0.7))">
-          <!-- ground shadow blob anchors the pile -->
-          <ellipse cx="27.5" cy="63.9" rx="32" ry="1.6" fill="rgba(0,0,0,0.6)" filter="blur(0.5px)"/>
+          <!-- ground shadow -->
+          <ellipse cx="27.5" cy="64.1" rx="34" ry="1.7" fill="rgba(0,0,0,0.6)" filter="blur(0.5px)"/>
 
-          <!-- foundation row (largest coins, fully visible) -->
-          <ellipse cx="3"   cy="63.4" rx="2.6" ry="1.1"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" opacity="0.85" transform="rotate(-12 3 63.4)"/>
-          <ellipse cx="9"   cy="63.7" rx="4.5" ry="1.5"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(6 9 63.7)"/>
-          <ellipse cx="17"  cy="63.85" rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-3 17 63.85)"/>
-          <ellipse cx="27.5" cy="63.95" rx="6.5" ry="1.95" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-1 27.5 63.95)"/>
-          <ellipse cx="38"  cy="63.85" rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(4 38 63.85)"/>
-          <ellipse cx="46"  cy="63.7" rx="4.5" ry="1.5"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-7 46 63.7)"/>
-          <ellipse cx="52"  cy="63.4" rx="2.6" ry="1.1"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" opacity="0.85" transform="rotate(9 52 63.4)"/>
+          <!-- foundation row (huge coins) -->
+          <ellipse cx="2"    cy="63.4"  rx="2.8" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  opacity="0.85" transform="rotate(-15 2 63.4)"/>
+          <ellipse cx="8"    cy="63.7"  rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(7 8 63.7)"/>
+          <ellipse cx="17"   cy="63.85" rx="6.5" ry="1.95" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-3 17 63.85)"/>
+          <ellipse cx="27.5" cy="63.95" rx="8"   ry="2.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.25" transform="rotate(-1 27.5 63.95)"/>
+          <ellipse cx="38"   cy="63.85" rx="6.5" ry="1.95" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(5 38 63.85)"/>
+          <ellipse cx="47"   cy="63.7"  rx="5.5" ry="1.7" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-7 47 63.7)"/>
+          <ellipse cx="53"   cy="63.4"  rx="2.8" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  opacity="0.85" transform="rotate(10 53 63.4)"/>
 
-          <!-- "fallen / leaning" coins at edges (face-on profile) -->
-          <ellipse cx="-1"  cy="63.6" rx="1.6" ry="2.1" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(72 -1 63.6)"/>
-          <ellipse cx="56"  cy="63.5" rx="1.6" ry="2.1" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-68 56 63.5)"/>
+          <!-- fallen / leaning edge coins (face-on, tilted) -->
+          <ellipse cx="-1"   cy="63.6"  rx="1.7" ry="2.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(72 -1 63.6)"/>
+          <ellipse cx="56"   cy="63.5"  rx="1.7" ry="2.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-68 56 63.5)"/>
 
-          <!-- second row -->
-          <ellipse cx="6"   cy="61.9" rx="3.4" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-14 6 61.9)"/>
-          <ellipse cx="13"  cy="62.1" rx="4.5" ry="1.4"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(7 13 62.1)"/>
-          <ellipse cx="22"  cy="62.25" rx="5.0" ry="1.5" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-3 22 62.25)"/>
-          <ellipse cx="32"  cy="62.25" rx="5.2" ry="1.55" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(5 32 62.25)"/>
-          <ellipse cx="41"  cy="62.1" rx="4.5" ry="1.4"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-9 41 62.1)"/>
-          <ellipse cx="49"  cy="61.9" rx="3.4" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(11 49 61.9)"/>
+          <!-- mid row -->
+          <ellipse cx="6"    cy="62.0"  rx="4"   ry="1.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-13 6 62.0)"/>
+          <ellipse cx="14"   cy="62.15" rx="5.5" ry="1.65" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(8 14 62.15)"/>
+          <ellipse cx="24"   cy="62.25" rx="6"   ry="1.8" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-3 24 62.25)"/>
+          <ellipse cx="34"   cy="62.2"  rx="5.8" ry="1.75" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(6 34 62.2)"/>
+          <ellipse cx="43"   cy="62.05" rx="5"   ry="1.5" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-10 43 62.05)"/>
+          <ellipse cx="50"   cy="61.9"  rx="3.6" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(11 50 61.9)"/>
 
-          <!-- third row -->
-          <ellipse cx="10"  cy="60.1" rx="3.6" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(8 10 60.1)"/>
-          <ellipse cx="18"  cy="60.3" rx="4.4" ry="1.35" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-6 18 60.3)"/>
-          <ellipse cx="27"  cy="60.4" rx="4.8" ry="1.45" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(3 27 60.4)"/>
-          <ellipse cx="36"  cy="60.3" rx="4.4" ry="1.35" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-9 36 60.3)"/>
-          <ellipse cx="44"  cy="60.1" rx="3.6" ry="1.15" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(13 44 60.1)"/>
+          <!-- top peek row (smaller coins, just under bars) -->
+          <ellipse cx="11"   cy="60.2"  rx="3.6" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-12 11 60.2)"/>
+          <ellipse cx="19"   cy="60.4"  rx="4.5" ry="1.4" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(7 19 60.4)"/>
+          <ellipse cx="36"   cy="60.4"  rx="4.5" ry="1.4" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-8 36 60.4)"/>
+          <ellipse cx="44"   cy="60.2"  rx="3.6" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(13 44 60.2)"/>
 
-          <!-- fourth row -->
-          <ellipse cx="14"  cy="58.5" rx="3.2" ry="1.0" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-12 14 58.5)"/>
-          <ellipse cx="22"  cy="58.7" rx="4.0" ry="1.2" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(5 22 58.7)"/>
-          <ellipse cx="32"  cy="58.75" rx="4.2" ry="1.3" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.2"  transform="rotate(-3 32 58.75)"/>
-          <ellipse cx="41"  cy="58.5" rx="3.2" ry="1.0" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(10 41 58.5)"/>
+          <!-- crown face-up coin at the top (bigger, clearly a coin with $ marking) -->
+          <ellipse cx="27.5" cy="59.7"  rx="4"   ry="3"  fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.25" transform="rotate(-3 27.5 59.7)"/>
+          <ellipse cx="27.5" cy="59.7"  rx="3.1" ry="2.3" fill="none" stroke="#7a4f1c" stroke-width="0.18" opacity="0.7" transform="rotate(-3 27.5 59.7)"/>
+          <text x="27.5" y="61.0" text-anchor="middle" font-family="Bowlby One, Inter, sans-serif" font-weight="900" font-size="3.4" fill="#3a2510" transform="rotate(-3 27.5 61.0)">$</text>
 
-          <!-- fifth row (peek under bars) -->
-          <ellipse cx="20"  cy="57.0" rx="2.8" ry="0.9" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-14 20 57.0)"/>
-          <ellipse cx="28"  cy="57.2" rx="3.4" ry="1.1" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(4 28 57.2)"/>
-          <ellipse cx="36"  cy="57.0" rx="2.8" ry="0.9" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.18" transform="rotate(-7 36 57.0)"/>
-
-          <!-- crown face-up coin (more circular — clearly a coin) -->
-          <ellipse cx="27.5" cy="55.6" rx="3.0" ry="2.4" fill="url(#coinGold)" stroke="#2a1808" stroke-width="0.22" transform="rotate(-4 27.5 55.6)"/>
-          <!-- inner rim ring of crown coin -->
-          <ellipse cx="27.5" cy="55.6" rx="2.2" ry="1.7" fill="none" stroke="#7a4f1c" stroke-width="0.15" opacity="0.7" transform="rotate(-4 27.5 55.6)"/>
-          <!-- tiny "$" on the crown coin face, marking it as a coin -->
-          <text x="27.5" y="56.6" text-anchor="middle" font-family="Bowlby One, Inter, sans-serif" font-weight="900" font-size="2.6" fill="#3a2510" transform="rotate(-4 27.5 56.6)">$</text>
-
-          <!-- top rim highlights catching light on big coins -->
-          <ellipse cx="27.5" cy="63.55" rx="5.4" ry="0.22" fill="#FFF4D0" opacity="0.65" transform="rotate(-1 27.5 63.55)"/>
-          <ellipse cx="17"   cy="63.5" rx="4.4" ry="0.2"  fill="#FFF4D0" opacity="0.55" transform="rotate(-3 17 63.5)"/>
-          <ellipse cx="38"   cy="63.5" rx="4.4" ry="0.2"  fill="#FFF4D0" opacity="0.55" transform="rotate(4 38 63.5)"/>
-          <ellipse cx="22"   cy="61.95" rx="3.8" ry="0.18" fill="#FFE4A0" opacity="0.55" transform="rotate(-3 22 61.95)"/>
-          <ellipse cx="32"   cy="61.95" rx="4.0" ry="0.18" fill="#FFE4A0" opacity="0.55" transform="rotate(5 32 61.95)"/>
-          <ellipse cx="27"   cy="60.1"  rx="3.6" ry="0.18" fill="#FFE4A0" opacity="0.55" transform="rotate(3 27 60.1)"/>
-          <ellipse cx="32"   cy="58.5"  rx="3.0" ry="0.16" fill="#FFE4A0" opacity="0.55" transform="rotate(-3 32 58.5)"/>
-          <ellipse cx="28"   cy="56.95" rx="2.6" ry="0.16" fill="#FFE4A0" opacity="0.55" transform="rotate(4 28 56.95)"/>
-          <ellipse cx="27.5" cy="54.0"  rx="2.2" ry="0.18" fill="#FFF4D0" opacity="0.7"  transform="rotate(-4 27.5 54.0)"/>
+          <!-- top rim highlights -->
+          <ellipse cx="27.5" cy="63.4"  rx="6.6" ry="0.28" fill="#FFF4D0" opacity="0.75" transform="rotate(-1 27.5 63.4)"/>
+          <ellipse cx="17"   cy="63.4"  rx="5.4" ry="0.22" fill="#FFF4D0" opacity="0.6"  transform="rotate(-3 17 63.4)"/>
+          <ellipse cx="38"   cy="63.4"  rx="5.4" ry="0.22" fill="#FFF4D0" opacity="0.6"  transform="rotate(5 38 63.4)"/>
+          <ellipse cx="14"   cy="61.85" rx="4.6" ry="0.2"  fill="#FFE4A0" opacity="0.6"  transform="rotate(8 14 61.85)"/>
+          <ellipse cx="24"   cy="61.95" rx="5"   ry="0.2"  fill="#FFE4A0" opacity="0.6"  transform="rotate(-3 24 61.95)"/>
+          <ellipse cx="34"   cy="61.9"  rx="4.8" ry="0.2"  fill="#FFE4A0" opacity="0.6"  transform="rotate(6 34 61.9)"/>
+          <ellipse cx="19"   cy="60.1"  rx="3.7" ry="0.17" fill="#FFE4A0" opacity="0.6"  transform="rotate(7 19 60.1)"/>
+          <ellipse cx="36"   cy="60.1"  rx="3.7" ry="0.17" fill="#FFE4A0" opacity="0.6"  transform="rotate(-8 36 60.1)"/>
+          <ellipse cx="27.5" cy="57.5"  rx="3.2" ry="0.22" fill="#FFF4D0" opacity="0.75" transform="rotate(-3 27.5 57.5)"/>
         </g>
         <circle class="ember" cx="8"  cy="58" r="0.7" fill="#F4C95C" style="animation-delay:-0.5s; animation-duration:5.2s; pointer-events:none"/>
         <circle class="ember" cx="16" cy="57" r="0.5" fill="#FFD480" style="animation-delay:-2.7s; animation-duration:6.0s; pointer-events:none"/>
