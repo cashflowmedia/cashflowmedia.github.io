@@ -1948,6 +1948,7 @@ ul, ol { list-style: none; }
   bottom: 28px; right: 28px;
   z-index: 200;
   display: flex; flex-direction: column;
+  align-items: flex-end;
   gap: 14px;
 }
 .support-fab-circle {
