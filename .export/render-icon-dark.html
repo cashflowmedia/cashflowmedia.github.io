@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  html,body{margin:0;padding:0;background:#0c0e0d}
+  body{display:flex;align-items:center;justify-content:center;width:1024px;height:1024px}
+  .wrap{width:880px;height:880px}
+  .cas{transform-origin:bottom;transform-box:fill-box;animation:cascadeSubtle 3.2s ease-in-out infinite}
+  .cas-1{animation-delay:0s}.cas-2{animation-delay:.22s}.cas-3{animation-delay:.44s}
+  @keyframes cascadeSubtle{0%,100%{transform:scaleY(.92)}35%,55%{transform:scaleY(1.05)}}
+  .ember{transform-box:fill-box;transform-origin:center;animation:emberRise 4.5s ease-out infinite;filter:drop-shadow(0 0 1.5px #F4C95C)}
+  @keyframes emberRise{0%{transform:translate(0,0) scale(1);opacity:0}15%{opacity:1}50%{transform:translate(2px,-30px) scale(.7);opacity:.75}100%{transform:translate(-2px,-58px) scale(.2);opacity:0}}
+  .dollar-soft{transform-origin:center;transform-box:fill-box;animation:dollarSoft 3.2s ease-in-out infinite}
+  @keyframes dollarSoft{0%,100%{transform:scale(.99);filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}50%{transform:scale(1.06);filter:drop-shadow(0 0 6px #F4C95C) drop-shadow(0 1px 2px rgba(0,0,0,.5))}}
+</style></head><body>
+<div class="wrap">
+<svg viewBox="0 0 64 64" width="100%" height="100%" overflow="visible">
+  <defs>
+    <linearGradient id="b1" x1="0" y1="60" x2="0" y2="36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#006622"/><stop offset="1" stop-color="#1aff66"/></linearGradient>
+    <linearGradient id="b2" x1="0" y1="60" x2="0" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008833"/><stop offset=".6" stop-color="#1aff66"/><stop offset="1" stop-color="#aaff99"/></linearGradient>
+    <linearGradient id="b3" x1="0" y1="60" x2="0" y2="6"  gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008833"/><stop offset=".45" stop-color="#1aff66"/><stop offset=".78" stop-color="#aaff99"/><stop offset="1" stop-color="#F4C95C"/></linearGradient>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <circle class="ember" cx="8"  cy="58" r="0.7" fill="#F4C95C" style="animation-delay:-.5s;animation-duration:5.2s"/>
+  <circle class="ember" cx="16" cy="57" r="0.5" fill="#FFD480" style="animation-delay:-2.7s;animation-duration:6s"/>
+  <circle class="ember" cx="22" cy="58" r="0.6" fill="#FFE4A0" style="animation-delay:-1.4s;animation-duration:4.8s"/>
+  <circle class="ember" cx="30" cy="57" r="0.7" fill="#F4C95C" style="animation-delay:-3.6s;animation-duration:5.6s"/>
+  <circle class="ember" cx="38" cy="58" r="0.5" fill="#FFD480" style="animation-delay:-.9s;animation-duration:5s"/>
+  <circle class="ember" cx="46" cy="57" r="0.7" fill="#F4C95C" style="animation-delay:-2.3s;animation-duration:5.4s"/>
+  <circle class="ember" cx="54" cy="58" r="0.6" fill="#FFE4A0" style="animation-delay:-4.1s;animation-duration:4.6s"/>
+  <circle class="ember" cx="60" cy="57" r="0.5" fill="#FFD480" style="animation-delay:-1.8s;animation-duration:5.8s"/>
+  <g filter="url(#g)">
+    <path class="cas cas-1" d="M8 56 V46 L19 38 V56 Z" fill="url(#b1)" opacity=".85"/>
+    <path d="M8 56 V46 L9.5 46.7 V56 Z" fill="rgba(255,255,255,.45)"/>
+    <path d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,.55)"/>
+    <path d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,.4)"/>
+    <path class="cas cas-2" d="M22 56 V34 L33 24 V56 Z" fill="url(#b2)" opacity=".95"/>
+    <path d="M22 56 V34 L23.5 34.7 V56 Z" fill="rgba(255,255,255,.45)"/>
+    <path d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,.55)"/>
+    <path d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,.4)"/>
+    <path class="cas cas-3" d="M36 56 V20 L47 8 V56 Z" fill="url(#b3)"/>
+    <path d="M36 56 V20 L37.5 20.7 V56 Z" fill="rgba(255,255,255,.5)"/>
+    <path d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,.6)"/>
+    <path d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,.4)"/>
+  </g>
+  <text class="dollar-soft" x="41.5" y="44" text-anchor="middle" font-family="Bowlby One, Inter, sans-serif" font-size="22" font-weight="400" fill="#001a0e">$</text>
+</svg>
+</div></body></html>
