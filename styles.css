@@ -506,13 +506,18 @@ ul, ol { list-style: none; }
     color: transparent;
   }
 }
-/* Mobile: 3 gold-glow layers (instead of desktop's 5 + dark drop) — enough halo to make the gold pop without crossing the threshold where mobile GPUs render gradient-clipped text as solid black */
+/* Mobile: replace filter drop-shadow with text-shadow.
+   iOS Safari has a known compositing bug where filter:drop-shadow stacked on
+   background-clip:text + -webkit-text-fill-color:transparent darkens the gradient
+   to a brown/dark-gold instead of glowing around it. text-shadow paints the halo
+   behind the glyph shape and doesn't hit that bug. */
 @media (max-width: 600px) {
   .logo-cf {
-    filter:
-      drop-shadow(0 0 3px  rgba(244,201,92,0.9))
-      drop-shadow(0 0 9px  rgba(244,201,92,0.55))
-      drop-shadow(0 0 22px rgba(244,201,92,0.25));
+    filter: none;
+    text-shadow:
+      0 0 3px  rgba(244,201,92,0.95),
+      0 0 9px  rgba(244,201,92,0.6),
+      0 0 22px rgba(244,201,92,0.3);
   }
 }
 @keyframes goldShimmer {
