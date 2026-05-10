@@ -1,0 +1,144 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Inter:wght@700;800;900&family=Quicksand:wght@700&family=Bowlby+One&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#0c0e0d;font-family:Inter,sans-serif;color:#fff}
+  body{width:1200px;display:grid;grid-template-columns:1fr 1fr;gap:0;padding:48px 0}
+  .opt{display:flex;flex-direction:column;align-items:center;padding:34px 24px;border-bottom:1px solid #1a1f1d;border-right:1px solid #1a1f1d;gap:6px}
+  .opt h3{font-size:18px;font-weight:700;color:#cdd;margin:0;letter-spacing:.04em}
+  .opt p{font-size:12px;color:#7a8a82;margin:0 0 14px;text-align:center;max-width:340px;line-height:1.5}
+  .opt svg{width:340px;height:340px;overflow:visible}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="b1" x1="0" y1="60" x2="0" y2="36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#006622"/><stop offset="1" stop-color="#1aff66"/></linearGradient>
+    <linearGradient id="b2" x1="0" y1="60" x2="0" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008833"/><stop offset=".6" stop-color="#1aff66"/><stop offset="1" stop-color="#aaff99"/></linearGradient>
+    <linearGradient id="b3" x1="0" y1="60" x2="0" y2="6"  gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008833"/><stop offset=".45" stop-color="#1aff66"/><stop offset=".78" stop-color="#aaff99"/><stop offset="1" stop-color="#F4C95C"/></linearGradient>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+
+    <!-- Metallic gold gradient for variant A (vertical highlight -> brand gold -> bronze) -->
+    <linearGradient id="metalGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#FFE4A0"/>
+      <stop offset="0.35" stop-color="#F4C95C"/>
+      <stop offset="0.7" stop-color="#a06b1c"/>
+      <stop offset="1"   stop-color="#3a2510"/>
+    </linearGradient>
+
+    <!-- Each-bar-matched dark gradients for variant D -->
+    <linearGradient id="cfmBar1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#003c14"/><stop offset="1" stop-color="#001508"/></linearGradient>
+    <linearGradient id="cfmBar2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#005a22"/><stop offset="1" stop-color="#001a08"/></linearGradient>
+    <linearGradient id="cfmBar3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5418"/><stop offset="1" stop-color="#1a0c04"/></linearGradient>
+
+    <!-- Inset/engraved look -->
+    <filter id="engrave">
+      <feGaussianBlur stdDeviation="0.15" />
+    </filter>
+  </defs>
+</svg>
+
+<!-- ========== A · Metallic gradient + soft 3D shadow ========== -->
+<div class="opt">
+  <h3>A · Metallic 3D</h3>
+  <p>Each letter uses a vertical metal gradient (cream → gold → bronze) + offset dark shadow underneath — same depth treatment as the bars themselves.</p>
+  <svg viewBox="0 0 64 64" fill="none">
+    <g filter="url(#g)">
+      <path d="M8 56 V46 L19 38 V56 Z" fill="url(#b1)" opacity=".85"/>
+      <path d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M22 56 V34 L33 24 V56 Z" fill="url(#b2)" opacity=".95"/>
+      <path d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M36 56 V20 L47 8 V56 Z" fill="url(#b3)"/>
+      <path d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,.6)"/>
+      <path d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,.4)"/>
+    </g>
+    <text x="41.5" y="44" text-anchor="middle" font-family="Bowlby One" font-weight="900" font-size="22" fill="#0a0500" stroke="#F4C95C" stroke-width="0.4" style="paint-order:stroke fill;letter-spacing:-1px">$</text>
+    <!-- Drop-shadow underneath each letter -->
+    <text x="13.6" y="55.4" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="#1a0c04" opacity="0.7">C</text>
+    <text x="27.6" y="55.4" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="#1a0c04" opacity="0.7">F</text>
+    <text x="41.6" y="55.4" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="#1a0c04" opacity="0.7">M</text>
+    <!-- Front faces with metal gradient -->
+    <text x="13.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="url(#metalGold)" stroke="#3a2510" stroke-width="0.12" style="paint-order:stroke fill">C</text>
+    <text x="27.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="url(#metalGold)" stroke="#3a2510" stroke-width="0.12" style="paint-order:stroke fill">F</text>
+    <text x="41.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="url(#metalGold)" stroke="#3a2510" stroke-width="0.12" style="paint-order:stroke fill">M</text>
+  </svg>
+</div>
+
+<!-- ========== B · Engraved / inset (carved into the bars) ========== -->
+<div class="opt">
+  <h3>B · Engraved (carved-in)</h3>
+  <p>Letters look pressed into the bar surface — dark interior with a thin light catch on the bottom edge (sun from above). Reads as if stamped into metal.</p>
+  <svg viewBox="0 0 64 64" fill="none">
+    <g filter="url(#g)">
+      <path d="M8 56 V46 L19 38 V56 Z" fill="url(#b1)" opacity=".85"/>
+      <path d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M22 56 V34 L33 24 V56 Z" fill="url(#b2)" opacity=".95"/>
+      <path d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M36 56 V20 L47 8 V56 Z" fill="url(#b3)"/>
+      <path d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,.6)"/>
+      <path d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,.4)"/>
+    </g>
+    <text x="41.5" y="44" text-anchor="middle" font-family="Bowlby One" font-weight="900" font-size="22" fill="#0a0500" stroke="#F4C95C" stroke-width="0.4" style="paint-order:stroke fill;letter-spacing:-1px">$</text>
+    <!-- Light catch on bottom edge -->
+    <text x="13.5" y="55.5" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="rgba(255,228,160,0.7)">C</text>
+    <text x="27.5" y="55.5" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="rgba(255,228,160,0.7)">F</text>
+    <text x="41.5" y="55.5" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="rgba(255,228,160,0.7)">M</text>
+    <!-- Dark interior on top -->
+    <text x="13.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="#1a0c04">C</text>
+    <text x="27.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="#1a0c04">F</text>
+    <text x="41.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="#1a0c04">M</text>
+  </svg>
+</div>
+
+<!-- ========== C · Brass nameplate plaque ========== -->
+<div class="opt">
+  <h3>C · Brass nameplate</h3>
+  <p>CFM sits on a small dark-bronze plaque under the bars — like a brass plate at the base of the bar graph. Most overtly "logo with a label."</p>
+  <svg viewBox="0 0 64 64" fill="none" overflow="visible">
+    <g filter="url(#g)">
+      <path d="M8 56 V46 L19 38 V56 Z" fill="url(#b1)" opacity=".85"/>
+      <path d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M22 56 V34 L33 24 V56 Z" fill="url(#b2)" opacity=".95"/>
+      <path d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M36 56 V20 L47 8 V56 Z" fill="url(#b3)"/>
+      <path d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,.6)"/>
+      <path d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,.4)"/>
+    </g>
+    <text x="41.5" y="44" text-anchor="middle" font-family="Bowlby One" font-weight="900" font-size="22" fill="#0a0500" stroke="#F4C95C" stroke-width="0.4" style="paint-order:stroke fill;letter-spacing:-1px">$</text>
+    <!-- Plaque -->
+    <rect x="6" y="57" width="44" height="6.4" rx="1.4" fill="#3a2510" stroke="#7a4f1c" stroke-width="0.25"/>
+    <rect x="6" y="57" width="44" height="0.5" fill="rgba(255,228,160,0.55)"/>
+    <text x="28" y="62" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="4.6" fill="#FFE4A0" letter-spacing="0.4">CFM</text>
+  </svg>
+</div>
+
+<!-- ========== D · Bar-matched (each letter inherits its bar) ========== -->
+<div class="opt">
+  <h3>D · Bar-matched</h3>
+  <p>Each letter uses a darker version of its bar's gradient (C=dark green, F=dark green, M=dark bronze) — letters visually "belong" to their bar.</p>
+  <svg viewBox="0 0 64 64" fill="none">
+    <g filter="url(#g)">
+      <path d="M8 56 V46 L19 38 V56 Z" fill="url(#b1)" opacity=".85"/>
+      <path d="M8 46 L19 38 L19 40 L8 47.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M19 38 V56 L17.3 56 V39 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M22 56 V34 L33 24 V56 Z" fill="url(#b2)" opacity=".95"/>
+      <path d="M22 34 L33 24 L33 26 L22 35.5 Z" fill="rgba(255,255,255,.55)"/>
+      <path d="M33 24 V56 L31.3 56 V25 Z" fill="rgba(0,0,0,.4)"/>
+      <path d="M36 56 V20 L47 8 V56 Z" fill="url(#b3)"/>
+      <path d="M36 20 L47 8 L47 10 L36 21.5 Z" fill="rgba(255,255,255,.6)"/>
+      <path d="M47 8 V56 L45.3 56 V9 Z" fill="rgba(0,0,0,.4)"/>
+    </g>
+    <text x="41.5" y="44" text-anchor="middle" font-family="Bowlby One" font-weight="900" font-size="22" fill="#0a0500" stroke="#F4C95C" stroke-width="0.4" style="paint-order:stroke fill;letter-spacing:-1px">$</text>
+    <text x="13.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="url(#cfmBar1)" stroke="#aaff99" stroke-width="0.12" style="paint-order:stroke fill">C</text>
+    <text x="27.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="url(#cfmBar2)" stroke="#aaff99" stroke-width="0.12" style="paint-order:stroke fill">F</text>
+    <text x="41.5" y="55.2" text-anchor="middle" font-family="Quicksand" font-weight="700" font-size="10" fill="url(#cfmBar3)" stroke="#FFE4A0" stroke-width="0.12" style="paint-order:stroke fill">M</text>
+  </svg>
+</div>
+
+</body></html>
