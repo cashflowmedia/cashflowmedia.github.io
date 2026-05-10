@@ -331,11 +331,13 @@ ul, ol { list-style: none; }
 .ember {
   transform-box: fill-box; transform-origin: center;
   animation: emberRise 4.5s ease-out infinite;
-  /* Brighter, multi-layer halo so each ember reads more luminous */
+  /* Hot-coal luminance — white core, layered cream + gold bloom */
   filter:
-    drop-shadow(0 0 0.8px #FFF4D0)
-    drop-shadow(0 0 2px   #FFE4A0)
-    drop-shadow(0 0 4px   rgba(244,201,92,0.85));
+    drop-shadow(0 0 0.4px #FFFFFF)
+    drop-shadow(0 0 1.0px #FFF8E0)
+    drop-shadow(0 0 2.5px #FFE4A0)
+    drop-shadow(0 0 5px   rgba(255,209,108,1))
+    drop-shadow(0 0 9px   rgba(244,201,92,0.6));
 }
 @keyframes emberRise {
   0%   { transform: translate(0,0) scale(1);    opacity: 0; }
@@ -410,7 +412,7 @@ ul, ol { list-style: none; }
   align-items: baseline;
   font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
   font-weight: 800;
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: -0.015em;
   white-space: nowrap;
 }
