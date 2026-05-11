@@ -208,7 +208,7 @@
       <span class="line"><span class="word">to</span> <span class="word gradient-text">scaled</span> <span class="word gradient-text">spend</span></span>
       <span class="line"><span class="word">in</span> <span class="word">nine</span> <span class="word">moves.</span></span>
     </h1>
-    <p class="hero-sub" data-anim="fade-up" data-delay="0.6" style="max-width:720px;">
+    <p class="hero-sub" data-anim="fade-up" data-delay="0.6" style="max-width:720px; margin-left:auto; margin-right:auto; text-align:center;">
       Most of these happen the same business day. The longest leg is your warm-up week — and we walk you through every creative, every cap, every replacement trigger so nothing surprises you.
     </p>
     <div class="hero-cta" data-anim="fade-up" data-delay="0.8">
@@ -539,31 +539,31 @@
         <div class="warmup-card-tag">Brand awareness</div>
         <h4>"How we ship faster than our competitors"</h4>
         <p class="warmup-body">A short BTS-style image of your team or warehouse. Caption: how you operate. Outcome: brand affinity, no aggressive offer.</p>
-        <button class="warmup-cta">Learn more</button>
+        <a href="#contact" class="warmup-cta">Learn more</a>
       </article>
       <article class="warmup-card">
         <div class="warmup-card-tag">Soft offer</div>
         <h4>"Free shipping on every order this week"</h4>
         <p class="warmup-body">Plain product photo, no urgency stacking, no countdown. Light promotional language Meta has seen a million times.</p>
-        <button class="warmup-cta">Shop now</button>
+        <a href="#contact" class="warmup-cta">Shop now</a>
       </article>
       <article class="warmup-card">
         <div class="warmup-card-tag">Educational</div>
         <h4>"3 things most buyers miss when they pick a [product]"</h4>
         <p class="warmup-body">Listicle carousel with neutral copy. Drives qualified clicks without big claims. Engagement signals stack fast.</p>
-        <button class="warmup-cta">Read the guide</button>
+        <a href="#contact" class="warmup-cta">Read the guide</a>
       </article>
       <article class="warmup-card">
         <div class="warmup-card-tag">Testimonial</div>
         <h4>"Why I switched after 6 months — Sarah, real customer"</h4>
         <p class="warmup-body">UGC-style video or static with a real-sounding quote. Add Sarah's first name and city. No "results not typical" red flags.</p>
-        <button class="warmup-cta">See her story</button>
+        <a href="#contact" class="warmup-cta">See her story</a>
       </article>
       <article class="warmup-card">
         <div class="warmup-card-tag">Lead magnet</div>
         <h4>"Get our free [niche] checklist — 1-page PDF"</h4>
         <p class="warmup-body">Simple form ask in exchange for a free resource. Generates pixel data, builds a custom audience, never trips policy.</p>
-        <button class="warmup-cta">Download free</button>
+        <a href="#contact" class="warmup-cta">Download free</a>
       </article>
     </div>
 
@@ -851,21 +851,19 @@
     try { var y = $('year'); if (y) y.textContent = new Date().getFullYear(); } catch (e) {}
     try { render(); } catch (e) { console.warn('initial render failed', e); }
 
-    // === Anchor-link smooth scroll fallback (in case script.js never wires it) ===
+    // === Anchor-link smooth scroll — runs in CAPTURE phase so it fires BEFORE script.js's bubble handler.
+    // (script.js uses lenis.scrollTo which can silently fail to actually scroll on this page; this guarantees scroll works.) ===
     try {
       document.querySelectorAll('a[href^="#"]').forEach(function(link) {
         link.addEventListener('click', function(e) {
           var id = link.getAttribute('href');
-          if (id && id.length > 1) {
-            var target = document.querySelector(id);
-            if (target) {
-              // only intervene if no other handler already prevented default
-              setTimeout(function() {
-                if (!e.defaultPrevented) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }, 0);
-            }
-          }
-        });
+          if (!id || id.length < 2) return;
+          var target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          e.stopPropagation();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, true); // CAPTURE
       });
     } catch (e) { console.warn('anchor scroll fallback failed', e); }
   }
